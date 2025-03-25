@@ -201,7 +201,16 @@ class MainWindow(UiMainWindow):
         # Инициализируем сигналы
         self.app.init_signal()
 
+        # Разработка
+        self._init_development()
+
     # =============== Инициализация и загрузка данных ===============
+    def _init_development(self):
+        self.combo_box_configs.setCurrentIndex(0)
+        self.action_git.setVisible(False)
+        self.action_load_table.setVisible(False)
+        self.action_settings.setVisible(False)
+
     def _init_combo_box_configs(self):
         """Инициализирует комбобокс с конфигурациями."""
         configs = ['REST']
@@ -489,8 +498,6 @@ class MainWindow(UiMainWindow):
         else:
             QMessageBox.critical(self, "Ошибка", f"Не удалось установить подключение к PostgreSQL! {message}")
 
-
-
     def _event_btn_clicked_open_sql_script(self, key: str, value: str):
         """Обработчик открытия скрипта SQL."""
         content_layout = SQLViewerScript(parent=self, app=self.app, event_render_sql_script=self._event_btn_clicked_render_sql_script)
@@ -564,14 +571,11 @@ class MainWindow(UiMainWindow):
         else:
             self.action_connect_pg.set_status_connect_off()
 
-
-
     def _callback_btn_ok_save_settings_pg(self, data: dict, form: ContentForm):
         """Обработчик сохранения настроек подключения к PostgreSQL."""
         self.app.config_service.set_sql_connect(key='pg', value=data)
         self.app.config_service.save_sql_connect()
         form.close()
-
 
 
     # =============== Вспомогательные методы ===============

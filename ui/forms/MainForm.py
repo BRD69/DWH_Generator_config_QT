@@ -287,19 +287,19 @@ class UiMainWindow(QtWidgets.QMainWindow):
         self.action_view = QtWidgets.QAction(self.icons["search"], "Просмотр", self)
         self.toolBar.addAction(self.action_view)
 
-        self.toolBar.addSeparator()
+        # self.toolBar.addSeparator()
 
         # self.toolBar.addWidget(QtWidgets.QLabel("Git"))
 
         self.action_git = QtWidgets.QAction(self.icons["git"], "Git", self)
         self.toolBar.addAction(self.action_git)
 
-        self.toolBar.addSeparator()
+        # self.toolBar.addSeparator()
 
         self.action_load_table = QtWidgets.QAction(self.icons["load_table"], "Загрузить таблицу", self)
         self.toolBar.addAction(self.action_load_table)
 
-        self.toolBar.addSeparator()
+        # self.toolBar.addSeparator()
 
         self.action_settings = QtWidgets.QAction(self.icons["gear"], "Настройки", self)
         self.toolBar.addAction(self.action_settings)

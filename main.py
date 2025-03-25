@@ -210,7 +210,7 @@ class MainWindow(UiMainWindow):
         self.action_git.setVisible(False)
         self.action_load_table.setVisible(False)
         self.action_settings.setVisible(False)
-        self.action_test_notification.setVisible(True)
+        self.action_test_notification.setVisible(False)
 
     def _init_combo_box_configs(self):
         """Инициализирует комбобокс с конфигурациями."""

@@ -210,7 +210,7 @@ class MainWindow(UiMainWindow):
         self.action_git.setVisible(False)
         self.action_load_table.setVisible(False)
         self.action_settings.setVisible(False)
-        self.action_test_notification.setVisible(False)
+        self.action_test_notification.setVisible(True)
 
     def _init_combo_box_configs(self):
         """Инициализирует комбобокс с конфигурациями."""
@@ -561,7 +561,7 @@ class MainWindow(UiMainWindow):
                         self._event_btn_clicked_add_field_table(data_value=fields)
                         self.loading.update_status(f"Обработка результатов... {progress}%", progress)
                     self.loading.hide_loading()
-                    self.notification.show_notification("Загрузка данных завершена! Количество строк: {total_rows}", "info")
+                    self.notification.show_notification(f"Загрузка данных завершена! Данных: {total_rows}", "info")
                     self.app.processEvents()
                 else:
                     self.logger.warning("SQL скрипт выполнен, но не вернул результатов")

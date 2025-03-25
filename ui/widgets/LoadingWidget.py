@@ -38,7 +38,7 @@ class LoadingWidget(QWidget):
         # Основной контейнер
         self.container = QFrame(self)
         self.container.setObjectName("loadingContainer")
-        self.container.setFixedSize(280, 180)  # Немного меньше основного виджета
+        self.container.setFixedSize(280, 180)
         self.container.setStyleSheet("""
             QFrame#loadingContainer {
                 background-color: white;
@@ -58,11 +58,13 @@ class LoadingWidget(QWidget):
         self.progress.setMaximum(100)
         self.progress.setValue(0)
         self.progress.setTextVisible(False)
-        self.progress.setFixedSize(80, 80)  # Увеличиваем размер индикатора
+        self.progress.setFixedSize(80, 80)  # Фиксированный размер
         self.progress.setStyleSheet("""
             QProgressBar#circularProgress {
                 border: none;
                 background-color: transparent;
+                min-height: 80px;
+                max-height: 80px;
             }
         """)
         container_layout.addWidget(self.progress, alignment=Qt.AlignCenter)
@@ -73,14 +75,16 @@ class LoadingWidget(QWidget):
         self.status_label.setFont(QFont("Segoe UI", 10))
         self.status_label.setStyleSheet("color: #333333;")
         self.status_label.setAlignment(Qt.AlignCenter)
-        self.status_label.setMinimumHeight(40)  # Минимальная высота для текста
+        self.status_label.setMinimumHeight(30)  # Уменьшаем минимальную высоту
+        self.status_label.setMaximumHeight(40)  # Добавляем максимальную высоту
         container_layout.addWidget(self.status_label)
 
         # Кнопка отмены
         self.cancel_button = QPushButton("Отмена", self)
         self.cancel_button.setObjectName("cancelButton")
         self.cancel_button.setFont(QFont("Segoe UI", 9))
-        self.cancel_button.setFixedWidth(120)  # Фиксированная ширина кнопки
+        self.cancel_button.setFixedWidth(120)
+        self.cancel_button.setFixedHeight(30)  # Фиксированная высота кнопки
         self.cancel_button.setStyleSheet("""
             QPushButton#cancelButton {
                 background-color: #f8f9fa;

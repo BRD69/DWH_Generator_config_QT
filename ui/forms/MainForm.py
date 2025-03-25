@@ -1,6 +1,6 @@
 from pathlib import Path
 from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtCore import Qt
+from PyQt5.QtCore import Qt, QTimer
 
 from ui.widgets.ActionsConnectWidget import ActionsConnectWidget
 from ui.widgets.LoadingWidget import LoadingWidget
@@ -394,11 +394,32 @@ class UiMainWindow(QtWidgets.QMainWindow):
         pass
 
     def _event_btn_clicked_test_notification(self):
-        """Обработчик события нажатия на кнопку тестового уведомления."""
-        # self.notification.show_notification("Тестовое уведомление", "info")
-        self.loading.show_loading("Тестовое уведомление")
-        self.loading.update_status("Обработка результатов...", 45)
-        # self.loading.hide_loading()
+        """Тестирование уведомлений"""
+        # Создаем виджет загрузки
+        self.loading_widget = LoadingWidget(self)
+        self.loading_widget.show_loading("Загрузка тестовых данных...")
+
+        # Создаем таймер для имитации загрузки
+        self.progress_timer = QTimer(self)
+        self.progress_timer.setInterval(50)  # Обновляем каждые 50мс
+        self.progress_value = 0
+        self.progress_timer.timeout.connect(self._update_progress)
+        self.progress_timer.start()
+
+    def _update_progress(self):
+        """Обновление прогресса загрузки"""
+        self.progress_value += 1
+        if self.progress_value <= 100:
+            self.loading_widget.update_status(f"Загрузка тестовых данных... {self.progress_value}%", self.progress_value)
+        else:
+            self.progress_timer.stop()
+            self.loading_widget.hide_loading()
+            # Показываем уведомление об успешной загрузке
+            self.notification_widget.show_notification(
+                "Успешно",
+                "Тестовые данные загружены",
+                "success"
+            )
 
 
     def load_field_data(self):

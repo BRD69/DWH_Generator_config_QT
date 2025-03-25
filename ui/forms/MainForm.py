@@ -3,6 +3,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtCore import Qt
 
 from ui.widgets.ActionsConnectWidget import ActionsConnectWidget
+from ui.widgets.LoadingWidget import LoadingWidget
 from ui.widgets.NotificationWidget import NotificationWidget
 
 
@@ -242,6 +243,7 @@ class UiMainWindow(QtWidgets.QMainWindow):
         self.menubar.addAction(self.menuParametrs.menuAction())
 
         self.notification = NotificationWidget(self)
+        self.loading = LoadingWidget(self)
 
         self._retranslateUi()
         self.toolBox_fields.setCurrentIndex(0)
@@ -393,7 +395,11 @@ class UiMainWindow(QtWidgets.QMainWindow):
 
     def _event_btn_clicked_test_notification(self):
         """Обработчик события нажатия на кнопку тестового уведомления."""
-        self.notification.show_notification("Тестовое уведомление", "info")
+        # self.notification.show_notification("Тестовое уведомление", "info")
+        self.loading.show_loading("Тестовое уведомление")
+        self.loading.update_status("Обработка результатов...", 45)
+        # self.loading.hide_loading()
+
 
     def load_field_data(self):
         """Загружает данные из файла JSON."""

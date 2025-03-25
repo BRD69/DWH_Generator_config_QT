@@ -542,6 +542,7 @@ class MainWindow(UiMainWindow):
             if not script:
                 raise ValueError(f"SQL скрипт с ключом {key} не найден")
 
+            self.loading.show_loading("Выполнение SQL скрипта...")
             success, result, error = self.app.postgres_service.execute_script(
                 script=script,
                 params={"value": value}
@@ -550,11 +551,18 @@ class MainWindow(UiMainWindow):
             if success:
                 if result:
                     self.logger.info("SQL скрипт выполнен успешно")
-                    for values in result:
+                    self.loading.update_status("Обработка результатов...")
+                    total_rows = len(result)
+
+                    for i, values in enumerate(result):
+                        progress = int((i + 1) / total_rows * 100)
                         keys = self.app.config_service.get_config_tables_keys()
                         fields = dict(zip(keys, values))
                         self._event_btn_clicked_add_field_table(data_value=fields)
-                    self.notification.show_notification("Скрипт SQL выполнен успешно!", "info")
+                        self.loading.update_status(f"Обработка результатов... {progress}%", progress)
+                    self.loading.hide_loading()
+                    self.notification.show_notification("Загрузка данных завершена! Количество строк: {total_rows}", "info")
+                    self.app.processEvents()
                 else:
                     self.logger.warning("SQL скрипт выполнен, но не вернул результатов")
                     self.notification.show_notification("Скрипт SQL выполнен, но не вернул результатов", "warning")

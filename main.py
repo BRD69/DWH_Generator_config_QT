@@ -142,50 +142,6 @@ class Application(QApplication):
         with open(path, mode="w", encoding="utf-8") as f:
             json.dump(self.config_output, f, indent=4, ensure_ascii=False)
 
-    def save_settings_pg(self, settings: dict):
-        """Сохраняет настройки подключения к PostgreSQL."""
-        pass
-        # try:
-        #     settings['password'] = set_crypto_pass(settings['password'], salt=self.user_name)
-        #     self.connect_sql['pg'] = settings
-
-        #     if self.file_service.save_json(self.file_service.connect_sql_path, self.connect_sql):
-        #         self._load_connect_sql()
-
-        #         # Обновляем конфигурацию PostgreSQL сервиса
-        #         if self.postgres_service:
-        #             self.postgres_service.close()
-        #         self.postgres_service = PostgresService(
-        #             config=self.connect_sql['pg'],
-        #             logger=self.logger
-        #         )
-
-        #         self.logger_service.info("Сохранены настройки подключения к PostgreSQL")
-        #     else:
-        #         raise Exception("Не удалось сохранить настройки")
-
-        # except Exception as e:
-        #     error_msg = f"Ошибка при сохранении настроек подключения к PostgreSQL: {e}"
-        #     self.logger_service.error(error_msg)
-        #     print(error_msg)
-
-    def set_sql_scripts(self, key: str, value: str):
-        """Устанавливает значение для указанного ключа в скриптах SQL."""
-        self.sql_scripts[key] = value
-        self.save_sql_scripts()
-
-    def save_sql_scripts(self, scripts: dict = None):
-        """Сохраняет скрипты SQL в файл."""
-        if scripts:
-            self.sql_scripts = scripts
-
-        try:
-            if not self.file_service.save_json(self.file_service.sql_scripts_path, self.sql_scripts):
-                raise Exception("Не удалось сохранить скрипты SQL")
-        except Exception as e:
-            error_msg = f"Ошибка при сохранении скриптов SQL: {e}"
-            self.logger_service.error(error_msg)
-            print(error_msg)
 
     # =============== Подключение к базам данных ===============
     def set_connect_sql_pg(self):
@@ -562,7 +518,8 @@ class MainWindow(UiMainWindow):
 
     def _event_btn_clicked_save_sql_script(self, key: str, content: str, form: ContentForm):
         """Обработчик сохранения скрипта SQL."""
-        self.app.set_sql_scripts(key=key, value=content)
+        self.app.config_service.set_sql_scripts(key=key, value=content)
+        self.app.config_service.save_sql_scripts()
         form.close()
 
     def _event_btn_clicked_run_sql_script(self, key: str, value: str):

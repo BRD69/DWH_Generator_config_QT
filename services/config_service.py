@@ -283,11 +283,10 @@ class ConfigService:
         Загружает конфигурацию из файла.
         """
         columns_table = []
-        config_fields = self.config_fields_data
-        if config_fields.get('tables'):
-            for values in config_fields['tables']['values']:
-                columns_table.append(values)
-            columns_table.append({"key": "action", "name": "", "type": "action", "value": ""})
+        for value in self.config_fields_data.values():
+            if value['type'] == 'table':
+                columns_table.extend(value['values'])
+        columns_table.append({"key": "action", "name": "", "type": "action", "value": ""})
         return tuple(columns_table)
 
     def load_config_output(self) -> Dict[str, Any]:

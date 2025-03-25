@@ -210,6 +210,7 @@ class MainWindow(UiMainWindow):
         self.action_git.setVisible(False)
         self.action_load_table.setVisible(False)
         self.action_settings.setVisible(False)
+        self.action_test_notification.setVisible(True)
 
     def _init_combo_box_configs(self):
         """Инициализирует комбобокс с конфигурациями."""
@@ -494,9 +495,9 @@ class MainWindow(UiMainWindow):
         self.app.signals.postgres_connection_changed.emit(status, message)
 
         if status:
-            QMessageBox.information(self, "Успех", "Подключение к PostgreSQL установлено!")
+            self.notification.show_notification("Подключение к PostgreSQL установлено!", "info")
         else:
-            QMessageBox.critical(self, "Ошибка", f"Не удалось установить подключение к PostgreSQL! {message}")
+            self.notification.show_notification(f"Не удалось установить подключение к PostgreSQL! {message}", "error", "Ошибка подключения к PostgreSQL")
 
     def _event_btn_clicked_open_sql_script(self, key: str, value: str):
         """Обработчик открытия скрипта SQL."""
@@ -533,7 +534,7 @@ class MainWindow(UiMainWindow):
         """Обработчик запуска скрипта SQL."""
         if not self.app.postgres_service or not self.app.postgres_service.is_connected:
             self.logger.error("Попытка выполнить SQL скрипт без подключения к PostgreSQL")
-            QMessageBox.critical(self, "Ошибка", "Не удалось установить подключение к PostgreSQL!")
+            self.notification.show_notification("Не удалось установить подключение к PostgreSQL!", "error", "Ошибка подключения к PostgreSQL")
             return
 
         try:
@@ -549,18 +550,22 @@ class MainWindow(UiMainWindow):
             if success:
                 if result:
                     self.logger.info("SQL скрипт выполнен успешно")
-                    QMessageBox.information(self, "Успех", "Скрипт SQL выполнен успешно!")
+                    for values in result:
+                        keys = self.app.config_service.get_config_tables_keys()
+                        fields = dict(zip(keys, values))
+                        self._event_btn_clicked_add_field_table(data_value=fields)
+                    self.notification.show_notification("Скрипт SQL выполнен успешно!", "info")
                 else:
                     self.logger.warning("SQL скрипт выполнен, но не вернул результатов")
-                    QMessageBox.information(self, "Информация", "Скрипт SQL выполнен, но не вернул результатов")
+                    self.notification.show_notification("Скрипт SQL выполнен, но не вернул результатов", "warning")
             else:
                 self.logger.error(f"Ошибка выполнения SQL скрипта: {error}")
-                QMessageBox.critical(self, "Ошибка", f"Ошибка выполнения SQL скрипта: {error}")
+                self.notification.show_notification(f"Ошибка выполнения SQL скрипта: {error}", "error")
 
         except Exception as e:
             error_msg = f"Ошибка при выполнении SQL скрипта: {e}"
             self.logger.error(error_msg)
-            QMessageBox.critical(self, "Ошибка", error_msg)
+            self.notification.show_notification(error_msg, "error")
 
 
     # =============== Обработчик сигналов ===============

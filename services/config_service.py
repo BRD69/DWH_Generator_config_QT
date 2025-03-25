@@ -98,6 +98,17 @@ class ConfigService:
         else:
             return self.config_fields_data
 
+    def get_config_tables_keys(self) -> list:
+        """
+        Возвращает список ключей таблиц в конфигурации.
+        """
+        keys = []
+        for value in self.config_fields_data.values():
+            if value['type'] == 'table':
+                for key in value['values']:
+                    keys.append(key['key'])
+        return keys
+
     # =============== Страницы ===============
     def load_config_pages(self) -> None:
         """

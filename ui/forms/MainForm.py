@@ -3,6 +3,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtCore import Qt
 
 from ui.widgets.ActionsConnectWidget import ActionsConnectWidget
+from ui.widgets.NotificationWidget import NotificationWidget
 
 
 
@@ -240,6 +241,8 @@ class UiMainWindow(QtWidgets.QMainWindow):
         self.menubar.addAction(self.menuFile.menuAction())
         self.menubar.addAction(self.menuParametrs.menuAction())
 
+        self.notification = NotificationWidget(self)
+
         self._retranslateUi()
         self.toolBox_fields.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(self)
@@ -304,6 +307,9 @@ class UiMainWindow(QtWidgets.QMainWindow):
         self.action_settings = QtWidgets.QAction(self.icons["gear"], "Настройки", self)
         self.toolBar.addAction(self.action_settings)
 
+        self.action_test_notification = QtWidgets.QAction(self.icons["load_table"], "Тестовое уведомление", self)
+        self.toolBar.addAction(self.action_test_notification)
+
         self.toolBar.widgetForAction(self.action_save).setCursor(Qt.PointingHandCursor)
         self.toolBar.widgetForAction(self.action_load).setCursor(Qt.PointingHandCursor)
         self.toolBar.widgetForAction(self.action_view).setCursor(Qt.PointingHandCursor)
@@ -350,6 +356,8 @@ class UiMainWindow(QtWidgets.QMainWindow):
         self.action_connect_pg.triggered.connect(self._event_btn_clicked_open_connection_pg_form)
         # self.action_connect_ch.triggered.connect(self._connect_ch)
 
+        self.action_test_notification.triggered.connect(self._event_btn_clicked_test_notification)
+
     # =============== Обработчики событий ===============
     def _event_btn_clicked_add_field_table(self):
         """Обработчик события нажатия на кнопку добавления поля."""
@@ -382,6 +390,10 @@ class UiMainWindow(QtWidgets.QMainWindow):
     def _event_btn_clicked_settings_fields(self):
         """Обработчик события нажатия на кнопку настроек."""
         pass
+
+    def _event_btn_clicked_test_notification(self):
+        """Обработчик события нажатия на кнопку тестового уведомления."""
+        self.notification.show_notification("Тестовое уведомление", "info")
 
     def load_field_data(self):
         """Загружает данные из файла JSON."""

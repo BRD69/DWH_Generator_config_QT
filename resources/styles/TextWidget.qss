@@ -1,0 +1,65 @@
+/* Кнопка "?" */
+QPushButton {
+    background-color: #808080;
+    /* Сероватый фон */
+    border-radius: 5px;
+    /* Делаем кнопку круглой */
+    color: white;
+    /* Цвет текста */
+    font-size: 8px;
+    /* Размер шрифта */
+    padding: 0px;
+    /* Убираем отступы */
+    border: 1px solid #606060;
+    /* Граница кнопки */
+    min-width: 10px;
+    /* Минимальная ширина */
+    min-height: 10px;
+    /* Минимальная высота */
+    max-width: 10px;
+    /* Максимальная ширина */
+    max-height: 10px;
+    /* Максимальная высота */
+}
+
+QPushButton:hover {
+    background-color: #909090;
+    /* Цвет фона при наведении */
+}
+
+QPushButton:pressed {
+    background-color: #707070;
+    /* Цвет фона при нажатии */
+}
+
+/* Кнопка "?" */
+QPushButton#btnLoad {
+    background-color: #808080;
+    /* Сероватый фон */
+    border-radius: 3px;
+    /* Делаем кнопку круглой */
+    color: white;
+    /* Цвет текста */
+    font-size: 8px;
+    /* Размер шрифта */
+    padding: 0px;
+    /* Убираем отступы */
+    border: 1px solid #606060;
+}
+
+QPushButton#btnLoad:hover {
+    background-color: #909090;
+    /* Цвет фона при наведении */
+}
+
+QPushButton#btnLoad:pressed {
+    background-color: #707070;
+    /* Цвет фона при нажатии */
+}
+
+QLineEdit {
+    background-color: #ffffff;
+    border: 1px solid #606060;
+    border-radius: 3px;
+    padding: 2px;
+}

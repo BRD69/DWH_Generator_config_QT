@@ -1,0 +1,235 @@
+{
+    "object_name": {
+        "name": "Название объекта",
+        "type": "text",
+        "values": "",
+        "placeholder": "doc_consignment_note",
+        "help": "Название объекта в системе-источнике",
+        "required": true
+    },
+    "source_system": {
+        "name": "Система-источник",
+        "type": "text",
+        "values": "",
+        "placeholder": "s1c_eson",
+        "help": "Система-источник",
+        "required": true
+    },
+    "sub_company": {
+        "name": "Подразделение",
+        "type": "text",
+        "values": "",
+        "placeholder": "corp",
+        "help": "Подразделение в системе-источнике",
+        "required": true
+    },
+    "domain": {
+        "name": "Домен",
+        "type": "text",
+        "values": "",
+        "placeholder": "oillg",
+        "help": "Домен в системе-источнике",
+        "required": true
+    },
+    "conn_id": {
+        "name": "ID соединения",
+        "type": "text",
+        "values": "",
+        "placeholder": "con_odata_eson",
+        "help": "ID соединения в системе-источнике",
+        "required": true
+    },
+    "pg_conn_id": {
+        "name": "ID соединения с PostgreSQL",
+        "type": "text",
+        "values": "",
+        "placeholder": "con_dp_pg_blps_edw_blps_postgres_h1",
+        "help": "ID соединения с PostgreSQL",
+        "required": true
+    },
+    "ch_conn_id": {
+        "name": "ID соединения с ClickHouse",
+        "type": "text",
+        "values": "",
+        "placeholder": "con_dp_adqm_generic_h1",
+        "help": "ID соединения с ClickHouse",
+        "required": true
+    },
+    "endpoint": {
+        "name": "Endpoint",
+        "type": "text",
+        "values": "",
+        "placeholder": "Document_ГПН_Накладная",
+        "help": "Endpoint в системе-источнике",
+        "required": true
+    },
+    "integration_id": {
+        "name": "ID интеграции",
+        "type": "number",
+        "values": 0,
+        "placeholder": "0",
+        "help": "ID интеграции в системе-источнике",
+        "required": true
+    },
+    "integration_template": {
+        "name": "Шаблон интеграции",
+        "type": "select",
+        "values": [
+            {
+                "name": "Шаблон №1",
+                "type": "text",
+                "value": 1
+            },
+            {
+                "name": "Шаблон №2",
+                "type": "text",
+                "value": 2
+            },
+            {
+                "name": "Шаблон №3",
+                "type": "text",
+                "value": 3
+            },
+            {
+                "name": "Шаблон №4",
+                "type": "text",
+                "value": 4
+            },
+            {
+                "name": "Шаблон №5",
+                "type": "text",
+                "value": 5
+            }
+        ],
+        "placeholder": "",
+        "help": "Шаблоны интеграции",
+        "required": true
+    },
+    "hst_layer_flag": {
+        "name": "Исторический слой",
+        "type": "boolean",
+        "values": false,
+        "placeholder": "Нужен исторический слой",
+        "help": "",
+        "required": false
+    },
+    "filter_field": {
+        "name": "Поле фильтра",
+        "type": "text",
+        "values": "",
+        "placeholder": "Введите поле фильтра",
+        "help": "Поле фильтра",
+        "required": false
+    },
+    "reload_period_depth": {
+        "name": "Глубина перезагрузки",
+        "type": "number",
+        "values": 0,
+        "placeholder": "0",
+        "help": "Глубина перезагрузки",
+        "required": false
+    },
+    "update_data_template": {
+        "name": "Шаблон обновления данных",
+        "type": "number",
+        "values": 0,
+        "placeholder": "0",
+        "help": "Шаблон обновления данных",
+        "required": false
+    },
+    "dag_owner": {
+        "name": "Владелец DAG",
+        "type": "text",
+        "values": "",
+        "placeholder": "Введите владельца DAG",
+        "help": "Владелец DAG",
+        "required": false
+    },
+    "dag_tags": {
+        "name": "Теги",
+        "type": "array",
+        "values": [],
+        "placeholder": "Введите и нажмите Enter...",
+        "help": "Теги",
+        "required": false
+    },
+    "hashkey": {
+        "name": "Ключ для хэширования",
+        "type": "array",
+        "values": [],
+        "placeholder": "Введите и нажмите Enter...",
+        "help": "Ключ для хэширования",
+        "required": true
+    },
+    "ch_order_by": {
+        "name": "Сортировка для CH",
+        "type": "array",
+        "values": [],
+        "placeholder": "Введите и нажмите Enter...",
+        "help": "Сортировка для CH",
+        "required": true
+    },
+    "ch_to_pg_named_collection": {
+        "name": "Имя коллекции CH в PG",
+        "type": "text",
+        "values": "",
+        "placeholder": "Введите имя коллекции CH в PG",
+        "help": "Имя коллекции CH в PG",
+        "required": true
+    },
+    "fields": {
+        "name": "Поля",
+        "type": "table",
+        "values": [
+            {
+                "key": "src_name",
+                "name": "Имя поля в источнике",
+                "type": "text",
+                "value": ""
+            },
+            {
+                "key": "tgt_name",
+                "name": "Имя поля в целевой системе",
+                "type": "text",
+                "value": ""
+            },
+            {
+                "key": "type",
+                "name": "Тип поля PG",
+                "type": "select",
+                "value": [
+                    "String",
+                    "Int64",
+                    "Float64",
+                    "Boolean",
+                    "Date",
+                    "DateTime",
+                    "UUID"
+                ]
+            },
+            {
+                "key": "ch_type",
+                "name": "Тип поля в CH",
+                "type": "select",
+                "value": [
+                    "String",
+                    "Int64",
+                    "Float64",
+                    "Boolean",
+                    "Date",
+                    "DateTime",
+                    "UUID"
+                ]
+            },
+            {
+                "key": "null_constraint",
+                "name": "Null",
+                "type": "boolean",
+                "value": false
+            }
+        ],
+        "placeholder": "",
+        "help": "Поля",
+        "required": true
+    }
+}

@@ -1,0 +1,75 @@
+/* Кнопка "?" */
+QPushButton {
+    background-color: #808080;
+    /* Сероватый фон */
+    border-radius: 5px;
+    /* Делаем кнопку круглой */
+    color: white;
+    /* Цвет текста */
+    font-size: 8px;
+    /* Размер шрифта */
+    padding: 0px;
+    /* Убираем отступы */
+    border: 1px solid #606060;
+    /* Граница кнопки */
+    min-width: 10px;
+    /* Минимальная ширина */
+    min-height: 10px;
+    /* Минимальная высота */
+    max-width: 10px;
+    /* Максимальная ширина */
+    max-height: 10px;
+    /* Максимальная высота */
+}
+
+QPushButton:hover {
+    background-color: #909090;
+    /* Цвет фона при наведении */
+}
+
+QPushButton:pressed {
+    background-color: #707070;
+    /* Цвет фона при нажатии */
+}
+
+/* Стили для выпадающего списка */
+QComboBox {
+    background-color: #ffffff;
+    border: 1px solid #606060;
+    border-radius: 3px;
+    padding: 3px 18px 3px 3px;
+    min-width: 6em;
+}
+
+QComboBox:hover {
+    border: 1px solid #808080;
+}
+
+QComboBox:focus {
+    border: 1px solid #404040;
+}
+
+QComboBox::drop-down {
+    border: none;
+    width: 20px;
+}
+
+QComboBox::down-arrow {
+    image: url(resources/icons/dropdown-arrow.png);
+    width: 12px;
+    height: 12px;
+}
+
+QComboBox::down-arrow:on {
+    /* Стиль стрелки при открытом списке */
+    top: 1px;
+    left: 1px;
+}
+
+QComboBox QAbstractItemView {
+    border: 1px solid #C0C0C0;
+    selection-background-color: #E0E0E0;
+    selection-color: black;
+    background: white;
+    outline: none;
+}

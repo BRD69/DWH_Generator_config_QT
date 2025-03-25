@@ -1,0 +1,29 @@
+QLineEdit {
+    background-color: #ffffff;
+    border: 1px solid #606060;
+    border-radius: 3px;
+    padding: 2px;
+}
+
+QTextEdit {
+    background-color: #ffffff;
+    border: 1px solid #606060;
+    border-radius: 3px;
+    padding: 2px;
+}
+
+#error_btn {
+    background: transparent;
+    border: none;
+    color: #0066cc;
+    text-decoration: underline;
+    padding: 0;
+}
+
+#error_btn:hover {
+    color: #003366;
+}
+
+#error_btn:pressed {
+    color: #0033cc;
+}

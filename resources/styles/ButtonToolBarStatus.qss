@@ -1,0 +1,16 @@
+/* Кнопки панели инструментов */
+QToolButton {
+    border: none;
+    padding: 5px;
+    min-width: 20px;
+    min-height: 15px;
+    margin: 0px; /* Убирает внешние отступы у кнопок */
+}
+
+QToolButton:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+QToolButton:pressed {
+    background: rgba(0, 0, 0, 0.2);
+}

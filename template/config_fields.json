@@ -1,0 +1,72 @@
+{
+    "text_field": {
+        "name": "Текстовое поле",
+        "type": "text",
+        "values": "",
+        "placeholder": "Текстовое поле",
+        "help": "Текстовое поле",
+        "required": true
+    },
+    "number_field": {
+        "name": "Числовое поле",
+        "type": "number",
+        "values": 0,
+        "placeholder": "0",
+        "help": "Числовое поле",
+        "required": false
+    },
+    "checkbox_field": {
+        "name": "Флажок",
+        "type": "checkbox",
+        "values": "",
+        "placeholder": "Флажок",
+        "help": "Флажок",
+        "required": false
+    },
+    "select_field": {
+        "name": "Выпадающий список",
+        "type": "select",
+        "values": [
+            {
+                "name": "Значение 1",
+                "type": "text",
+                "value": "value1"
+            },
+            {
+                "name": "Значение 2",
+                "type": "text",
+                "value": "value2"
+            }
+        ],
+        "placeholder": "Выберите значение",
+        "help": "Выпадающий список",
+        "required": true
+    },
+    "array_field": {
+        "name": "Массив",
+        "type": "array",
+        "values": [],
+        "placeholder": "",
+        "help": "Массив",
+        "required": false
+    },
+    "table_field": {
+        "name": "Таблица",
+        "type": "table",
+        "values": [
+            {
+                "name": "Имя поля 1",
+                "type": "text",
+                "value": ""
+            },
+            {
+                "name": "Имя поля 2",
+                "type": "text",
+                "value": ""
+            }
+        ],
+        "placeholder": "",
+        "help": "Таблица",
+        "required": false
+    }
+}

@@ -1,0 +1,1114 @@
+2025-03-16 22:31:05 - DWH_Generator - INFO - Запуск приложения
+2025-03-16 22:31:05 - DWH_Generator - DEBUG - Установлена иконка приложения
+2025-03-16 22:31:05 - DWH_Generator - INFO - Инициализированы параметры приложения: версия 1.25.073
+2025-03-16 22:31:05 - DWH_Generator - DEBUG - Инициализированы пути к файлам конфигурации
+2025-03-16 22:31:05 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-16 22:31:05 - DWH_Generator - DEBUG - Выполнено тестовое подключение к PostgreSQL
+2025-03-16 22:35:09 - DWH_Generator - INFO - Инициализирована структура конфигурационных директорий
+2025-03-16 22:35:09 - DWH_Generator - INFO - Запуск приложения
+2025-03-16 22:35:09 - DWH_Generator - DEBUG - Установлена иконка приложения
+2025-03-16 22:35:09 - DWH_Generator - INFO - Инициализированы параметры приложения: версия 1.25.073
+2025-03-16 22:35:09 - DWH_Generator - ERROR - Ошибка подключения к PostgreSQL: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-03-16 22:35:09 - DWH_Generator - INFO - Приложение завершило работу
+2025-03-16 22:35:40 - DWH_Generator - INFO - Инициализирована структура конфигурационных директорий
+2025-03-16 22:35:40 - DWH_Generator - INFO - Запуск приложения
+2025-03-16 22:35:40 - DWH_Generator - DEBUG - Установлена иконка приложения
+2025-03-16 22:35:40 - DWH_Generator - INFO - Инициализированы параметры приложения: версия 1.25.073
+2025-03-16 22:35:40 - DWH_Generator - ERROR - Ошибка подключения к PostgreSQL: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-03-16 22:35:40 - DWH_Generator - INFO - Приложение завершило работу
+2025-03-16 22:40:07 - DWH_Generator - INFO - Запуск приложения
+2025-03-16 22:40:07 - DWH_Generator - DEBUG - Установлена иконка приложения
+2025-03-16 22:40:07 - DWH_Generator - INFO - Инициализированы параметры приложения: версия 1.25.073
+2025-03-16 22:40:07 - DWH_Generator - DEBUG - Инициализированы пути к файлам конфигурации
+2025-03-16 22:40:07 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-16 22:40:07 - DWH_Generator - DEBUG - Выполнено тестовое подключение к PostgreSQL
+2025-03-16 22:53:51 - DWH_Generator - INFO - Запуск приложения
+2025-03-16 22:53:51 - DWH_Generator - DEBUG - Установлена иконка приложения
+2025-03-16 22:53:51 - DWH_Generator - INFO - Инициализированы параметры приложения: версия 1.25.073
+2025-03-16 22:53:51 - DWH_Generator - DEBUG - Инициализированы пути к файлам конфигурации
+2025-03-16 22:53:51 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-16 22:53:51 - DWH_Generator - DEBUG - Выполнено тестовое подключение к PostgreSQL
+2025-03-16 23:05:05 - DWH_Generator - INFO - Запуск приложения
+2025-03-16 23:05:05 - DWH_Generator - DEBUG - Установлена иконка приложения
+2025-03-16 23:05:05 - DWH_Generator - INFO - Инициализированы параметры приложения: версия 1.25.073
+2025-03-16 23:05:05 - DWH_Generator - INFO - Созданы необходимые директории
+2025-03-16 23:05:05 - DWH_Generator - INFO - Инициализированы конфигурационные файлы
+2025-03-16 23:05:05 - DWH_Generator - DEBUG - Загружена конфигурация из /Users/boroda/Development/Apps/DWH_Generator_config_QT/config/connect_sql.json
+2025-03-16 23:05:05 - DWH_Generator - DEBUG - Загружена конфигурация из /Users/boroda/Development/Apps/DWH_Generator_config_QT/config/config_fields.json
+2025-03-16 23:05:05 - DWH_Generator - DEBUG - Загружена конфигурация из /Users/boroda/Development/Apps/DWH_Generator_config_QT/config/pages.json
+2025-03-16 23:05:05 - DWH_Generator - DEBUG - Загружена конфигурация из /Users/boroda/Development/Apps/DWH_Generator_config_QT/config/sql_scripts.json
+2025-03-16 23:05:05 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-16 23:05:05 - DWH_Generator - INFO - Приложение завершило работу
+2025-03-16 23:10:46 - DWH_Generator - INFO - Запуск приложения
+2025-03-16 23:10:46 - DWH_Generator - DEBUG - Установлена иконка приложения
+2025-03-16 23:10:46 - DWH_Generator - INFO - Инициализированы параметры приложения: версия 1.25.073
+2025-03-16 23:10:46 - DWH_Generator - INFO - Созданы необходимые директории
+2025-03-16 23:10:46 - DWH_Generator - INFO - Инициализированы конфигурационные файлы
+2025-03-16 23:10:46 - DWH_Generator - DEBUG - Загружена конфигурация из /Users/boroda/Development/Apps/DWH_Generator_config_QT/config/connect_sql.json
+2025-03-16 23:10:46 - DWH_Generator - DEBUG - Загружена конфигурация из /Users/boroda/Development/Apps/DWH_Generator_config_QT/config/config_fields.json
+2025-03-16 23:10:46 - DWH_Generator - DEBUG - Загружена конфигурация из /Users/boroda/Development/Apps/DWH_Generator_config_QT/config/pages.json
+2025-03-16 23:10:46 - DWH_Generator - DEBUG - Загружена конфигурация из /Users/boroda/Development/Apps/DWH_Generator_config_QT/config/sql_scripts.json
+2025-03-16 23:10:46 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-16 23:10:46 - DWH_Generator - INFO - Приложение завершило работу
+2025-03-16 23:11:15 - DWH_Generator - INFO - Запуск приложения
+2025-03-16 23:11:15 - DWH_Generator - DEBUG - Установлена иконка приложения
+2025-03-16 23:11:15 - DWH_Generator - INFO - Инициализированы параметры приложения: версия 1.25.073
+2025-03-16 23:11:15 - DWH_Generator - INFO - Созданы необходимые директории
+2025-03-16 23:11:15 - DWH_Generator - INFO - Инициализированы конфигурационные файлы
+2025-03-16 23:11:15 - DWH_Generator - DEBUG - Загружена конфигурация из /Users/boroda/Development/Apps/DWH_Generator_config_QT/config/connect_sql.json
+2025-03-16 23:11:15 - DWH_Generator - DEBUG - Загружена конфигурация из /Users/boroda/Development/Apps/DWH_Generator_config_QT/config/config_fields.json
+2025-03-16 23:11:15 - DWH_Generator - DEBUG - Загружена конфигурация из /Users/boroda/Development/Apps/DWH_Generator_config_QT/config/pages.json
+2025-03-16 23:11:15 - DWH_Generator - DEBUG - Загружена конфигурация из /Users/boroda/Development/Apps/DWH_Generator_config_QT/config/sql_scripts.json
+2025-03-16 23:11:15 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-16 23:11:15 - DWH_Generator - DEBUG - Выполнено тестовое подключение к PostgreSQL
+2025-03-16 23:11:15 - DWH_Generator - INFO - Приложение завершило работу
+2025-03-16 23:15:14 - DWH_Generator - INFO - Запуск приложения
+2025-03-16 23:15:14 - DWH_Generator - DEBUG - Установлена иконка приложения
+2025-03-16 23:15:14 - DWH_Generator - INFO - Инициализированы параметры приложения: версия 1.25.073
+2025-03-16 23:15:14 - DWH_Generator - INFO - Созданы необходимые директории
+2025-03-16 23:15:14 - DWH_Generator - INFO - Инициализированы конфигурационные файлы
+2025-03-16 23:15:14 - DWH_Generator - DEBUG - Загружена конфигурация из /Users/boroda/Development/Apps/DWH_Generator_config_QT/config/connect_sql.json
+2025-03-16 23:15:14 - DWH_Generator - DEBUG - Загружена конфигурация из /Users/boroda/Development/Apps/DWH_Generator_config_QT/config/config_fields.json
+2025-03-16 23:15:14 - DWH_Generator - DEBUG - Загружена конфигурация из /Users/boroda/Development/Apps/DWH_Generator_config_QT/config/pages.json
+2025-03-16 23:15:14 - DWH_Generator - DEBUG - Загружена конфигурация из /Users/boroda/Development/Apps/DWH_Generator_config_QT/config/sql_scripts.json
+2025-03-16 23:15:14 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-16 23:15:14 - DWH_Generator - DEBUG - Выполнено тестовое подключение к PostgreSQL
+2025-03-16 23:15:14 - DWH_Generator - INFO - Приложение завершило работу
+2025-03-16 23:16:59 - DWH_Generator - INFO - Запуск приложения
+2025-03-16 23:16:59 - DWH_Generator - DEBUG - Установлена иконка приложения
+2025-03-16 23:16:59 - DWH_Generator - INFO - Инициализированы параметры приложения: версия 1.25.073
+2025-03-16 23:16:59 - DWH_Generator - INFO - Созданы необходимые директории
+2025-03-16 23:16:59 - DWH_Generator - INFO - Инициализированы конфигурационные файлы
+2025-03-16 23:16:59 - DWH_Generator - DEBUG - Загружена конфигурация из /Users/boroda/Development/Apps/DWH_Generator_config_QT/config/connect_sql.json
+2025-03-16 23:16:59 - DWH_Generator - DEBUG - Загружена конфигурация из /Users/boroda/Development/Apps/DWH_Generator_config_QT/config/config_fields.json
+2025-03-16 23:16:59 - DWH_Generator - DEBUG - Загружена конфигурация из /Users/boroda/Development/Apps/DWH_Generator_config_QT/config/pages.json
+2025-03-16 23:16:59 - DWH_Generator - DEBUG - Загружена конфигурация из /Users/boroda/Development/Apps/DWH_Generator_config_QT/config/sql_scripts.json
+2025-03-16 23:16:59 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-16 23:16:59 - DWH_Generator - DEBUG - Выполнено тестовое подключение к PostgreSQL
+2025-03-16 23:22:51 - DWH_Generator - INFO - Запуск приложения
+2025-03-16 23:22:51 - DWH_Generator - DEBUG - Установлена иконка приложения
+2025-03-16 23:22:51 - DWH_Generator - INFO - Инициализированы параметры приложения: версия 1.25.073
+2025-03-16 23:22:51 - DWH_Generator - DEBUG - Инициализированы пути к файлам конфигурации
+2025-03-16 23:22:51 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-16 23:22:51 - DWH_Generator - DEBUG - Выполнено тестовое подключение к PostgreSQL
+2025-03-16 23:22:51 - DWH_Generator - INFO - Приложение завершило работу
+2025-03-16 23:23:44 - DWH_Generator - INFO - Запуск приложения
+2025-03-16 23:23:44 - DWH_Generator - DEBUG - Установлена иконка приложения
+2025-03-16 23:23:44 - DWH_Generator - INFO - Инициализированы параметры приложения: версия 1.25.073
+2025-03-16 23:23:44 - DWH_Generator - DEBUG - Инициализированы пути к файлам конфигурации
+2025-03-16 23:23:44 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-16 23:23:44 - DWH_Generator - DEBUG - Выполнено тестовое подключение к PostgreSQL
+2025-03-16 23:40:50 - DWH_Generator - INFO - Запуск приложения
+2025-03-16 23:40:50 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-16 23:40:50 - DWH_Generator - DEBUG - Установлена иконка приложения
+2025-03-16 23:40:50 - DWH_Generator - INFO - Инициализированы параметры приложения: версия 1.25.073
+2025-03-16 23:40:50 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-16 23:40:50 - DWH_Generator - DEBUG - Выполнено тестовое подключение к PostgreSQL
+2025-03-16 23:40:50 - DWH_Generator - INFO - Приложение завершило работу
+2025-03-16 23:53:39 - DWH_Generator - INFO - Запуск приложения
+2025-03-16 23:53:39 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-16 23:53:39 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-16 23:53:39 - DWH_Generator - DEBUG - Выполнено тестовое подключение к PostgreSQL
+2025-03-17 00:55:40 - DWH_Generator - INFO - Запуск приложения
+2025-03-17 00:55:40 - DWH_Generator - INFO - Создан файл настроек подключения: /Users/boroda/Development/Apps/DWH_Generator_config_QT/config/sql_connect.json
+2025-03-17 00:55:40 - DWH_Generator - INFO - Создан файл конфигурации: /Users/boroda/Development/Apps/DWH_Generator_config_QT/config/config_pages.json
+2025-03-17 00:55:40 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-17 00:56:46 - DWH_Generator - INFO - Запуск приложения
+2025-03-17 00:56:46 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-17 01:00:42 - DWH_Generator - INFO - Запуск приложения
+2025-03-17 01:00:42 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-17 01:00:42 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-17 01:02:35 - DWH_Generator - INFO - Запуск приложения
+2025-03-17 01:02:35 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-17 01:02:35 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-17 01:06:09 - DWH_Generator - INFO - Запуск приложения
+2025-03-17 01:06:09 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-17 01:06:09 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-17 01:06:09 - DWH_Generator - INFO - Приложение завершило работу
+2025-03-17 01:09:04 - DWH_Generator - INFO - Запуск приложения
+2025-03-17 01:09:04 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-17 01:09:04 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-17 01:25:56 - DWH_Generator - INFO - Запуск приложения
+2025-03-17 01:25:56 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-17 01:25:56 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-17 10:05:31 - DWH_Generator - INFO - Запуск приложения
+2025-03-17 10:05:31 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-17 10:05:31 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-17 10:12:03 - DWH_Generator - INFO - Запуск приложения
+2025-03-17 10:12:03 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-17 10:12:03 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-17 10:12:06 - DWH_Generator - INFO - Приложение завершило работу
+2025-03-17 10:51:34 - DWH_Generator - INFO - Запуск приложения
+2025-03-17 10:51:34 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-17 10:51:34 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-17 11:51:49 - DWH_Generator - INFO - Запуск приложения
+2025-03-17 11:51:49 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-17 11:52:42 - DWH_Generator - INFO - Запуск приложения
+2025-03-17 11:52:42 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-17 11:52:42 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-17 11:52:46 - DWH_Generator - INFO - Приложение завершило работу
+2025-03-17 12:00:51 - DWH_Generator - INFO - Запуск приложения
+2025-03-17 12:00:51 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-17 12:00:51 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-17 13:26:41 - DWH_Generator - INFO - Запуск приложения
+2025-03-17 13:26:41 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-17 13:28:08 - DWH_Generator - INFO - Запуск приложения
+2025-03-17 13:28:08 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-17 13:28:27 - DWH_Generator - INFO - Запуск приложения
+2025-03-17 13:28:27 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-17 13:30:06 - DWH_Generator - INFO - Запуск приложения
+2025-03-17 13:30:06 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-17 13:32:52 - DWH_Generator - INFO - Запуск приложения
+2025-03-17 13:32:52 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-17 13:39:06 - DWH_Generator - INFO - Запуск приложения
+2025-03-17 13:39:36 - DWH_Generator - INFO - Запуск приложения
+2025-03-17 13:39:36 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-17 13:39:36 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-17 13:43:12 - DWH_Generator - INFO - Запуск приложения
+2025-03-17 13:43:12 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-17 13:43:12 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-17 13:56:21 - DWH_Generator - INFO - Запуск приложения
+2025-03-17 13:56:21 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-17 13:56:21 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-17 13:56:21 - DWH_Generator - INFO - Приложение завершило работу
+2025-03-17 13:56:35 - DWH_Generator - INFO - Запуск приложения
+2025-03-17 13:56:35 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-17 13:56:35 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-17 13:56:45 - DWH_Generator - INFO - Приложение завершило работу
+2025-03-17 13:57:02 - DWH_Generator - INFO - Запуск приложения
+2025-03-17 13:57:02 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-17 13:57:02 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-17 14:00:25 - DWH_Generator - INFO - Запуск приложения
+2025-03-17 14:00:25 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-17 14:00:25 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-17 14:19:45 - DWH_Generator - INFO - Приложение завершило работу
+2025-03-17 14:19:46 - DWH_Generator - INFO - Запуск приложения
+2025-03-17 14:19:46 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-17 14:19:46 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-17 14:19:46 - DWH_Generator - INFO - Приложение завершило работу
+2025-03-17 14:20:12 - DWH_Generator - INFO - Запуск приложения
+2025-03-17 14:20:12 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-17 14:20:12 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-17 14:20:42 - DWH_Generator - INFO - Приложение завершило работу
+2025-03-17 14:23:57 - DWH_Generator - INFO - Запуск приложения
+2025-03-17 14:23:57 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-17 14:23:57 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-17 14:23:57 - DWH_Generator - ERROR - event_on_changed не установлен для TagInputWidget - hashkey
+2025-03-17 14:23:57 - DWH_Generator - INFO - Приложение завершило работу
+2025-03-17 14:24:15 - DWH_Generator - INFO - Запуск приложения
+2025-03-17 14:24:15 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-17 14:24:15 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-17 14:24:43 - DWH_Generator - INFO - Приложение завершило работу
+2025-03-17 14:47:45 - DWH_Generator - INFO - Запуск приложения
+2025-03-17 14:47:45 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-17 14:47:45 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-17 15:00:18 - DWH_Generator - INFO - Запуск приложения
+2025-03-17 15:00:18 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-17 15:00:18 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-17 15:38:40 - DWH_Generator - INFO - Запуск приложения
+2025-03-17 15:38:40 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-17 15:38:40 - DWH_Generator - INFO - Приложение завершило работу
+2025-03-17 15:42:10 - DWH_Generator - INFO - Запуск приложения
+2025-03-17 15:42:10 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-17 15:42:10 - DWH_Generator - INFO - Приложение завершило работу
+2025-03-17 15:45:39 - DWH_Generator - INFO - Запуск приложения
+2025-03-17 15:45:39 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-17 15:45:39 - DWH_Generator - INFO - Приложение завершило работу
+2025-03-17 15:46:40 - DWH_Generator - INFO - Запуск приложения
+2025-03-17 15:46:40 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-17 15:46:40 - DWH_Generator - ERROR - Ошибка подключения к PostgreSQL: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-03-17 15:46:40 - DWH_Generator - INFO - Приложение завершило работу
+2025-03-17 15:47:19 - DWH_Generator - INFO - Запуск приложения
+2025-03-17 15:47:19 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-17 15:47:19 - DWH_Generator - INFO - Приложение завершило работу
+2025-03-17 15:47:44 - DWH_Generator - INFO - Запуск приложения
+2025-03-17 15:47:44 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-17 15:47:44 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-17 15:47:49 - DWH_Generator - INFO - Приложение завершило работу
+2025-03-17 15:48:13 - DWH_Generator - INFO - Запуск приложения
+2025-03-17 15:48:13 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-17 15:48:23 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-17 15:49:51 - DWH_Generator - INFO - Запуск приложения
+2025-03-17 15:49:51 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-17 15:51:29 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-17 15:52:25 - DWH_Generator - INFO - Запуск приложения
+2025-03-17 15:52:25 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-17 15:52:25 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-17 15:52:29 - DWH_Generator - INFO - Приложение завершило работу
+2025-03-17 15:59:19 - DWH_Generator - INFO - Запуск приложения
+2025-03-17 15:59:19 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-17 15:59:19 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-17 15:59:21 - DWH_Generator - INFO - Приложение завершило работу
+2025-03-17 16:03:56 - DWH_Generator - INFO - Запуск приложения
+2025-03-17 16:03:56 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-17 16:03:56 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-17 16:04:00 - DWH_Generator - INFO - Приложение завершило работу
+2025-03-17 16:04:47 - DWH_Generator - INFO - Запуск приложения
+2025-03-17 16:04:47 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-17 16:04:47 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-17 16:04:51 - DWH_Generator - INFO - Приложение завершило работу
+2025-03-17 20:08:38 - DWH_Generator - INFO - Запуск приложения
+2025-03-17 20:08:38 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-17 20:08:38 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-17 20:08:49 - DWH_Generator - INFO - Приложение завершило работу
+2025-03-17 20:10:35 - DWH_Generator - INFO - Запуск приложения
+2025-03-17 20:10:35 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-17 20:10:35 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-17 20:10:40 - DWH_Generator - INFO - Приложение завершило работу
+2025-03-17 20:19:06 - DWH_Generator - INFO - Запуск приложения
+2025-03-17 20:19:06 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-17 20:19:06 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-17 20:21:18 - DWH_Generator - INFO - Запуск приложения
+2025-03-17 20:21:18 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-17 20:21:18 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-17 20:26:58 - DWH_Generator - INFO - Запуск приложения
+2025-03-17 20:26:58 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-17 20:26:58 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-17 20:27:19 - DWH_Generator - INFO - Запуск приложения
+2025-03-17 20:27:19 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-17 20:27:19 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-17 20:31:16 - DWH_Generator - INFO - Запуск приложения
+2025-03-17 20:31:16 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-17 20:31:16 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-18 09:23:22 - DWH_Generator - INFO - Запуск приложения
+2025-03-18 09:23:22 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-18 09:23:22 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-18 09:24:27 - DWH_Generator - INFO - Запуск приложения
+2025-03-18 09:24:27 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-18 09:24:27 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-18 09:26:40 - DWH_Generator - INFO - Запуск приложения
+2025-03-18 09:26:40 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-18 09:26:40 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-18 09:29:24 - DWH_Generator - INFO - Запуск приложения
+2025-03-18 09:29:24 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-18 09:29:24 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-18 09:30:13 - DWH_Generator - INFO - Запуск приложения
+2025-03-18 09:30:13 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-18 09:30:13 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-18 09:31:21 - DWH_Generator - INFO - Запуск приложения
+2025-03-18 09:31:21 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-18 09:31:21 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-18 09:32:33 - DWH_Generator - INFO - Запуск приложения
+2025-03-18 09:32:33 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-18 09:32:33 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-18 09:33:54 - DWH_Generator - INFO - Запуск приложения
+2025-03-18 09:33:54 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-18 09:33:54 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-18 09:37:13 - DWH_Generator - INFO - Запуск приложения
+2025-03-18 09:37:13 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-18 09:37:13 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-18 09:37:51 - DWH_Generator - INFO - Запуск приложения
+2025-03-18 09:37:51 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-18 09:37:51 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-18 13:50:53 - DWH_Generator - INFO - Запуск приложения
+2025-03-18 13:50:53 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-18 13:50:53 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-18 15:24:44 - DWH_Generator - INFO - Запуск приложения
+2025-03-18 15:24:44 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-18 15:24:44 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-18 15:24:46 - DWH_Generator - INFO - Приложение завершило работу
+2025-03-19 09:24:25 - DWH_Generator - INFO - Запуск приложения
+2025-03-19 09:24:25 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-19 09:24:25 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-19 09:30:31 - DWH_Generator - INFO - Запуск приложения
+2025-03-19 09:30:31 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-19 09:30:31 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-19 11:40:28 - DWH_Generator - INFO - Запуск приложения
+2025-03-19 11:40:28 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-19 11:41:40 - DWH_Generator - INFO - Запуск приложения
+2025-03-19 11:41:40 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-19 11:41:40 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-19 11:42:41 - DWH_Generator - INFO - Запуск приложения
+2025-03-19 11:42:41 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-19 11:42:41 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-19 11:44:31 - DWH_Generator - INFO - Запуск приложения
+2025-03-19 11:44:31 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-19 11:44:31 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-19 11:44:43 - DWH_Generator - INFO - Запуск приложения
+2025-03-19 11:44:43 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-19 11:45:05 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-19 11:45:09 - DWH_Generator - INFO - Приложение завершило работу
+2025-03-19 11:45:13 - DWH_Generator - INFO - Запуск приложения
+2025-03-19 11:45:13 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-19 11:47:42 - DWH_Generator - INFO - Запуск приложения
+2025-03-19 11:47:42 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-19 11:47:42 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-19 11:47:56 - DWH_Generator - INFO - Запуск приложения
+2025-03-19 11:47:56 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-19 11:51:09 - DWH_Generator - INFO - Запуск приложения
+2025-03-19 11:51:09 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-19 11:51:09 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-19 11:51:20 - DWH_Generator - ERROR - Ошибка подключения к PostgreSQL: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-03-20 09:28:30 - DWH_Generator - INFO - Запуск приложения
+2025-03-20 09:28:30 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-20 09:28:30 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-20 09:28:51 - DWH_Generator - INFO - Запуск приложения
+2025-03-20 09:28:51 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-20 09:28:51 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-20 09:32:04 - DWH_Generator - INFO - Запуск приложения
+2025-03-20 09:32:04 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-20 09:32:04 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-20 09:33:26 - DWH_Generator - INFO - Запуск приложения
+2025-03-20 09:33:26 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-20 09:33:26 - DWH_Generator - ERROR - Ошибка подключения к PostgreSQL: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-03-20 09:33:26 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-20 10:02:52 - DWH_Generator - INFO - Запуск приложения
+2025-03-20 10:02:52 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-20 10:02:52 - DWH_Generator - ERROR - Ошибка подключения к PostgreSQL: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-03-20 10:02:52 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-20 10:03:54 - DWH_Generator - INFO - Запуск приложения
+2025-03-20 10:03:54 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-20 10:03:54 - DWH_Generator - ERROR - Ошибка подключения к PostgreSQL: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-03-20 10:03:54 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-20 10:04:30 - DWH_Generator - INFO - Запуск приложения
+2025-03-20 10:04:30 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-20 10:04:30 - DWH_Generator - ERROR - Ошибка подключения к PostgreSQL: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-03-20 10:04:30 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-20 10:04:32 - DWH_Generator - ERROR - Попытка выполнить SQL скрипт без подключения к PostgreSQL
+2025-03-20 10:04:38 - DWH_Generator - INFO - Приложение завершило работу
+2025-03-20 10:05:23 - DWH_Generator - INFO - Запуск приложения
+2025-03-20 10:05:23 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-20 10:05:23 - DWH_Generator - ERROR - Ошибка подключения к PostgreSQL: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-03-20 10:05:23 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-20 10:05:25 - DWH_Generator - ERROR - Попытка выполнить SQL скрипт без подключения к PostgreSQL
+2025-03-20 10:07:11 - DWH_Generator - INFO - Запуск приложения
+2025-03-20 10:07:11 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-20 10:07:11 - DWH_Generator - ERROR - Ошибка подключения к PostgreSQL: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-03-20 10:07:11 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-20 10:07:13 - DWH_Generator - ERROR - Попытка выполнить SQL скрипт без подключения к PostgreSQL
+2025-03-20 10:08:30 - DWH_Generator - INFO - Запуск приложения
+2025-03-20 10:08:30 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-20 10:08:30 - DWH_Generator - ERROR - Ошибка подключения к PostgreSQL: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-03-20 10:08:30 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-20 10:08:32 - DWH_Generator - ERROR - Попытка выполнить SQL скрипт без подключения к PostgreSQL
+2025-03-20 10:09:13 - DWH_Generator - INFO - Запуск приложения
+2025-03-20 10:09:13 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-20 10:09:13 - DWH_Generator - ERROR - Ошибка подключения к PostgreSQL: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-03-20 10:09:13 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-20 10:09:15 - DWH_Generator - ERROR - Попытка выполнить SQL скрипт без подключения к PostgreSQL
+2025-03-20 10:09:43 - DWH_Generator - INFO - Запуск приложения
+2025-03-20 10:09:43 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-20 10:09:43 - DWH_Generator - ERROR - Ошибка подключения к PostgreSQL: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-03-20 10:09:43 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-20 10:16:52 - DWH_Generator - INFO - Запуск приложения
+2025-03-20 10:16:52 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-20 10:16:52 - DWH_Generator - ERROR - Ошибка при расшифровке пароля: Invalid base64-encoded string: number of data characters (5) cannot be 1 more than a multiple of 4
+2025-03-20 10:17:13 - DWH_Generator - INFO - Запуск приложения
+2025-03-20 10:17:13 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-20 10:17:13 - DWH_Generator - ERROR - Ошибка при расшифровке пароля: Invalid base64-encoded string: number of data characters (5) cannot be 1 more than a multiple of 4
+2025-03-20 10:17:49 - DWH_Generator - INFO - Запуск приложения
+2025-03-20 10:17:49 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-20 10:17:49 - DWH_Generator - ERROR - Ошибка при расшифровке пароля: Invalid base64-encoded string: number of data characters (5) cannot be 1 more than a multiple of 4
+2025-03-20 10:17:49 - DWH_Generator - ERROR - Ошибка подключения к PostgreSQL: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-03-20 10:17:49 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-20 10:29:03 - DWH_Generator - INFO - Запуск приложения
+2025-03-20 10:29:03 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-20 10:29:03 - DWH_Generator - ERROR - Ошибка подключения к PostgreSQL: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-03-20 10:29:03 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-20 10:29:17 - DWH_Generator - INFO - Приложение завершило работу
+2025-03-20 10:32:37 - DWH_Generator - INFO - Запуск приложения
+2025-03-20 10:32:37 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-20 10:32:37 - DWH_Generator - ERROR - Ошибка подключения к PostgreSQL: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-03-20 10:32:37 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-20 10:33:03 - DWH_Generator - INFO - Приложение завершило работу
+2025-03-20 10:33:37 - DWH_Generator - INFO - Запуск приложения
+2025-03-20 10:33:37 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-20 10:33:37 - DWH_Generator - ERROR - Ошибка подключения к PostgreSQL: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-03-20 10:33:37 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-20 10:33:53 - DWH_Generator - INFO - Приложение завершило работу
+2025-03-20 10:36:00 - DWH_Generator - INFO - Запуск приложения
+2025-03-20 10:36:00 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-20 10:36:00 - DWH_Generator - ERROR - Ошибка подключения к PostgreSQL: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-03-20 10:36:00 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-20 10:41:13 - DWH_Generator - INFO - Приложение завершило работу
+2025-03-20 10:41:23 - DWH_Generator - INFO - Запуск приложения
+2025-03-20 10:41:23 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-20 10:41:23 - DWH_Generator - ERROR - Ошибка подключения к PostgreSQL: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-03-20 10:41:23 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-20 11:09:15 - DWH_Generator - INFO - Приложение завершило работу
+2025-03-20 11:09:15 - DWH_Generator - INFO - Запуск приложения
+2025-03-20 11:09:15 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-20 11:09:15 - DWH_Generator - ERROR - Ошибка подключения к PostgreSQL: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-03-20 11:09:15 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-20 11:35:27 - DWH_Generator - INFO - Запуск приложения
+2025-03-20 11:35:27 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-20 11:35:27 - DWH_Generator - ERROR - Ошибка подключения к PostgreSQL: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-03-20 11:35:27 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-20 11:42:04 - DWH_Generator - INFO - Приложение завершило работу
+2025-03-20 11:42:04 - DWH_Generator - INFO - Запуск приложения
+2025-03-20 11:42:04 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-20 11:42:04 - DWH_Generator - ERROR - Ошибка подключения к PostgreSQL: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-03-20 11:42:04 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-20 11:44:32 - DWH_Generator - INFO - Приложение завершило работу
+2025-03-20 11:44:35 - DWH_Generator - INFO - Запуск приложения
+2025-03-20 11:44:35 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-20 11:44:35 - DWH_Generator - ERROR - Ошибка подключения к PostgreSQL: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-03-20 11:44:35 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-20 11:44:58 - DWH_Generator - INFO - Приложение завершило работу
+2025-03-20 11:47:17 - DWH_Generator - INFO - Запуск приложения
+2025-03-20 11:47:17 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-20 11:47:17 - DWH_Generator - ERROR - Ошибка подключения к PostgreSQL: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-03-20 11:47:17 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-20 11:49:54 - DWH_Generator - INFO - Приложение завершило работу
+2025-03-20 11:49:55 - DWH_Generator - INFO - Запуск приложения
+2025-03-20 11:49:55 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-20 11:49:55 - DWH_Generator - ERROR - Ошибка подключения к PostgreSQL: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-03-20 11:49:55 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-20 11:50:04 - DWH_Generator - INFO - Приложение завершило работу
+2025-03-20 11:51:27 - DWH_Generator - INFO - Запуск приложения
+2025-03-20 11:51:27 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-20 11:51:27 - DWH_Generator - ERROR - Ошибка подключения к PostgreSQL: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-03-20 11:51:27 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-20 11:51:32 - DWH_Generator - INFO - Приложение завершило работу
+2025-03-20 11:52:07 - DWH_Generator - INFO - Запуск приложения
+2025-03-20 11:52:07 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-20 11:52:07 - DWH_Generator - ERROR - Ошибка подключения к PostgreSQL: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-03-20 11:52:07 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-20 11:54:17 - DWH_Generator - INFO - Запуск приложения
+2025-03-20 11:54:17 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-20 11:54:17 - DWH_Generator - ERROR - Ошибка подключения к PostgreSQL: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-03-20 11:54:17 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-20 13:36:38 - DWH_Generator - INFO - Запуск приложения
+2025-03-20 13:36:38 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-20 13:36:38 - DWH_Generator - ERROR - Ошибка подключения к PostgreSQL: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-03-20 13:36:38 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-20 13:40:09 - DWH_Generator - ERROR - Ошибка подключения к PostgreSQL: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-03-20 13:42:38 - DWH_Generator - INFO - Запуск приложения
+2025-03-20 13:42:38 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-20 13:42:38 - DWH_Generator - ERROR - Ошибка подключения к PostgreSQL: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-03-20 13:42:38 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-20 13:43:01 - DWH_Generator - INFO - Запуск приложения
+2025-03-20 13:43:01 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-20 13:43:01 - DWH_Generator - ERROR - Ошибка подключения к PostgreSQL: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-03-20 13:43:01 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-20 14:08:03 - DWH_Generator - INFO - Запуск приложения
+2025-03-20 14:08:03 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-20 14:08:03 - DWH_Generator - ERROR - Ошибка подключения к PostgreSQL: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-03-20 14:08:03 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-20 14:14:08 - DWH_Generator - INFO - Запуск приложения
+2025-03-20 14:14:08 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-20 14:14:08 - DWH_Generator - ERROR - Ошибка подключения к PostgreSQL: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-03-20 14:14:08 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-20 14:21:51 - DWH_Generator - INFO - Запуск приложения
+2025-03-20 14:21:51 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-20 14:21:51 - DWH_Generator - ERROR - Ошибка подключения к PostgreSQL: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-03-20 14:21:51 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-20 14:22:27 - DWH_Generator - INFO - Запуск приложения
+2025-03-20 14:22:27 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-20 14:22:27 - DWH_Generator - ERROR - Ошибка подключения к PostgreSQL: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-03-20 14:22:27 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-20 14:23:41 - DWH_Generator - INFO - Запуск приложения
+2025-03-20 14:23:41 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-20 14:23:41 - DWH_Generator - ERROR - Ошибка подключения к PostgreSQL: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-03-20 14:23:41 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-20 14:25:43 - DWH_Generator - INFO - Запуск приложения
+2025-03-20 14:25:43 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-20 14:25:43 - DWH_Generator - ERROR - Ошибка подключения к PostgreSQL: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-03-20 14:25:43 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-20 14:26:05 - DWH_Generator - INFO - Запуск приложения
+2025-03-20 14:26:05 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-20 14:26:05 - DWH_Generator - ERROR - Ошибка подключения к PostgreSQL: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-03-20 14:26:05 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-20 14:27:51 - DWH_Generator - INFO - Запуск приложения
+2025-03-20 14:27:51 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-20 14:27:51 - DWH_Generator - ERROR - Ошибка подключения к PostgreSQL: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-03-20 14:27:51 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-20 14:30:15 - DWH_Generator - INFO - Запуск приложения
+2025-03-20 14:30:15 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-20 14:30:15 - DWH_Generator - ERROR - Ошибка подключения к PostgreSQL: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-03-20 14:30:15 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-20 14:30:42 - DWH_Generator - INFO - Запуск приложения
+2025-03-20 14:30:42 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-20 14:30:42 - DWH_Generator - ERROR - Ошибка подключения к PostgreSQL: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-03-20 14:30:42 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-20 14:31:10 - DWH_Generator - INFO - Запуск приложения
+2025-03-20 14:31:10 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-20 14:31:10 - DWH_Generator - ERROR - Ошибка подключения к PostgreSQL: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-03-20 14:31:10 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-20 14:32:15 - DWH_Generator - INFO - Запуск приложения
+2025-03-20 14:32:15 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-20 14:32:15 - DWH_Generator - ERROR - Ошибка подключения к PostgreSQL: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-03-20 14:32:15 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-20 14:35:04 - DWH_Generator - INFO - Запуск приложения
+2025-03-20 14:35:04 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-20 14:35:04 - DWH_Generator - ERROR - Ошибка подключения к PostgreSQL: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-03-20 14:35:04 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-20 14:35:07 - DWH_Generator - INFO - Приложение завершило работу
+2025-03-20 14:39:10 - DWH_Generator - INFO - Запуск приложения
+2025-03-20 14:39:10 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-20 14:39:10 - DWH_Generator - ERROR - Ошибка подключения к PostgreSQL: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-03-20 14:39:10 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-20 14:45:37 - DWH_Generator - INFO - Запуск приложения
+2025-03-20 14:45:37 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-20 14:45:37 - DWH_Generator - ERROR - Ошибка подключения к PostgreSQL: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-03-20 14:45:37 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-20 14:46:03 - DWH_Generator - INFO - Запуск приложения
+2025-03-20 14:46:03 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-20 14:46:03 - DWH_Generator - ERROR - Ошибка подключения к PostgreSQL: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-03-20 14:46:03 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-20 14:46:22 - DWH_Generator - INFO - Запуск приложения
+2025-03-20 14:46:22 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-20 14:46:22 - DWH_Generator - ERROR - Ошибка подключения к PostgreSQL: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-03-20 14:46:22 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-20 14:46:55 - DWH_Generator - INFO - Запуск приложения
+2025-03-20 14:46:55 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-20 14:46:55 - DWH_Generator - ERROR - Ошибка подключения к PostgreSQL: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-03-20 14:46:55 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-20 14:49:10 - DWH_Generator - INFO - Запуск приложения
+2025-03-20 14:49:10 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-20 14:49:10 - DWH_Generator - ERROR - Ошибка подключения к PostgreSQL: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-03-20 14:49:10 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-20 15:05:32 - DWH_Generator - INFO - Запуск приложения
+2025-03-20 15:05:32 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-20 15:05:32 - DWH_Generator - ERROR - Ошибка подключения к PostgreSQL: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-03-20 15:05:32 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-20 16:03:57 - DWH_Generator - INFO - Запуск приложения
+2025-03-20 16:03:57 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-20 16:03:57 - DWH_Generator - ERROR - Ошибка подключения к PostgreSQL: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-03-20 16:03:57 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-20 16:04:26 - DWH_Generator - INFO - Приложение завершило работу
+2025-03-20 16:04:31 - DWH_Generator - INFO - Запуск приложения
+2025-03-20 16:04:31 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-20 16:04:31 - DWH_Generator - ERROR - Ошибка подключения к PostgreSQL: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-03-20 16:04:31 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-20 16:05:45 - DWH_Generator - INFO - Запуск приложения
+2025-03-20 16:05:45 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-20 16:05:45 - DWH_Generator - ERROR - Ошибка подключения к PostgreSQL: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-03-20 16:05:45 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-20 16:46:03 - DWH_Generator - INFO - Запуск приложения
+2025-03-20 16:46:03 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-20 16:46:49 - DWH_Generator - INFO - Запуск приложения
+2025-03-20 16:46:49 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-20 16:46:49 - DWH_Generator - ERROR - Ошибка подключения к PostgreSQL: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-03-20 16:46:49 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-20 16:46:57 - DWH_Generator - INFO - Приложение завершило работу
+2025-03-20 16:47:28 - DWH_Generator - INFO - Запуск приложения
+2025-03-20 16:47:28 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-20 16:47:28 - DWH_Generator - ERROR - Ошибка подключения к PostgreSQL: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-03-20 16:47:28 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-20 16:47:34 - DWH_Generator - INFO - Приложение завершило работу
+2025-03-20 16:48:48 - DWH_Generator - INFO - Запуск приложения
+2025-03-20 16:48:48 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-20 16:48:48 - DWH_Generator - ERROR - Ошибка подключения к PostgreSQL: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-03-20 16:48:48 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-20 16:48:51 - DWH_Generator - INFO - Приложение завершило работу
+2025-03-20 16:49:28 - DWH_Generator - INFO - Запуск приложения
+2025-03-20 16:49:28 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-20 16:49:28 - DWH_Generator - ERROR - Ошибка подключения к PostgreSQL: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-03-20 16:49:28 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-20 17:14:24 - DWH_Generator - INFO - Приложение завершило работу
+2025-03-20 17:14:25 - DWH_Generator - INFO - Запуск приложения
+2025-03-20 17:14:25 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-20 17:14:25 - DWH_Generator - ERROR - Ошибка подключения к PostgreSQL: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-03-20 17:14:25 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-20 17:15:03 - DWH_Generator - INFO - Приложение завершило работу
+2025-03-20 17:16:08 - DWH_Generator - INFO - Запуск приложения
+2025-03-20 17:16:08 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-20 17:16:08 - DWH_Generator - ERROR - Ошибка подключения к PostgreSQL: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-03-20 17:16:08 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-20 17:16:21 - DWH_Generator - INFO - Приложение завершило работу
+2025-03-20 17:17:16 - DWH_Generator - INFO - Запуск приложения
+2025-03-20 17:17:16 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-20 17:17:16 - DWH_Generator - ERROR - Ошибка подключения к PostgreSQL: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-03-20 17:17:16 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-20 17:17:26 - DWH_Generator - INFO - Приложение завершило работу
+2025-03-20 17:18:40 - DWH_Generator - INFO - Запуск приложения
+2025-03-20 17:18:40 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-20 17:18:40 - DWH_Generator - ERROR - Ошибка подключения к PostgreSQL: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-03-20 17:18:40 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-20 17:18:43 - DWH_Generator - INFO - Приложение завершило работу
+2025-03-20 17:18:59 - DWH_Generator - INFO - Запуск приложения
+2025-03-20 17:18:59 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-20 17:18:59 - DWH_Generator - ERROR - Ошибка подключения к PostgreSQL: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-03-20 17:18:59 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-20 17:19:25 - DWH_Generator - INFO - Приложение завершило работу
+2025-03-20 17:19:38 - DWH_Generator - INFO - Запуск приложения
+2025-03-20 17:19:38 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-20 17:19:38 - DWH_Generator - ERROR - Ошибка подключения к PostgreSQL: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-03-20 17:19:38 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-20 17:19:46 - DWH_Generator - INFO - Приложение завершило работу
+2025-03-20 17:28:35 - DWH_Generator - INFO - Запуск приложения
+2025-03-20 17:28:35 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-20 17:28:35 - DWH_Generator - ERROR - Ошибка подключения к PostgreSQL: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-03-20 17:28:35 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-20 17:28:53 - DWH_Generator - INFO - Приложение завершило работу
+2025-03-20 17:29:45 - DWH_Generator - INFO - Запуск приложения
+2025-03-20 17:29:45 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-20 17:29:45 - DWH_Generator - ERROR - Ошибка подключения к PostgreSQL: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-03-20 17:29:45 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-20 17:29:56 - DWH_Generator - INFO - Приложение завершило работу
+2025-03-20 17:30:55 - DWH_Generator - INFO - Запуск приложения
+2025-03-20 17:30:55 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-20 17:30:55 - DWH_Generator - ERROR - Ошибка подключения к PostgreSQL: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-03-20 17:30:55 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-20 17:30:58 - DWH_Generator - INFO - Приложение завершило работу
+2025-03-20 17:31:48 - DWH_Generator - INFO - Запуск приложения
+2025-03-20 17:31:48 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-20 17:31:48 - DWH_Generator - ERROR - Ошибка подключения к PostgreSQL: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-03-20 17:31:48 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-20 17:31:52 - DWH_Generator - INFO - Приложение завершило работу
+2025-03-20 17:36:32 - DWH_Generator - INFO - Запуск приложения
+2025-03-20 17:36:32 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-20 17:36:32 - DWH_Generator - ERROR - Ошибка подключения к PostgreSQL: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-03-20 17:36:32 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-20 17:40:44 - DWH_Generator - INFO - Приложение завершило работу
+2025-03-20 17:40:45 - DWH_Generator - INFO - Запуск приложения
+2025-03-20 17:40:45 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-20 17:40:45 - DWH_Generator - ERROR - Ошибка подключения к PostgreSQL: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-03-20 17:40:45 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-20 17:42:26 - DWH_Generator - INFO - Приложение завершило работу
+2025-03-20 17:42:29 - DWH_Generator - INFO - Запуск приложения
+2025-03-20 17:42:29 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-20 17:42:29 - DWH_Generator - ERROR - Ошибка подключения к PostgreSQL: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-03-20 17:42:29 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-20 17:42:53 - DWH_Generator - INFO - Приложение завершило работу
+2025-03-20 17:43:54 - DWH_Generator - INFO - Запуск приложения
+2025-03-20 17:43:54 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-20 17:43:54 - DWH_Generator - ERROR - Ошибка подключения к PostgreSQL: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-03-20 17:43:54 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-20 17:53:12 - DWH_Generator - INFO - Приложение завершило работу
+2025-03-20 17:53:45 - DWH_Generator - INFO - Запуск приложения
+2025-03-20 17:53:45 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-20 17:53:45 - DWH_Generator - ERROR - Ошибка подключения к PostgreSQL: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-03-20 17:53:45 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-20 17:53:52 - DWH_Generator - INFO - Приложение завершило работу
+2025-03-20 17:55:36 - DWH_Generator - INFO - Запуск приложения
+2025-03-20 17:55:36 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-20 17:55:36 - DWH_Generator - ERROR - Ошибка подключения к PostgreSQL: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-03-20 17:55:36 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-20 17:55:44 - DWH_Generator - INFO - Приложение завершило работу
+2025-03-20 17:56:31 - DWH_Generator - INFO - Запуск приложения
+2025-03-20 17:56:31 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-20 17:56:31 - DWH_Generator - ERROR - Ошибка подключения к PostgreSQL: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-03-20 17:56:31 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-20 17:56:44 - DWH_Generator - INFO - Приложение завершило работу
+2025-03-24 17:04:20 - DWH_Generator - INFO - Запуск приложения
+2025-03-24 17:04:20 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-24 17:04:20 - DWH_Generator - ERROR - Ошибка подключения к PostgreSQL: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-03-24 17:04:20 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-24 17:04:44 - DWH_Generator - INFO - Приложение завершило работу
+2025-03-25 10:34:08 - DWH_Generator - INFO - Запуск приложения
+2025-03-25 10:34:08 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-25 10:34:08 - DWH_Generator - ERROR - Ошибка подключения к PostgreSQL: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-03-25 10:34:08 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-25 10:34:19 - DWH_Generator - INFO - Приложение завершило работу
+2025-03-25 10:34:44 - DWH_Generator - INFO - Запуск приложения
+2025-03-25 10:34:44 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-25 10:34:44 - DWH_Generator - ERROR - Ошибка подключения к PostgreSQL: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-03-25 10:34:44 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-25 10:35:24 - DWH_Generator - INFO - Запуск приложения
+2025-03-25 10:35:24 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-25 10:35:24 - DWH_Generator - ERROR - Ошибка подключения к PostgreSQL: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-03-25 10:35:24 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-25 10:36:23 - DWH_Generator - INFO - Запуск приложения
+2025-03-25 10:36:23 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-25 10:37:02 - DWH_Generator - ERROR - Ошибка при расшифровке пароля: Incorrect padding
+2025-03-25 10:37:02 - DWH_Generator - ERROR - Ошибка подключения к PostgreSQL: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-03-25 10:37:02 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-25 10:39:44 - DWH_Generator - INFO - Запуск приложения
+2025-03-25 10:39:44 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-25 10:39:44 - DWH_Generator - ERROR - Ошибка при расшифровке пароля: Incorrect padding
+2025-03-25 10:39:44 - DWH_Generator - ERROR - Ошибка подключения к PostgreSQL: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-03-25 10:39:44 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-25 10:40:14 - DWH_Generator - INFO - Запуск приложения
+2025-03-25 10:40:14 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-25 10:40:14 - DWH_Generator - ERROR - Ошибка подключения к PostgreSQL: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-03-25 10:40:14 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-25 10:42:05 - DWH_Generator - INFO - Запуск приложения
+2025-03-25 10:42:05 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-25 10:42:19 - DWH_Generator - ERROR - Ошибка подключения к PostgreSQL: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-03-25 10:42:19 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-25 10:44:37 - DWH_Generator - INFO - Запуск приложения
+2025-03-25 10:44:37 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-25 10:44:37 - DWH_Generator - ERROR - Ошибка подключения к PostgreSQL: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-03-25 10:44:37 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-25 10:48:51 - DWH_Generator - INFO - Запуск приложения
+2025-03-25 10:48:51 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-25 10:48:51 - DWH_Generator - ERROR - Ошибка подключения к PostgreSQL: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-03-25 10:48:51 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-25 10:49:14 - DWH_Generator - INFO - Запуск приложения
+2025-03-25 10:49:14 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-25 10:49:14 - DWH_Generator - ERROR - Ошибка подключения к PostgreSQL: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-03-25 10:49:14 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-25 10:51:12 - DWH_Generator - INFO - Запуск приложения
+2025-03-25 10:51:12 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-25 10:51:12 - DWH_Generator - ERROR - Ошибка подключения к PostgreSQL: connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-03-25 10:51:12 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-25 10:52:32 - DWH_Generator - INFO - Запуск приложения
+2025-03-25 10:52:32 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-25 10:52:32 - DWH_Generator - ERROR - Ошибка подключения к PostgreSQL: connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-03-25 10:52:32 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-25 10:57:02 - DWH_Generator - INFO - Запуск приложения
+2025-03-25 10:57:02 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-25 10:57:02 - DWH_Generator - ERROR - Ошибка подключения к PostgreSQL: connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-03-25 10:57:02 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-25 10:57:02 - DWH_Generator - INFO - Приложение завершило работу
+2025-03-25 10:57:24 - DWH_Generator - INFO - Запуск приложения
+2025-03-25 10:57:24 - DWH_Generator - INFO - Структура приложения инициализирована успешно
+2025-03-25 10:57:24 - DWH_Generator - ERROR - Ошибка подключения к PostgreSQL: connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-03-25 10:57:24 - DWH_Generator - INFO - Загружена конфигурация приложения
+2025-03-25 10:57:40 - DWH_Generator - INFO - Приложение завершило работу

@@ -1,0 +1,55 @@
+{
+    "pages": [
+        {
+            "name": "main_params",
+            "title": "Основные параметры",
+            "fields": [
+                "object_name",
+                "source_system",
+                "sub_company",
+                "domain",
+                "endpoint",
+                "schema",
+                "schema_ch",
+                "schema_view_ch",
+                "schema_view_pg",
+                "tables",
+                "create_pg_view",
+                "create_ch_view"
+            ]
+        },
+        {
+            "name": "conn_params",
+            "title": "Параметры соединения",
+            "fields": [
+                "conn_id",
+                "auth_type",
+                "pg_conn_id",
+                "ch_conn_id"
+            ]
+        },
+        {
+            "name": "integration_params",
+            "title": "Интеграция",
+            "fields": [
+                "integration_id",
+                "integration_template",
+                "hst_layer_flag",
+                "filter_field",
+                "reload_period_depth",
+                "update_data_template",
+                "hashkey",
+                "ch_order_by",
+                "ch_to_pg_named_collection"
+            ]
+        },
+        {
+            "name": "dag_params",
+            "title": "Настройки DAG",
+            "fields": [
+                "dag_owner",
+                "dag_tags"
+            ]
+        }
+    ]
+}

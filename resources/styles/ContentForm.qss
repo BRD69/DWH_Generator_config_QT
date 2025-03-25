@@ -1,0 +1,20 @@
+/* Кнопки */
+QPushButton {
+    font-size: 12px;
+    border-radius: 3px;
+    padding: 3px 12px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    background-color: rgba(200, 200, 200, 0.5);
+    /* Светло-серый, полупрозрачный */
+    color: black;
+}
+
+/* Ховер-эффект: немного темнее */
+QPushButton:hover {
+    background-color: rgba(180, 180, 180, 0.7);
+}
+
+/* При нажатии: еще темнее + легкое уменьшение */
+QPushButton:pressed {
+    background-color: rgba(160, 160, 160, 0.9);
+}

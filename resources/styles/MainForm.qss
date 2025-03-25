@@ -1,0 +1,261 @@
+/* Основное окно приложения */
+QMainWindow#MainWindow {
+    padding: 5px;
+    background-color: #f5f5f5;
+}
+
+/* Панель инструментов */
+QToolBar#toolBar {
+    background-color: #f5f5f5;
+    padding: 5px;
+    border: 1px solid #e0e0e0;
+}
+
+QToolBar#toolBarStatus {
+    background-color: #f5f5f5;
+}
+
+
+
+/* Центральный виджет главного окна */
+QWidget#centralwidget {
+    padding: 5px;
+    background-color: rgb(255, 255, 255);
+}
+
+/* Основной контейнер для контента */
+QFrame#frame_content {
+    background-color: rgb(255, 255, 255);
+    border: none;
+}
+
+/* Контейнер для элементов управления */
+QFrame#frame_control {
+    padding: 2px;
+    border: 1px solid #cccccc;
+    /* Светло-серая рамка */
+    border-radius: 5px;
+}
+
+/* Эффект при наведении на контейнер управления */
+QFrame#frame_control:hover {
+    border: 1px solid #999999;
+    /* Немного темнее рамка при наведении */
+    border-radius: 5px;
+    background-color: rgba(240, 240, 240, 0.9);
+    /* Увеличиваем непрозрачность при наведении */
+}
+
+/* Левая панель контента */
+QFrame#frame_content_left {
+    padding: 3px;
+    border: 1px solid #cccccc;
+    /* Светло-серая рамка */
+    border-radius: 5px;
+    background-color: rgba(240, 240, 240, 0.8);
+    /* Светло-серый с небольшой прозрачностью */
+}
+
+/* Правая панель контента */
+QFrame#frame_content_right {
+    padding: 3px;
+    border: 1px solid #cccccc;
+    /* Светло-серая рамка */
+    border-radius: 5px;
+    background-color: rgba(240, 240, 240, 0.8);
+    /* Светло-серый с небольшой прозрачностью */
+}
+
+QToolBox#toolBox_fields {
+    background-color: #f5f5f5;
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 12px;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Стили для вкладок */
+QToolBox#toolBox_fields::tab {
+    background: #d9d9d9;
+    /* Светло-серый */
+    padding: 3px 16px;
+    border-radius: 2px;
+    margin-bottom: 1px;
+    color: #666;
+    /* Тусклый текст */
+}
+
+/* Активная вкладка */
+QToolBox#toolBox_fields::tab:selected {
+    background: #bfbfbf;
+    /* Чуть темнее для выделения */
+    color: black;
+}
+
+/* Стили для содержимого активной страницы */
+QToolBox#toolBox_fields QWidget {
+    background-color: #eaeaea;
+    /* Спокойный серый фон */
+    color: black;
+}
+
+/* Если страница неактивна — тусклый цвет */
+QToolBox#toolBox_fields QWidget:disabled {
+    background-color: #f5f5f5;
+    /* Светлый, почти белый */
+    color: #999;
+    /* Более тусклый текст */
+}
+
+/* Стили для выпадающего списка */
+QComboBox#combo_box_configs {
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 3px 18px 3px 3px;
+    min-width: 6em;
+}
+
+QComboBox#combo_box_configs:hover {
+    border: 1px solid #808080;
+    color: #333;
+}
+
+QComboBox#combo_box_configs:focus {
+    border: 1px solid #404040;
+}
+
+QComboBox#combo_box_configs::drop-down {
+    border: none;
+    width: 20px;
+}
+
+QComboBox#combo_box_configs::down-arrow {
+    image: url(resources/icons/dropdown-arrow.png);
+    width: 12px;
+    height: 12px;
+}
+
+QComboBox#combo_box_configs::down-arrow:on {
+    /* Стиль стрелки при открытом списке */
+    top: 1px;
+    left: 1px;
+}
+
+/* Стили для выпадающего списка */
+QComboBox#combo_box_configs QAbstractItemView {
+    background-color: #f5f5f5;
+    selection-background-color: #e0e0e0;
+    selection-color: black;
+}
+
+QComboBox#combo_box_configs QAbstractItemView::item {
+    padding: 5px;
+    color: #333;
+}
+
+QComboBox#combo_box_configs QAbstractItemView::item:hover {
+    background-color: #e0e0e0;
+    color: black;
+}
+
+/* Кнопки */
+QPushButton {
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    padding: 6px 12px;
+    border: none;
+}
+
+QPushButton:hover {
+    background-color: #0056b3;
+}
+
+/* Группы */
+QGroupBox {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: white;
+    padding: 10px;
+}
+
+/* Чтобы не было проблем с прозрачностью */
+QWidget {
+    background-color: transparent;
+}
+
+/* Таблица управления */
+QFrame#frame_control_table {
+    border: none;
+    background-color: rgb(246, 246, 246);
+}
+
+/* Кнопки */
+QPushButton {
+    font-size: 12px;
+    border-radius: 3px;
+    padding: 3px 12px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    background-color: rgba(200, 200, 200, 0.5);
+    /* Светло-серый, полупрозрачный */
+    color: black;
+}
+
+/* Ховер-эффект: немного темнее */
+QPushButton:hover {
+    background-color: rgba(180, 180, 180, 0.7);
+}
+
+/* При нажатии: еще темнее + легкое уменьшение */
+QPushButton:pressed {
+    background-color: rgba(160, 160, 160, 0.9);
+}
+
+/* Убираем разные цвета для кнопок — все в едином стиле */
+#btnSave,
+#btnLoad,
+#btnGit,
+#btnSettings,
+#btnAdd,
+#btnClear,
+#btnView {
+    background-color: rgba(200, 200, 200, 0.5);
+}
+
+#btnSave:hover,
+#btnLoad:hover,
+#btnGit:hover,
+#btnSettings:hover,
+btnAdd:hover,
+btnClear:hover,
+#btnView:hover {
+    background-color: rgba(180, 180, 180, 0.7);
+}
+
+#btnSave:pressed,
+#btnLoad:pressed,
+#btnGit:pressed,
+#btnSettings:pressed,
+btnAdd:pressed,
+btnClear:pressed,
+#btnView:hover {
+    background-color: rgba(160, 160, 160, 0.9);
+}
+
+/* Таблица полей */
+QTableWidget#table_fields {
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 12px;
+    color: #333;
+}
+
+QHeaderView::section {
+    background-color: #e0e0e0;
+    padding: 5px;
+    border: 1px solid #ccc;
+}

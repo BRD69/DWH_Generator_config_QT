@@ -58,13 +58,13 @@ class LoadingWidget(QWidget):
         self.progress.setMaximum(100)
         self.progress.setValue(0)
         self.progress.setTextVisible(False)
-        self.progress.setFixedSize(80, 80)  # Фиксированный размер
+        self.progress.setFixedSize(80, 20)  # Фиксированный размер
         self.progress.setStyleSheet("""
             QProgressBar#circularProgress {
                 border: none;
                 background-color: transparent;
-                min-height: 80px;
-                max-height: 80px;
+                min-height: 20px;
+                max-height: 20px;
             }
         """)
         container_layout.addWidget(self.progress, alignment=Qt.AlignCenter)

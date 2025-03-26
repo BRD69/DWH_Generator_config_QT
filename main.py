@@ -634,7 +634,9 @@ class MainWindow(UiMainWindow):
         try:
             self.app.signals.postgres_disconnected.emit()
             self.app.postgres_service.close()
-            
+
+            self.app.postgres_service.set_config(self.app.config_service.get_sql_connect(key='pg'))
+
             self.app.postgres_service.connect()
 
             if self.app.postgres_service.is_connected:
@@ -791,6 +793,8 @@ class MainWindow(UiMainWindow):
         """Обработчик сохранения настроек подключения к PostgreSQL."""
         self.app.config_service.set_sql_connect(key='pg', value=data)
         self.app.config_service.save_sql_connect()
+
+        self.app.postgres_service.set_config(self.app.config_service.get_sql_connect(key='pg'))
 
         self.app.postgres_service.connect()
 

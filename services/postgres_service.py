@@ -31,6 +31,10 @@ class PostgresService:
         """Возвращает текущий статус соединения."""
         return self._status
 
+    def set_config(self, config: Dict[str, Any]) -> None:
+        """Устанавливает конфигурацию подключения."""
+        self.config = config
+
     def connect(self) -> Tuple[bool, str]:
         """
         Устанавливает соединение с PostgreSQL.

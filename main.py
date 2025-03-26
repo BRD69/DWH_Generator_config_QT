@@ -10,50 +10,6 @@ from pathlib import Path
 from services.config_service import ConfigService
 from services.crypto_text_service import CryptoTextService
 from settings import NAME_APP, AUTHOR_APP, DESCRIPTION_APP, LICENSE_APP, COPYRIGHT_APP, get_version_info
-
-# def _append_run_path():
-#     """Добавляет пути для поиска DLL файлов Qt в собранном приложении."""
-#     if getattr(sys, 'frozen', False):
-#         pathlist = []
-
-#         # Путь к временной директории PyInstaller
-#         meipass = getattr(sys, '_MEIPASS', None)
-#         if meipass:
-#             pathlist.append(meipass)
-#             logging.info("Добавлен путь MEIPASS: %s", meipass)
-
-#             # Добавляем путь к bin директории Qt
-#             qt_bin = os.path.join(meipass, 'PyQt5', 'Qt5', 'bin')
-#             if os.path.exists(qt_bin):
-#                 pathlist.append(qt_bin)
-#                 logging.info("Добавлен путь Qt bin: %s", qt_bin)
-
-#             # Добавляем путь к plugins директории Qt
-#             qt_plugins = os.path.join(meipass, 'PyQt5', 'Qt5', 'plugins')
-#             if os.path.exists(qt_plugins):
-#                 pathlist.append(qt_plugins)
-#                 logging.info("Добавлен путь Qt plugins: %s", qt_plugins)
-
-#         # Путь к директории с исполняемым файлом
-#         exe_path = os.path.dirname(sys.executable)
-#         pathlist.append(exe_path)
-#         logging.info("Добавлен путь к exe: %s", exe_path)
-
-#         # Добавляем пути в начало PATH
-#         os.environ["PATH"] = os.pathsep.join(pathlist) + os.pathsep + os.environ["PATH"]
-#         logging.info("Обновленный PATH: %s", os.environ["PATH"])
-
-#         # Проверяем наличие Qt DLL
-#         qt_core = os.path.join(meipass, 'PyQt5', 'Qt5', 'bin', 'Qt5Core.dll')
-#         if os.path.exists(qt_core):
-#             logging.info("Qt5Core.dll найден: %s", qt_core)
-#         else:
-#             logging.error("Qt5Core.dll не найден!")
-#             logging.error("Содержимое директории bin: %s", os.listdir(os.path.join(meipass, 'PyQt5', 'Qt5', 'bin')))
-
-# # Добавляем пути для Qt перед импортом PyQt5
-# _append_run_path()
-
 from PyQt5 import QtGui, QtWidgets
 from PyQt5.QtCore import pyqtSignal, QObject, QThread
 from PyQt5.QtWidgets import QApplication, QFileDialog, QMessageBox

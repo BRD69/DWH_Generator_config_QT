@@ -1,4 +1,5 @@
-from PyQt5.QtWidgets import QWidget, QVBoxLayout, QLabel, QFrame, QSizePolicy
+from PyQt5.QtWidgets import QWidget, QVBoxLayout, QLabel, QFrame, QSizePolicy, QPushButton, QHBoxLayout
+from PyQt5.QtWidgets import QWidget, QVBoxLayout, QLabel, QFrame, QSizePolicy, QPushButton
 from PyQt5.QtCore import Qt, QTimer, QPropertyAnimation, QEasingCurve, QPoint
 from PyQt5.QtGui import QColor, QPalette, QFont
 
@@ -30,7 +31,7 @@ class NotificationWidget(QWidget):
         layout.setSpacing(0)
 
         # Устанавливаем минимальный размер виджета
-        self.setMinimumSize(300, 75)  # Минимальная высота 75px
+        self.setMinimumSize(300, 85)  # Минимальная высота 80px
         self.setSizePolicy(QSizePolicy.Fixed, QSizePolicy.Minimum)  # Растягивается по ширине, адаптируется по высоте
 
         # Основной контейнер
@@ -45,8 +46,13 @@ class NotificationWidget(QWidget):
         """)
 
         container_layout = QVBoxLayout(self.container)
-        container_layout.setContentsMargins(12, 8, 12, 12)  # Уменьшаем верхний отступ до 8
+        container_layout.setContentsMargins(8, 8, 8, 8)  # Уменьшаем верхний отступ до 8
         container_layout.setSpacing(4)
+
+        # Горизонтальный layout для заголовка и кнопки закрытия
+        header_layout = QHBoxLayout()
+        header_layout.setContentsMargins(0, 0, 0, 0)
+        header_layout.setSpacing(8)
 
         # Заголовок уведомления
         self.title_label = QLabel(self)
@@ -55,7 +61,27 @@ class NotificationWidget(QWidget):
         title_font.setBold(True)
         self.title_label.setFont(title_font)
         self.title_label.setStyleSheet("color: #333333;")
-        container_layout.addWidget(self.title_label)
+        header_layout.addWidget(self.title_label)
+
+        # Кнопка закрытия
+        self.close_button = QPushButton("×", self)
+        self.close_button.setObjectName("closeButton")
+        self.close_button.setFixedSize(20, 20)
+        self.close_button.setStyleSheet("""
+            QPushButton#closeButton {
+                background-color: transparent;
+                border: none;
+                color: #666666;
+                font-size: 16px;
+            }
+            QPushButton#closeButton:hover {
+                color: #333333;
+            }
+        """)
+        self.close_button.clicked.connect(self.hide_notification)
+        header_layout.addWidget(self.close_button)
+
+        container_layout.addLayout(header_layout)
 
         # Разделительная линия
         self.separator = QFrame(self)
@@ -65,9 +91,15 @@ class NotificationWidget(QWidget):
 
         # Текст уведомления
         self.message_label = QLabel(self)
+        self.message_label.setObjectName("messageLabel")
         self.message_label.setWordWrap(True)
         self.message_label.setFont(QFont("Segoe UI", 10))
-        self.message_label.setStyleSheet("color: #333333;")
+        self.message_label.setStyleSheet("""
+            QLabel#messageLabel {
+                color: #333333;
+                padding: 3px 3px;
+            }
+        """)
         self.message_label.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Minimum)  # Растягивается по ширине, адаптируется по высоте
         container_layout.addWidget(self.message_label)
 

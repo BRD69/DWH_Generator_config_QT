@@ -32,7 +32,7 @@ class ContentForm(QDialog):
 
     def _load_stylesheet(self):
         """Загрузка стилей."""
-        style_path = self.app.file_service.get_content_form_stylesheet()
+        style_path = self.app.file_service.get_stylesheet_path("ContentForm.qss")
         try:
             with open(style_path, "r", encoding='utf-8') as f:
                 self.stylesheet = f.read()

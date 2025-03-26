@@ -633,6 +633,8 @@ class MainWindow(UiMainWindow):
         """Тест подключения к PostgreSQL."""
         try:
             self.app.signals.postgres_disconnected.emit()
+            self.app.postgres_service.close()
+            
             self.app.postgres_service.connect()
 
             if self.app.postgres_service.is_connected:
@@ -789,6 +791,14 @@ class MainWindow(UiMainWindow):
         """Обработчик сохранения настроек подключения к PostgreSQL."""
         self.app.config_service.set_sql_connect(key='pg', value=data)
         self.app.config_service.save_sql_connect()
+
+        self.app.postgres_service.connect()
+
+        if self.app.postgres_service and self.app.postgres_service.is_connected:
+            self.app.signals.postgres_connected.emit()
+        else:
+            self.app.signals.postgres_disconnected.emit()
+
         form.close()
 
     # =============== Обработчик тестовой загрузки ===============

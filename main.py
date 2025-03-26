@@ -250,18 +250,29 @@ class MainWindow(UiMainWindow):
             self.combo_box_configs.addItem(config)
 
     def load_page(self):
+        """Загружает страницы в toolbox."""
+        if not self.app.config_pages:
+            self.logger.error("Не удалось загрузить страницы!")
+            self.notification.show_notification("Не удалось загрузить страницы!", "error", "Ошибка загрузки страниц")
+            return
+
         pages_list = []
         for page in self.app.config_pages['pages']:
             pages_list.append({"page": PageWidget(name=page['name']), "title": page['title'], "fields": page['fields'], "name": page['name']})
 
-        """Загружает страницы в toolbox."""
         self.pages = pages_list
         for page in self.pages:
             self.toolBox_fields.addItem(page["page"], page["title"])
             self.toolBox_fields.setItemText(self.toolBox_fields.indexOf(page['page']), f"{page['title']} ({len(page['fields'])})")
 
+
     def load_page_fields(self, config: dict):
         """Загружает поля на страницы в соответствии с конфигурацией."""
+        if not self.pages:
+            self.logger.error("Не удалось загрузить страницы!")
+            self.notification.show_notification("Не удалось загрузить страницы!", "error", "Ошибка загрузки страниц")
+            return
+
         for page in self.pages:
             page_widget = page["page"]
             if page_widget.layout():
@@ -338,8 +349,13 @@ class MainWindow(UiMainWindow):
                     page_layout.addWidget(line)
             page_layout.addItem(QtWidgets.QSpacerItem(20, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding))
 
-    def load_columns(self, columns):
+    def load_columns(self, columns):    
         """Загружает колонки в таблицу."""
+        if not columns:
+            self.logger.error("Не удалось загрузить колонки!")
+            self.notification.show_notification("Не удалось загрузить колонки!", "error", "Ошибка загрузки колонки")
+            return
+
         self.table_fields.setColumnCount(0)
         self.table_fields.setColumnCount(len(columns))
         self.table_fields.horizontalHeader().setStretchLastSection(False)

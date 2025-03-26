@@ -55,7 +55,7 @@ class ApplicationSignals(QObject):
     config_error = pyqtSignal(str)  # Сигнал ошибки при работе с конфигурацией
 
     # Сигналы для работы с PostgreSQL
-    postgres_connected = pyqtSignal(bool, str)  # Сигнал успешного подключения к PostgreSQL
+    postgres_connected = pyqtSignal()  # Сигнал успешного подключения к PostgreSQL
     postgres_disconnected = pyqtSignal()  # Сигнал отключения от PostgreSQL
     postgres_error = pyqtSignal(str)  # Сигнал ошибки при работе с PostgreSQL
 
@@ -189,7 +189,7 @@ class Application(QApplication):
 
 
         # Инициализируем сигналы
-        self.signals.postgres_connected.emit(self.postgres_service.status[0], self.postgres_service.status[1])
+        self.signals.postgres_connected.emit()
         self.load_file_data = None
         self.logger_service.info("Загружена конфигурация приложения")
 
@@ -197,7 +197,7 @@ class Application(QApplication):
     # =============== Сигналы ===============
     def init_signal(self):
         """Устанавливает сигналы для приложения."""
-        self.signals.postgres_connected.emit(self.postgres_service.status[0], self.postgres_service.status[1])
+        pass
 
 
     def save_data(self, path: Path):
@@ -287,7 +287,8 @@ class MainWindow(UiMainWindow):
         self.load_columns(columns=self.app.columns_table)
 
         #  Подключаем сигналы
-        self.app.signals.postgres_connected.connect(self._on_signal_status_connect_sql)
+        self.app.signals.postgres_connected.connect(self._on_signal_postgres_connected)
+        self.app.signals.postgres_disconnected.connect(self._on_signal_postgres_disconnected)
 
         # Инициализируем сигналы
         self.app.init_signal()
@@ -631,15 +632,15 @@ class MainWindow(UiMainWindow):
     def _event_btn_clicked_test_connect(self):
         """Тест подключения к PostgreSQL."""
         try:
+            self.app.signals.postgres_disconnected.emit()
             self.app.postgres_service.connect()
-            status, message = self.app.postgres_service.status
-            self.app.signals.postgres_connected.emit(status, message)
 
-            if status:
+            if self.app.postgres_service.is_connected:
                 self.notification.show_notification("Подключение к PostgreSQL установлено!", "info")
+                self.app.signals.postgres_connected.emit()
             else:
-                self.notification.show_notification(f"Не удалось установить подключение к PostgreSQL! {message}", "error", "Ошибка подключения к PostgreSQL")
-
+                self.notification.show_notification(f"Не удалось установить подключение к PostgreSQL!", "error", "Ошибка подключения к PostgreSQL")
+                self.app.signals.postgres_disconnected.emit()
         except Exception as e:
             self.logger.error(f"Ошибка при тестировании подключения к PostgreSQL: {e}")
             self.notification.show_notification(f"Ошибка при тестировании подключения к PostgreSQL: {e}", "error", "Ошибка тестирования подключения к PostgreSQL")
@@ -776,12 +777,13 @@ class MainWindow(UiMainWindow):
         )
 
     # =============== Обработчик сигналов ===============
-    def _on_signal_status_connect_sql(self, status: bool, message: str):
-        """Обработчик сигнала статуса соединения."""
-        if status:
-            self.action_connect_pg.set_status_connect_on()
-        else:
-            self.action_connect_pg.set_status_connect_off()
+    def _on_signal_postgres_connected(self):
+        """Обработчик сигнала успешного подключения к PostgreSQL."""
+        self.action_connect_pg.set_status_connect_on()
+
+    def _on_signal_postgres_disconnected(self):
+        """Обработчик сигнала отключения от PostgreSQL."""
+        self.action_connect_pg.set_status_connect_off()
 
     def _callback_btn_ok_save_settings_pg(self, data: dict, form: ContentForm):
         """Обработчик сохранения настроек подключения к PostgreSQL."""
@@ -855,6 +857,10 @@ def main():
 
         # Создаем главное окно
         main_window = MainWindow(app=app)
+        if app.postgres_service and app.postgres_service.is_connected:
+            app.signals.postgres_connected.emit()
+        else:
+            app.signals.postgres_disconnected.emit()
 
         # Создаем таймер для минимального времени показа splash screen
         min_display_timer = QTimer()

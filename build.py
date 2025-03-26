@@ -55,7 +55,7 @@ def get_pyinstaller_args(is_mac, is_windows, build_path, icon_path):
         'main.py',
         '--onefile',
         '--windowed',
-        '--name=dwhgenerator',
+        '--name=dgc',
         f'--icon={icon_path}',
         f'--distpath={build_path}',
         # Добавляем все ресурсы
@@ -114,7 +114,7 @@ def get_pyinstaller_args(is_mac, is_windows, build_path, icon_path):
         # Собираем все файлы PyQt5
         '--collect-all=PyQt5',
         # Добавляем отладочную информацию
-        '--debug=all',
+        # '--debug=all',
         # Исключаем файлы и модули
         '--exclude-module=_tmp',
         '--exclude-module=.qt_ui',

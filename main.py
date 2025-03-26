@@ -865,7 +865,7 @@ def main():
 
         splash.update_check_status('structure', bool(app.file_service))
         splash.update_check_status('sql', bool(app.postgres_service and app.postgres_service.is_connected))
-        splash.update_check_status('config', bool(app.config_fields and app.config_pages and app.config_output))
+        splash.update_check_status('config', bool(app.config_fields and app.config_pages))
 
         # Центрируем splash screen
         screen = QApplication.primaryScreen().geometry()
@@ -911,7 +911,7 @@ def _check_app_ready(splash, main_window, min_display_timer, check_ready_timer, 
         splash.update_check_status('sql', sql_ready)
 
         # Проверяем поля конфигурации
-        config_ready = bool(app.config_fields and app.config_pages and app.config_output)
+        config_ready = bool(app.config_fields and app.config_pages)
         splash.update_check_status('config', config_ready)
 
         # Проверяем, прошло ли 5 секунд с момента запуска

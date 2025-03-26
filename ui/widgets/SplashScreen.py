@@ -58,6 +58,8 @@ class SplashScreen(QtWidgets.QWidget):
         """)
         self.header_layout.addWidget(self.title_label)
 
+        self.layout.addLayout(self.header_layout)
+
         # Добавляем имя пользователя
         self.user_label = QtWidgets.QLabel(self.user_name)
         self.user_label.setStyleSheet("""
@@ -66,9 +68,19 @@ class SplashScreen(QtWidgets.QWidget):
                 color: #666666;
             }
         """)
-        self.header_layout.addWidget(self.user_label)
+        self.user_label.setAlignment(Qt.AlignCenter)
+        self.layout.addWidget(self.user_label)
 
-        self.layout.addLayout(self.header_layout)
+        # Добавляем сообщение о загрузке
+        self.loading_label = QtWidgets.QLabel("Загрузка...")
+        self.loading_label.setStyleSheet("""
+            QLabel {
+                font-size: 16px;
+                color: #666666;
+            }
+        """)
+        self.loading_label.setAlignment(Qt.AlignCenter)
+        self.layout.addWidget(self.loading_label)
 
         # Добавляем растягивающийся элемент
         self.layout.addStretch()

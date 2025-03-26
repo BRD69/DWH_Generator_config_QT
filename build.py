@@ -75,6 +75,17 @@ def get_pyinstaller_args(is_mac, is_windows, build_path, icon_path):
         f'--add-data=resources/styles/ViewTextWidget.qss{separator}resources/styles',
         f'--add-data=resources/images/icon512.ico{separator}resources/images',
         f'--add-data=resources/images/icon512.png{separator}resources/images',
+        # Добавляем иконки для кнопок
+        f'--add-data=resources/icons/clear.png{separator}resources/icons',
+        f'--add-data=resources/icons/plus.png{separator}resources/icons',
+        f'--add-data=resources/icons/x.png{separator}resources/icons',
+        f'--add-data=resources/icons/save.png{separator}resources/icons',
+        f'--add-data=resources/icons/load.png{separator}resources/icons',
+        f'--add-data=resources/icons/search.png{separator}resources/icons',
+        f'--add-data=resources/icons/gear.png{separator}resources/icons',
+        f'--add-data=resources/icons/git.png{separator}resources/icons',
+        f'--add-data=resources/icons/load_table.png{separator}resources/icons',
+        f'--add-data=resources/icons/load_item.png{separator}resources/icons',
         '--clean',
         '--noconfirm',
         f'--add-data=config{separator}config',
@@ -114,7 +125,7 @@ def get_pyinstaller_args(is_mac, is_windows, build_path, icon_path):
         # Собираем все файлы PyQt5
         '--collect-all=PyQt5',
         # Добавляем отладочную информацию
-        # '--debug=all',
+        '--debug=all',
         # Исключаем файлы и модули
         '--exclude-module=_tmp',
         '--exclude-module=.qt_ui',

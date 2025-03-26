@@ -73,10 +73,11 @@ class JSONHighlighter(QSyntaxHighlighter):
 
 
 class ViewJSONWidget(QWidget):
-    def __init__(self, text: str = "", working_dir: Path = None, parent=None):
+    def __init__(self, text: str = "", working_dir: Path = None, app = None, parent=None):
         super().__init__(parent)
         self.text = text
         self.working_dir = working_dir
+        self.app = app
         self.setup_ui()
         self.setObjectName("view_text_widget")
 

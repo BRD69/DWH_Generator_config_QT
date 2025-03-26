@@ -11,7 +11,7 @@ from services.config_service import ConfigService
 from services.crypto_text_service import CryptoTextService
 from settings import NAME_APP, AUTHOR_APP, DESCRIPTION_APP, LICENSE_APP, COPYRIGHT_APP, get_version_info
 from PyQt5 import QtGui, QtWidgets
-from PyQt5.QtCore import pyqtSignal, QObject, QThread
+from PyQt5.QtCore import pyqtSignal, QObject, QThread, Qt, QTimer
 from PyQt5.QtWidgets import QApplication, QFileDialog, QMessageBox
 
 from ui.forms.ContentForm import ContentForm
@@ -31,6 +31,7 @@ from ui.widgets.TagInputWidget import TagInputWidget
 from ui.widgets.TextWidget import TextWidget
 from ui.widgets.ViewJSONWidget import ViewJSONWidget
 from ui.widgets.ViewTextWidget import ViewTextWidget
+from ui.widgets.SplashScreen import SplashScreen
 from services.postgres_service import PostgresService
 from services.logger_service import LoggerService
 from services.file_structure_service import FileStructureService
@@ -48,13 +49,73 @@ else:
 class ApplicationSignals(QObject):
     """Класс для управления сигналами приложения."""
 
-    # Определяем сигналы
-    postgres_connection_changed = pyqtSignal(bool, str)
-    # sql_script_changed = pyqtSignal(str, str)
-    # config_changed = pyqtSignal(dict)
-    # pages_changed = pyqtSignal(list)
-    # columns_changed = pyqtSignal(list)
-    # output_data_changed = pyqtSignal(dict)
+    # Сигналы для работы с конфигурацией
+    config_loaded = pyqtSignal(dict)  # Сигнал успешной загрузки конфигурации
+    config_saved = pyqtSignal()  # Сигнал успешного сохранения конфигурации
+    config_error = pyqtSignal(str)  # Сигнал ошибки при работе с конфигурацией
+
+    # Сигналы для работы с PostgreSQL
+    postgres_connected = pyqtSignal(bool, str)  # Сигнал успешного подключения к PostgreSQL
+    postgres_disconnected = pyqtSignal()  # Сигнал отключения от PostgreSQL
+    postgres_error = pyqtSignal(str)  # Сигнал ошибки при работе с PostgreSQL
+
+    # Сигналы для работы с файлами
+    file_saved = pyqtSignal(str)  # Сигнал успешного сохранения файла
+    file_loaded = pyqtSignal(str)  # Сигнал успешной загрузки файла
+    file_error = pyqtSignal(str)  # Сигнал ошибки при работе с файлами
+
+    # Сигналы для работы с Git
+    git_updated = pyqtSignal()  # Сигнал успешного обновления Git
+    git_error = pyqtSignal(str)  # Сигнал ошибки при работе с Git
+
+    # Сигналы для работы с уведомлениями
+    notification = pyqtSignal(str, str)  # Сигнал для отображения уведомления (тип, сообщение)
+
+    # Сигналы для работы с загрузкой
+    loading_started = pyqtSignal(str)  # Сигнал начала загрузки
+    loading_finished = pyqtSignal()  # Сигнал окончания загрузки
+    loading_error = pyqtSignal(str)  # Сигнал ошибки при загрузке
+
+    # Сигналы для работы с формой
+    form_loaded = pyqtSignal()  # Сигнал успешной загрузки формы
+    form_error = pyqtSignal(str)  # Сигнал ошибки при загрузке формы
+
+    # Сигналы для работы с таблицей
+    table_loaded = pyqtSignal()  # Сигнал успешной загрузки таблицы
+    table_error = pyqtSignal(str)  # Сигнал ошибки при загрузке таблицы
+
+    # Сигналы для работы с настройками
+    settings_loaded = pyqtSignal()  # Сигнал успешной загрузки настроек
+    settings_saved = pyqtSignal()  # Сигнал успешного сохранения настроек
+    settings_error = pyqtSignal(str)  # Сигнал ошибки при работе с настройками
+
+    # Сигналы для работы с логами
+    log_loaded = pyqtSignal()  # Сигнал успешной загрузки логов
+    log_error = pyqtSignal(str)  # Сигнал ошибки при работе с логами
+
+    # Сигналы для работы с криптографией
+    crypto_encrypted = pyqtSignal()  # Сигнал успешного шифрования
+    crypto_decrypted = pyqtSignal()  # Сигнал успешного дешифрования
+    crypto_error = pyqtSignal(str)  # Сигнал ошибки при работе с криптографией
+
+    # Сигналы для работы с файловой структурой
+    structure_loaded = pyqtSignal()  # Сигнал успешной загрузки структуры
+    structure_error = pyqtSignal(str)  # Сигнал ошибки при работе со структурой
+
+    # Сигналы для работы с версией
+    version_loaded = pyqtSignal()  # Сигнал успешной загрузки версии
+    version_error = pyqtSignal(str)  # Сигнал ошибки при работе с версией
+
+    # Сигналы для работы с пользователем
+    user_loaded = pyqtSignal()  # Сигнал успешной загрузки пользователя
+    user_error = pyqtSignal(str)  # Сигнал ошибки при работе с пользователем
+
+    # Сигналы для работы с приложением
+    app_started = pyqtSignal()  # Сигнал успешного запуска приложения
+    app_error = pyqtSignal(str)  # Сигнал ошибки при запуске приложения
+
+    # Сигналы для работы с splash screen
+    splash_finished = pyqtSignal()  # Сигнал окончания отображения splash screen
 
 
 class Application(QApplication):
@@ -128,7 +189,7 @@ class Application(QApplication):
 
 
         # Инициализируем сигналы
-        self.signals.postgres_connection_changed.emit(self.postgres_service.status[0], self.postgres_service.status[1])
+        self.signals.postgres_connected.emit(self.postgres_service.status[0], self.postgres_service.status[1])
         self.load_file_data = None
         self.logger_service.info("Загружена конфигурация приложения")
 
@@ -136,7 +197,7 @@ class Application(QApplication):
     # =============== Сигналы ===============
     def init_signal(self):
         """Устанавливает сигналы для приложения."""
-        self.signals.postgres_connection_changed.emit(self.postgres_service.status[0], self.postgres_service.status[1])
+        self.signals.postgres_connected.emit(self.postgres_service.status[0], self.postgres_service.status[1])
 
 
     def save_data(self, path: Path):
@@ -226,7 +287,7 @@ class MainWindow(UiMainWindow):
         self.load_columns(columns=self.app.columns_table)
 
         #  Подключаем сигналы
-        self.app.signals.postgres_connection_changed.connect(self._on_signal_status_connect_sql)
+        self.app.signals.postgres_connected.connect(self._on_signal_status_connect_sql)
 
         # Инициализируем сигналы
         self.app.init_signal()
@@ -496,7 +557,7 @@ class MainWindow(UiMainWindow):
             self.notification.show_notification("Не удалось загрузить поля!", "error", "Ошибка загрузки полей")
             return
 
-        content_layout = ViewJSONWidget(text=json.dumps(self.app.config_output, indent=4, ensure_ascii=False), working_dir=self.working_dir)
+        content_layout = ViewJSONWidget(text=json.dumps(self.app.config_output, indent=4, ensure_ascii=False), working_dir=self.working_dir, app=self.app)
 
         # Создаем кнопку для копирования в буфер обмена
         copy_button = QtWidgets.QPushButton("Копировать")
@@ -757,12 +818,66 @@ class MainWindow(UiMainWindow):
                     self.list_widget_fields[key].set_value(value)
 
 
+def main():
+    """Точка входа в приложение."""
+    try:
+        # Создаем приложение
+        app = Application(sys.argv)
+
+        # Получаем имя пользователя
+        user_name = getpass.getuser()
+
+        # Создаем и показываем splash screen
+        splash = SplashScreen(user_name)
+        splash.show()
+
+        # Центрируем splash screen
+        screen = QApplication.primaryScreen().geometry()
+        x = (screen.width() - splash.width()) // 2
+        y = (screen.height() - splash.height()) // 2
+        splash.move(x, y)
+
+        # Создаем главное окно
+        main_window = MainWindow(app=app)
+
+        # Создаем таймер для минимального времени показа splash screen
+        min_display_timer = QTimer()
+        min_display_timer.setSingleShot(True)
+        min_display_timer.start(2000)  # Минимум 2 секунды
+
+        # Создаем таймер для проверки готовности приложения
+        check_ready_timer = QTimer()
+        check_ready_timer.timeout.connect(lambda: _check_app_ready(splash, main_window, min_display_timer, check_ready_timer, app))
+        check_ready_timer.start(100)  # Проверяем каждые 100мс
+
+        # Запускаем приложение
+        sys.exit(app.exec_())
+
+    except Exception as e:
+        print(f"Ошибка при запуске приложения: {e}")
+        sys.exit(1)
+
+
+def _check_app_ready(splash, main_window, min_display_timer, check_ready_timer, app):
+    """Проверяет готовность приложения к показу."""
+    # Проверяем, прошло ли минимальное время показа
+    if not min_display_timer.isActive():
+        # Проверяем, загружены ли все необходимые данные
+        if (app.config_fields and
+            app.config_pages and
+            app.config_output):
+
+            # Останавливаем таймер проверки
+            check_ready_timer.stop()
+
+            # Закрываем splash screen
+            splash.close()
+
+            # Показываем главное окно
+            main_window.show()
 
 
 import resource # type: ignore
 
 if __name__ == "__main__":
-    app = Application([])
-    window = MainWindow(app=app)
-    window.show()
-    app.exec_()
+    main()

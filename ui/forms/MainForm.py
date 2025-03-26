@@ -10,6 +10,7 @@ from ui.widgets.NotificationWidget import NotificationWidget
 
 
 
+
 class UiMainWindow(QtWidgets.QMainWindow):
     """Главное окно приложения.
 
@@ -70,35 +71,39 @@ class UiMainWindow(QtWidgets.QMainWindow):
             - gear: Иконка настроек
             - git: Иконка git
         """
-        self.icons["clear"] = QtGui.QIcon()
-        self.icons["clear"].addPixmap(QtGui.QPixmap(":/icon_button/resources/icons/clear.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        try:
+            # Определяем путь к директории с иконками
+            if getattr(sys, 'frozen', False):
+                # Если приложение запущено как exe
+                icons_dir = os.path.join(sys._MEIPASS, "resources", "icons")
+            else:
+                # Если приложение запущено как скрипт Python
+                icons_dir = os.path.join(os.path.dirname(__file__), "..", "..", "resources", "icons")
 
-        self.icons["plus"] = QtGui.QIcon()
-        self.icons["plus"].addPixmap(QtGui.QPixmap(":/icon_button/resources/icons/plus.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+            # Загружаем иконки
+            self.icons["clear"] = QtGui.QIcon(os.path.join(icons_dir, "clear.png"))
+            self.icons["plus"] = QtGui.QIcon(os.path.join(icons_dir, "plus.png"))
+            self.icons["x"] = QtGui.QIcon(os.path.join(icons_dir, "x.png"))
+            self.icons["save"] = QtGui.QIcon(os.path.join(icons_dir, "save.png"))
+            self.icons["upload"] = QtGui.QIcon(os.path.join(icons_dir, "load.png"))
+            self.icons["search"] = QtGui.QIcon(os.path.join(icons_dir, "search.png"))
+            self.icons["gear"] = QtGui.QIcon(os.path.join(icons_dir, "gear.png"))
+            self.icons["git"] = QtGui.QIcon(os.path.join(icons_dir, "git.png"))
+            self.icons["load_table"] = QtGui.QIcon(os.path.join(icons_dir, "load_table.png"))
+            self.icons["load_item"] = QtGui.QIcon(os.path.join(icons_dir, "load_item.png"))
 
-        self.icons["x"] = QtGui.QIcon()
-        self.icons["x"].addPixmap(QtGui.QPixmap(":/icon_button/resources/icons/x.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+            # Устанавливаем иконку окна
+            if getattr(sys, 'frozen', False):
+                window_icon_path = os.path.join(sys._MEIPASS, "resources", "images", "icon512.ico")
+            else:
+                window_icon_path = os.path.join(os.path.dirname(__file__), "..", "..", "resources", "images", "icon512.ico")
 
-        self.icons["save"] = QtGui.QIcon()
-        self.icons["save"].addPixmap(QtGui.QPixmap(":/icon_button/resources/icons/save.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+            self.setWindowIcon(QtGui.QIcon(window_icon_path))
 
-        self.icons["upload"] = QtGui.QIcon()
-        self.icons["upload"].addPixmap(QtGui.QPixmap(":/icon_button/resources/icons/load.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-
-        self.icons["search"] = QtGui.QIcon()
-        self.icons["search"].addPixmap(QtGui.QPixmap(":/icon_button/resources/icons/search.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-
-        self.icons["gear"] = QtGui.QIcon()
-        self.icons["gear"].addPixmap(QtGui.QPixmap(":/icon_button/resources/icons/gear.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-
-        self.icons["git"] = QtGui.QIcon()
-        self.icons["git"].addPixmap(QtGui.QPixmap(":/icon_button/resources/icons/git.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-
-        self.icons["load_table"] = QtGui.QIcon()
-        self.icons["load_table"].addPixmap(QtGui.QPixmap(":/icon_button/resources/icons/load_table.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-
-        self.icons["load_item"] = QtGui.QIcon()
-        self.icons["load_item"].addPixmap(QtGui.QPixmap(":/icon_button/resources/icons/load_item.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        except Exception as e:
+            print(f"Ошибка загрузки иконок: {e}")
+            # В случае ошибки используем пустые иконки
+            self.icons = {name: QtGui.QIcon() for name in ["clear", "plus", "x", "save", "upload", "search", "gear", "git", "load_table", "load_item"]}
 
     # =============== Настройка интерфейса ===============
     def _setup_ui(self):
@@ -393,18 +398,22 @@ class UiMainWindow(QtWidgets.QMainWindow):
 
     def _event_btn_clicked_test_notification(self):
         """Тестирование уведомлений"""
-        # Создаем виджет загрузки
-        self.loading_widget.show_loading("Загрузка тестовых данных...")
+        # # Создаем виджет загрузки
+        # self.loading_widget.show_loading("Загрузка тестовых данных...")
 
-        # Подключаем сигнал отмены
-        self.loading_widget.cancelled.connect(self._cancel_loading)
+        # # Подключаем сигнал отмены
+        # self.loading_widget.cancelled.connect(self._cancel_loading)
 
-        # Создаем таймер для имитации загрузки
-        self.progress_timer = QTimer(self)
-        self.progress_timer.setInterval(50)  # Обновляем каждые 50мс
-        self.progress_value = 0
-        self.progress_timer.timeout.connect(self._update_progress)
-        self.progress_timer.start()
+        # # Создаем таймер для имитации загрузки
+        # self.progress_timer = QTimer(self)
+        # self.progress_timer.setInterval(50)  # Обновляем каждые 50мс
+        # self.progress_value = 0
+        # self.progress_timer.timeout.connect(self._update_progress)
+        # self.progress_timer.start()
+        from ui.widgets.SplashScreen import SplashScreen
+        
+        splash = SplashScreen(os.getlogin())
+        splash.show()
 
 
 

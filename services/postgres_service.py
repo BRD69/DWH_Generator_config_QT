@@ -17,12 +17,14 @@ class PostgresService:
         self.config = config
         self.logger = logger
         self.connection: Optional[psycopg2.extensions.connection] = None
-        self._status: Tuple[bool, str] = (False, "")
+        self.cursor = None
+        self._status: Tuple[bool, str] = (False, "Не подключено")
+        self._is_connected = False
 
     @property
     def is_connected(self) -> bool:
-        """Проверяет активно ли соединение с БД."""
-        return bool(self.connection and not self.connection.closed)
+        """Возвращает статус подключения."""
+        return self._is_connected
 
     @property
     def status(self) -> Tuple[bool, str]:
@@ -38,12 +40,15 @@ class PostgresService:
         """
         try:
             self.connection = psycopg2.connect(**self.config)
+            self.cursor = self.connection.cursor()
             self._status = (True, "Успешное подключение к PostgreSQL")
+            self._is_connected = True
             self.logger.info("Установлено подключение к PostgreSQL")
             return self._status
         except Exception as e:
             error_msg = f"Ошибка подключения к PostgreSQL: {e}"
             self._status = (False, error_msg)
+            self._is_connected = False
             self.logger.error(error_msg)
             return self._status
 
@@ -105,10 +110,13 @@ class PostgresService:
 
     def close(self) -> None:
         """Закрывает соединение с базой данных."""
+        if self.cursor:
+            self.cursor.close()
         if self.connection:
             try:
                 self.connection.close()
                 self._status = (False, "Соединение закрыто")
+                self._is_connected = False
                 self.logger.info("Соединение с PostgreSQL закрыто")
             except Exception as e:
                 self.logger.error(f"Ошибка при закрытии соединения: {e}")

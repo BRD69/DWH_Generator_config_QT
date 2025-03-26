@@ -1,6 +1,7 @@
 import PyInstaller.__main__
-from settings import set_version_app, set_version_app_short
+from settings import set_version_app
 import os
+import datetime
 import platform
 import shutil
 from PIL import Image
@@ -21,13 +22,12 @@ def log_exception(exc_type, exc_value, exc_traceback):
 sys.excepthook = log_exception
 
 # Устанавливаем версию приложения
-set_version_app()
-version_app_short = set_version_app_short()
+version_app_short = set_version_app()
 
 # Сохраняем информацию о версии в JSON файл
 version_info = {
     'version': version_app_short,
-    'build_date': platform.datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+    'build_date': datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
     'build_platform': platform.system(),
     'build_arch': platform.machine()
 }

@@ -68,6 +68,7 @@ def get_pyinstaller_args(is_mac, is_windows, build_path, icon_path):
         f'--add-data=resources/styles/MainForm.qss{separator}resources/styles',
         f'--add-data=resources/styles/NumberWidget.qss{separator}resources/styles',
         f'--add-data=resources/styles/SelectWidget.qss{separator}resources/styles',
+        f'--add-data=resources/styles/SplashScreen.qss{separator}resources/styles',
         f'--add-data=resources/styles/SettingsForm.qss{separator}resources/styles',
         f'--add-data=resources/styles/SQLWidget.qss{separator}resources/styles',
         f'--add-data=resources/styles/TagInputWidget.qss{separator}resources/styles',

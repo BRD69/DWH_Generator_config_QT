@@ -13,7 +13,7 @@ from settings import NAME_APP, AUTHOR_APP, DESCRIPTION_APP, LICENSE_APP, COPYRIG
 
 from PyQt5 import QtGui, QtWidgets
 from PyQt5.QtCore import pyqtSignal, QObject
-from PyQt5.QtWidgets import QApplication, QFileDialog, QMessageBox
+from PyQt5.QtWidgets import QApplication, QFileDialog
 
 from ui.forms.ContentForm import ContentForm
 from ui.forms.GitForm import GitForm
@@ -414,9 +414,9 @@ class MainWindow(UiMainWindow):
         if file_path:
             try:
                 self.app.save_data(path=Path(file_path))
-                QMessageBox.information(self, "Успех", "Файл успешно сохранен!")
+                self.notification.show_notification(f"Файл: {file_path} сохранен!", "info", "Сохранение файла")
             except Exception as e:
-                QMessageBox.critical(self, "Ошибка", f"Не удалось сохранить файл: {e}")
+                self.notification.show_notification(f"Не удалось сохранить файл: {e}", "error", "Ошибка сохранения файла")
 
     def _event_btn_clicked_load_fields_table(self):
         """Обработчик загрузки полей."""

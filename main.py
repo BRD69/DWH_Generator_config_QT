@@ -625,9 +625,9 @@ class MainWindow(UiMainWindow):
         self.loading_widget.hide_loading()
         # Показываем уведомление об успешной загрузке
         self.notification.show_notification(
-            "Успешно",
-            "Тестовые данные загружены",
-            "info"
+            message="Тестовые данные загружены",
+            status="info",
+            title="Успешно"
         )
 
 

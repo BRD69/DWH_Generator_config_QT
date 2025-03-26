@@ -3,6 +3,39 @@ from PyQt5.QtWidgets import (QWidget, QVBoxLayout, QLabel, QPushButton,
 from PyQt5.QtCore import Qt, QTimer, QPropertyAnimation, QEasingCurve, QPoint, pyqtSignal
 from PyQt5.QtGui import QPainter, QColor, QFont, QPen
 
+class LinearProgress(QWidget):
+    """Виджет для отображения линейного индикатора загрузки"""
+
+    def __init__(self, parent=None):
+        super().__init__(parent)
+        self.setFixedSize(200, 6)  # Ширина 200px, высота 6px
+        self.progress_value = 0
+
+    def set_progress(self, value):
+        """Установка значения прогресса"""
+        self.progress_value = value
+        self.update()
+
+    def paintEvent(self, event):
+        """Отрисовка линейного индикатора"""
+        painter = QPainter(self)
+        painter.setRenderHint(QPainter.Antialiasing)
+
+        # Получаем размеры виджета
+        rect = self.rect()
+        width = rect.width()
+        height = rect.height()
+
+        # Рисуем фон
+        painter.setPen(Qt.NoPen)
+        painter.setBrush(QColor("#e9ecef"))
+        painter.drawRoundedRect(0, 0, width, height, height/2, height/2)
+
+        # Рисуем прогресс
+        progress_width = int(width * self.progress_value / 100)
+        painter.setBrush(QColor("#007bff"))
+        painter.drawRoundedRect(0, 0, progress_width, height, height/2, height/2)
+
 class LoadingWidget(QWidget):
     """Виджет для отображения процесса загрузки"""
 
@@ -19,12 +52,6 @@ class LoadingWidget(QWidget):
         self.animation = QPropertyAnimation(self, b"windowOpacity")
         self.animation.setEasingCurve(QEasingCurve.InOutCubic)
         self.animation.setDuration(200)
-
-        # Анимация вращения
-        self.rotation_angle = 0
-        self.rotation_timer = QTimer(self)
-        self.rotation_timer.timeout.connect(self.rotate)
-        self.rotation_timer.setInterval(50)
 
         # Изначально скрыт
         self.hide()
@@ -54,22 +81,8 @@ class LoadingWidget(QWidget):
         container_layout.setContentsMargins(20, 20, 20, 20)
         container_layout.setSpacing(15)
 
-        # Круговой индикатор загрузки
-        self.progress = QProgressBar(self)
-        self.progress.setObjectName("circularProgress")
-        self.progress.setMinimum(0)
-        self.progress.setMaximum(100)
-        self.progress.setValue(0)
-        self.progress.setTextVisible(False)
-        self.progress.setFixedSize(80, 20)  # Фиксированный размер
-        self.progress.setStyleSheet("""
-            QProgressBar#circularProgress {
-                border: none;
-                background-color: transparent;
-                min-height: 20px;
-                max-height: 20px;
-            }
-        """)
+        # Линейный индикатор загрузки
+        self.progress = LinearProgress(self)
         container_layout.addWidget(self.progress, alignment=Qt.AlignCenter)
 
         # Текст статуса
@@ -78,8 +91,8 @@ class LoadingWidget(QWidget):
         self.status_label.setFont(QFont("Segoe UI", 10))
         self.status_label.setStyleSheet("color: #333333;")
         self.status_label.setAlignment(Qt.AlignCenter)
-        self.status_label.setMinimumHeight(30)  # Уменьшаем минимальную высоту
-        self.status_label.setMaximumHeight(40)  # Добавляем максимальную высоту
+        self.status_label.setMinimumHeight(30)
+        self.status_label.setMaximumHeight(40)
         container_layout.addWidget(self.status_label)
 
         # Кнопка отмены
@@ -87,7 +100,7 @@ class LoadingWidget(QWidget):
         self.cancel_button.setObjectName("cancelButton")
         self.cancel_button.setFont(QFont("Segoe UI", 9))
         self.cancel_button.setFixedWidth(120)
-        self.cancel_button.setFixedHeight(30)  # Фиксированная высота кнопки
+        self.cancel_button.setFixedHeight(30)
         self.cancel_button.setStyleSheet("""
             QPushButton#cancelButton {
                 background-color: #f8f9fa;
@@ -115,8 +128,7 @@ class LoadingWidget(QWidget):
             message (str): Текст статуса загрузки
         """
         self.status_label.setText(message)
-        self.progress.setValue(0)
-        self.rotation_angle = 0
+        self.progress.set_progress(0)
 
         # Центрируем виджет на родительском окне
         if self.parent():
@@ -131,11 +143,9 @@ class LoadingWidget(QWidget):
         self.animation.setStartValue(0.0)
         self.animation.setEndValue(1.0)
         self.animation.start()
-        self.rotation_timer.start()
 
     def hide_loading(self):
         """Скрыть виджет загрузки с анимацией"""
-        self.rotation_timer.stop()
         self.animation.setStartValue(1.0)
         self.animation.setEndValue(0.0)
         self.animation.finished.connect(self.hide)
@@ -150,39 +160,9 @@ class LoadingWidget(QWidget):
         """
         self.status_label.setText(message)
         if value is not None:
-            self.progress.setValue(value)
+            self.progress.set_progress(value)
 
     def cancel_loading(self):
         """Отмена загрузки"""
-        self.rotation_timer.stop()
         self.hide_loading()
         self.cancelled.emit()  # Эмитим сигнал отмены
-
-    def rotate(self):
-        """Анимация вращения"""
-        self.rotation_angle = (self.rotation_angle + 5) % 360
-        self.progress.update()
-
-    def paintEvent(self, event):
-        """Переопределение метода paintEvent для вращения"""
-        super().paintEvent(event)
-        painter = QPainter(self.progress)
-        painter.setRenderHint(QPainter.Antialiasing)
-
-        rect = self.progress.rect()
-        center = rect.center()
-        radius = min(rect.width(), rect.height()) // 2 - 3
-
-        # Фоновый круг
-        painter.setPen(Qt.NoPen)
-        painter.setBrush(QColor("#e9ecef"))
-        painter.drawEllipse(center.x() - radius, center.y() - radius,
-                          radius * 2, radius * 2)
-
-        # Вращающийся индикатор
-        painter.setPen(QPen(QColor("#007bff"), 3))
-        painter.setBrush(Qt.NoBrush)
-        start_angle = 90 * 16 - self.rotation_angle * 16
-        span_angle = 270 * 16
-        painter.drawArc(center.x() - radius, center.y() - radius,
-                       radius * 2, radius * 2, start_angle, span_angle)

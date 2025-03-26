@@ -13,7 +13,7 @@ from settings import NAME_APP, AUTHOR_APP, DESCRIPTION_APP, LICENSE_APP, COPYRIG
 
 from PyQt5 import QtGui, QtWidgets
 from PyQt5.QtCore import pyqtSignal, QObject, QThread
-from PyQt5.QtWidgets import QApplication, QFileDialog
+from PyQt5.QtWidgets import QApplication, QFileDialog, QMessageBox
 
 from ui.forms.ContentForm import ContentForm
 from ui.forms.GitForm import GitForm
@@ -419,10 +419,22 @@ class MainWindow(UiMainWindow):
                     dict_fields_widget[key].set_value(value)
 
     def _event_btn_clicked_clear_fields_table(self):
-        """Обработчик очистки полей."""
-        self.table_fields.setRowCount(0)
-        self.values_fields = []
-        self.app.config_service.set_config_output(key='fields', value=self.values_fields)
+        """Очистить таблицу"""
+        # Создаем диалоговое окно подтверждения
+        reply = QMessageBox.question(
+            self,
+            "Подтверждение",
+            "Очистить таблицу?",
+            QMessageBox.Yes | QMessageBox.No,
+            QMessageBox.No
+        )
+
+        # Если пользователь нажал "Да"
+        if reply == QMessageBox.Yes:
+            # Очищаем таблицу
+            self.table_fields.setRowCount(0)
+            self.values_fields = []
+            self.app.config_service.set_config_output(key='fields', value=self.values_fields)
 
     def _event_btn_clicked_delete_row(self, row):
         """Обработчик удаления строки."""

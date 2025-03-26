@@ -71,6 +71,7 @@ class UiMainWindow(QtWidgets.QMainWindow):
         """Загружает иконки для кнопок приложения.
 
         Загружает следующие иконки:
+            - clear: Иконка очистки
             - plus: Иконка добавления
             - x: Иконка удаления
             - download: Иконка сохранения
@@ -79,6 +80,9 @@ class UiMainWindow(QtWidgets.QMainWindow):
             - gear: Иконка настроек
             - git: Иконка git
         """
+        self.icons["clear"] = QtGui.QIcon()
+        self.icons["clear"].addPixmap(QtGui.QPixmap(":/icon_button/resources/icons/clear.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+
         self.icons["plus"] = QtGui.QIcon()
         self.icons["plus"].addPixmap(QtGui.QPixmap(":/icon_button/resources/icons/plus.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
 
@@ -178,8 +182,11 @@ class UiMainWindow(QtWidgets.QMainWindow):
         self.btnClear = QtWidgets.QPushButton(self.frame_control_table)
 
         self.btnClear.setText("")
-        self.btnClear.setIcon(self.icons["x"])
+        self.btnClear.setIcon(self.icons["clear"])
         self.btnClear.setObjectName("btnClear")
+        self.btnClear.setCursor(Qt.PointingHandCursor)
+        self.btnClear.setToolTip("Очистить таблицу")
+        self.btnClear.setMaximumWidth(30)
         self.horizontalLayout_2.addWidget(self.btnClear)
         spacerItem = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout_2.addItem(spacerItem)

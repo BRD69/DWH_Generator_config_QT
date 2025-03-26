@@ -98,14 +98,14 @@ class SQLHighlighter(QSyntaxHighlighter):
 
 
 class SQLViewerScript(QWidget):
-    def __init__(self, parent=None, app=None, event_render_sql_script=None):
+    def __init__(self, parent=None, app=None, event_render_sql_script=None, event_run_sql_script=None):
         super().__init__(parent)
         self.app = app
         self.working_dir = app.working_dir
         self.key_render_sql_script = ""
         self.value_render_sql_script = ""
         self.event_render_sql_script = event_render_sql_script
-
+        self.event_run_sql_script = event_run_sql_script
         self.icons = {}
 
         self._load_icons()
@@ -245,6 +245,7 @@ class SQLViewerScript(QWidget):
         """Подключение сигналов"""
         self.format_btn.clicked.connect(self._format_sql)
         self.clear_btn.clicked.connect(self.clear)
+        self.execute_btn.clicked.connect(lambda: self.event_run_sql_script(sql_script=self.get_text_viewer()))
         self.editor.textChanged.connect(self.set_text_viewer)
 
     def _load_data(self):
@@ -303,3 +304,7 @@ class SQLViewerScript(QWidget):
                     sql_script=self.get_text()
                 )
             )
+
+    def get_text_viewer(self) -> str:
+        """Получение текста из редактора"""
+        return self.editor_viewer.toPlainText()

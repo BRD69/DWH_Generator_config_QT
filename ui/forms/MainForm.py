@@ -399,6 +399,9 @@ class UiMainWindow(QtWidgets.QMainWindow):
         self.loading_widget = LoadingWidget(self)
         self.loading_widget.show_loading("Загрузка тестовых данных...")
 
+        # Подключаем сигнал отмены
+        self.loading_widget.cancelled.connect(self._cancel_loading)
+
         # Создаем таймер для имитации загрузки
         self.progress_timer = QTimer(self)
         self.progress_timer.setInterval(50)  # Обновляем каждые 50мс
@@ -406,20 +409,7 @@ class UiMainWindow(QtWidgets.QMainWindow):
         self.progress_timer.timeout.connect(self._update_progress)
         self.progress_timer.start()
 
-    def _update_progress(self):
-        """Обновление прогресса загрузки"""
-        self.progress_value += 1
-        if self.progress_value <= 100:
-            self.loading_widget.update_status(f"Загрузка тестовых данных... {self.progress_value}%", self.progress_value)
-        else:
-            self.progress_timer.stop()
-            self.loading_widget.hide_loading()
-            # Показываем уведомление об успешной загрузке
-            self.notification_widget.show_notification(
-                "Успешно",
-                "Тестовые данные загружены",
-                "success"
-            )
+    
 
 
     def load_field_data(self):

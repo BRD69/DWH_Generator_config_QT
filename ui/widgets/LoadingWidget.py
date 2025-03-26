@@ -1,10 +1,13 @@
 from PyQt5.QtWidgets import (QWidget, QVBoxLayout, QLabel, QPushButton,
                              QProgressBar, QFrame)
-from PyQt5.QtCore import Qt, QTimer, QPropertyAnimation, QEasingCurve, QPoint
+from PyQt5.QtCore import Qt, QTimer, QPropertyAnimation, QEasingCurve, QPoint, pyqtSignal
 from PyQt5.QtGui import QPainter, QColor, QFont, QPen
 
 class LoadingWidget(QWidget):
     """Виджет для отображения процесса загрузки"""
+
+    # Добавляем сигнал для отмены
+    cancelled = pyqtSignal()
 
     def __init__(self, parent=None):
         super().__init__(parent)
@@ -150,9 +153,10 @@ class LoadingWidget(QWidget):
             self.progress.setValue(value)
 
     def cancel_loading(self):
-        """Обработка нажатия кнопки отмены"""
-        # Здесь можно добавить логику отмены операции
+        """Отмена загрузки"""
+        self.rotation_timer.stop()
         self.hide_loading()
+        self.cancelled.emit()  # Эмитим сигнал отмены
 
     def rotate(self):
         """Анимация вращения"""

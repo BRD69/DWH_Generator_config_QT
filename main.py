@@ -501,8 +501,14 @@ class MainWindow(UiMainWindow):
 
     def _event_btn_clicked_open_sql_script(self, key: str, value: str):
         """Обработчик открытия скрипта SQL."""
-        content_layout = SQLViewerScript(parent=self, app=self.app, event_render_sql_script=self._event_btn_clicked_render_sql_script)
+        content_layout = SQLViewerScript(
+            parent=self,
+            app=self.app,
+            event_render_sql_script=self._event_btn_clicked_render_sql_script,
+            event_run_sql_script=self._event_btn_clicked_run_sql_script
+            )
         content_layout.set_text(text=self.app.sql_scripts[key], key=key, value=value)
+
 
         form = ContentForm(
             title="Скрипт SQL",
@@ -530,7 +536,7 @@ class MainWindow(UiMainWindow):
         self.app.config_service.save_sql_scripts()
         form.close()
 
-    def _event_btn_clicked_run_sql_script(self, key: str, value: str):
+    def _event_btn_clicked_run_sql_script(self, key: str = None, value: str = None, sql_script = None):
         """Обработчик запуска скрипта SQL."""
         if not self.app.postgres_service or not self.app.postgres_service.is_connected:
             self.logger.error("Попытка выполнить SQL скрипт без подключения к PostgreSQL")
@@ -538,9 +544,12 @@ class MainWindow(UiMainWindow):
             return
 
         try:
-            script = self.app.sql_scripts.get(key, "")
-            if not script:
-                raise ValueError(f"SQL скрипт с ключом {key} не найден")
+            if sql_script is None:
+                script = self.app.sql_scripts.get(key, "")
+                if not script:
+                    raise ValueError(f"SQL скрипт с ключом {key} не найден")
+            else:
+                script = sql_script
 
             self.loading.show_loading("Выполнение SQL скрипта...")
             success, result, error = self.app.postgres_service.execute_script(
@@ -589,6 +598,37 @@ class MainWindow(UiMainWindow):
         self.app.config_service.set_sql_connect(key='pg', value=data)
         self.app.config_service.save_sql_connect()
         form.close()
+
+    # =============== Обработчик тестовой загрузки ===============
+    def _update_progress(self):
+        """Обновление прогресса загрузки"""
+        self.progress_value += 1
+        if self.progress_value <= 100:
+            self.loading_widget.update_status(f"Загрузка тестовых данных... {self.progress_value}%", self.progress_value)
+        else:
+            self._finish_loading()
+
+    def _cancel_loading(self):
+        """Обработка отмены загрузки"""
+        self.progress_timer.stop()
+        self.loading_widget.hide_loading()
+        # Показываем уведомление об отмене
+        self.notification.show_notification(
+            "Отменено",
+            "Загрузка данных отменена пользователем",
+            "warning"
+        )
+
+    def _finish_loading(self):
+        """Завершение загрузки"""
+        self.progress_timer.stop()
+        self.loading_widget.hide_loading()
+        # Показываем уведомление об успешной загрузке
+        self.notification.show_notification(
+            "Успешно",
+            "Тестовые данные загружены",
+            "info"
+        )
 
 
     # =============== Вспомогательные методы ===============

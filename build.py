@@ -121,18 +121,6 @@ def get_pyinstaller_args(is_mac, is_windows, build_path, icon_path):
         '--exclude-module=.vscode',
         '--exclude-module=test',
         '--exclude-module=test2',
-        # Добавляем дополнительные параметры для Qt
-        # '--add-binary=PyQt5/Qt5/bin/Qt5Core.dll;PyQt5/Qt5/bin',
-        # '--add-binary=PyQt5/Qt5/bin/Qt5Gui.dll;PyQt5/Qt5/bin',
-        # '--add-binary=PyQt5/Qt5/bin/Qt5Widgets.dll;PyQt5/Qt5/bin',
-        # '--add-binary=PyQt5/Qt5/bin/Qt5Sql.dll;PyQt5/Qt5/bin',
-        # '--add-binary=PyQt5/Qt5/plugins/sqldrivers/qsqlpsql.dll;PyQt5/Qt5/plugins/sqldrivers',
-        # Добавляем параметры для PostgreSQL
-        # '--add-binary=psycopg2_binary.libs/libpq.dll;.',
-        # '--add-binary=psycopg2_binary.libs/libintl.dll;.',
-        # '--add-binary=psycopg2_binary.libs/libiconv.dll;.',
-        # '--add-binary=psycopg2_binary.libs/libssl.dll;.',
-        # '--add-binary=psycopg2_binary.libs/libcrypto.dll;.',
     ]
 
     # Добавляем специфичные параметры для macOS

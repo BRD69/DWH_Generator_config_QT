@@ -1,4 +1,5 @@
 import json
+import os
 from pathlib import Path
 from abc import ABC, abstractmethod
 from typing import Dict, Any, Optional, Tuple
@@ -66,6 +67,8 @@ class ConfigService:
         if not self.config_fields_file.exists():
             self.logger_service.error(f"Файл конфигурации не найден: {self.config_fields_file}")
             self.set_config_fields(data={})
+        elif os.path.getsize(self.config_fields_file) == 0:
+            self.set_config_fields(data={})
         else:
             with open(file=self.config_fields_file, mode='r', encoding='utf-8') as file:
                 self.set_config_fields(data=json.load(file))
@@ -86,8 +89,10 @@ class ConfigService:
         """
         if data:
             self.config_fields_data = data
-        else:
+        elif key and value:
             self.config_fields_data[key] = value
+        else:
+            self.config_fields_data = {}
 
     def get_config_fields(self, key: str = None) -> Any:
         """
@@ -118,6 +123,8 @@ class ConfigService:
         if not self.config_pages_file.exists():
             self.logger_service.error(f"Файл конфигурации не найден: {self.config_pages_file}")
             self.set_config_pages(data={})
+        elif os.path.getsize(self.config_pages_file) == 0:
+            self.set_config_pages(data={})
         else:
             with open(self.config_pages_file, 'r', encoding='utf-8') as file:
                 self.set_config_pages(data=json.load(file))
@@ -138,8 +145,10 @@ class ConfigService:
         """
         if data:
             self.config_pages_data = data
-        else:
+        elif key and value: 
             self.config_pages_data[key] = value
+        else:
+            self.config_pages_data = {}
 
     def get_config_pages(self, key: str = None) -> Any:
         """
@@ -294,10 +303,11 @@ class ConfigService:
         Загружает конфигурацию из файла.
         """
         columns_table = []
-        for value in self.config_fields_data.values():
-            if value['type'] == 'table':
-                columns_table.extend(value['values'])
-        columns_table.append({"key": "action", "name": "", "type": "action", "value": ""})
+        if self.config_fields_data:
+            for value in self.config_fields_data.values():
+                if value['type'] == 'table':
+                    columns_table.extend(value['values'])
+            columns_table.append({"key": "action", "name": "", "type": "action", "value": ""})
         return tuple(columns_table)
 
     def load_config_output(self) -> Dict[str, Any]:

@@ -297,6 +297,7 @@ class MainWindow(UiMainWindow):
         if not self.app.config_pages:
             self.logger.error("Не удалось загрузить страницы!")
             self.notification.show_notification("Не удалось загрузить страницы!", "error", "Ошибка загрузки страниц")
+            self.pages = []
             return
 
         pages_list = []

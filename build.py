@@ -130,7 +130,7 @@ def get_pyinstaller_args(is_mac, is_windows, build_path, icon_path):
         target_arch = 'arm64' if arch == 'arm64' else 'x86_64'
         args.extend([
             f'--target-architecture={target_arch}',
-            '--osx-bundle-identifier=com.brdpro.dwhgenerator',
+            '--osx-bundle-identifier=com.brdpro.dgc',
             '--codesign-identity=-',  # Отключаем подпись для разработки
             '--osx-entitlements-file=entitlements.plist',  # Добавляем файл с правами доступа
         ])
@@ -186,20 +186,20 @@ def build_app():
             os.remove('icon.icns')
         # Копируем файл с логами в директорию сборки
         if os.path.exists('error.log'):
-            shutil.copy('error.log', os.path.join(build_path, 'dwhgenerator.app', 'Contents', 'MacOS', 'error.log'))
+            shutil.copy('error.log', os.path.join(build_path, 'dgc.app', 'Contents', 'MacOS', 'error.log'))
 
     # Выводим информацию о сборке
     print(f"\nСборка завершена. Приложение находится в директории: {build_path}")
     print(f"Версия приложения: {version_app_short}")
     if is_mac:
         print("\nДля запуска приложения из терминала:")
-        print(f"cd {build_path}/dwhgenerator.app/Contents/MacOS")
-        print("./dwhgenerator")
+        print(f"cd {build_path}/dgc.app/Contents/MacOS")
+        print("./dgc")
         print("\nДля просмотра логов:")
-        print(f"cat {build_path}/dwhgenerator.app/Contents/MacOS/error.log")
+        print(f"cat {build_path}/dgc.app/Contents/MacOS/error.log")
     elif is_windows:
         print("\nДля запуска приложения:")
-        print(f"{build_path}\\dwhgenerator.exe")
+        print(f"{build_path}\\dgc.exe")
         print("\nДля просмотра логов:")
         print(f"type {build_path}\\error.log")
 

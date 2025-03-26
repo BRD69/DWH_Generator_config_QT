@@ -1,18 +1,107 @@
 QPushButton#btnHelp {
-    background-color: #808080;  /* Сероватый фон */
-    border-radius: 5px;        /* Делаем кнопку круглой */
-    color: white;               /* Цвет текста */
-    font-size: 8px;             /* Размер шрифта */
-    padding: 0px;               /* Убираем отступы */
-    border: 1px solid #606060;  /* Граница кнопки */
-    min-width: 10px;            /* Минимальная ширина */
-    min-height: 10px;          /* Минимальная высота */
-    max-width: 10px;           /* Максимальная ширина */
-    max-height: 10px;           /* Максимальная высота */
+    background-color: #808080;
+    /* Сероватый фон */
+    border-radius: 5px;
+    /* Делаем кнопку круглой */
+    color: white;
+    /* Цвет текста */
+    font-size: 8px;
+    /* Размер шрифта */
+    padding: 0px;
+    /* Убираем отступы */
+    border: 1px solid #606060;
+    /* Граница кнопки */
+    min-width: 10px;
+    /* Минимальная ширина */
+    min-height: 10px;
+    /* Минимальная высота */
+    max-width: 10px;
+    /* Максимальная ширина */
+    max-height: 10px;
+    /* Максимальная высота */
 }
+
 QPushButton#btnHelp:hover {
-    background-color: #909090;  /* Цвет фона при наведении */
+    background-color: #909090;
+    /* Цвет фона при наведении */
 }
+
 QPushButton#btnHelp:pressed {
-    background-color: #707070;  /* Цвет фона при нажатии */
+    background-color: #707070;
+    /* Цвет фона при нажатии */
+}
+
+/* Стили для стандартных диалогов Windows */
+QDialog {
+    background-color: #f0f0f0;
+}
+
+QDialog QLabel {
+    color: #000000;
+}
+
+QDialog QPushButton {
+    background-color: #e0e0e0;
+    border: 1px solid #a0a0a0;
+    border-radius: 3px;
+    padding: 5px 15px;
+    color: #000000;
+}
+
+QDialog QPushButton:hover {
+    background-color: #d0d0d0;
+}
+
+QDialog QPushButton:pressed {
+    background-color: #c0c0c0;
+}
+
+/* Стили для QFileDialog */
+QFileDialog {
+    background-color: #f0f0f0;
+}
+
+QFileDialog QLabel {
+    color: #000000;
+}
+
+QFileDialog QPushButton {
+    background-color: #e0e0e0;
+    border: 1px solid #a0a0a0;
+    border-radius: 3px;
+    padding: 5px 15px;
+    color: #000000;
+}
+
+QFileDialog QPushButton:hover {
+    background-color: #d0d0d0;
+}
+
+QFileDialog QPushButton:pressed {
+    background-color: #c0c0c0;
+}
+
+/* Стили для QMessageBox */
+QMessageBox {
+    background-color: #f0f0f0;
+}
+
+QMessageBox QLabel {
+    color: #000000;
+}
+
+QMessageBox QPushButton {
+    background-color: #e0e0e0;
+    border: 1px solid #a0a0a0;
+    border-radius: 3px;
+    padding: 5px 15px;
+    color: #000000;
+}
+
+QMessageBox QPushButton:hover {
+    background-color: #d0d0d0;
+}
+
+QMessageBox QPushButton:pressed {
+    background-color: #c0c0c0;
 }

@@ -1,3 +1,5 @@
+import os
+import sys
 from pathlib import Path
 from PyQt5.QtWidgets import (
     QWidget,
@@ -24,8 +26,16 @@ class ViewTextWidget(QWidget):
 
     def _load_stylesheet(self):
         """Загружает стили для виджета."""
-        with open(self.working_dir / "resources" / "styles" / "ViewTextWidget.qss", "r") as f_view_text_widget:
-            self.stylesheet = f_view_text_widget.read()
+        style_path = self.app.file_service.get_stylesheet_path("ViewTextWidget.qss")
+        try:
+            with open(style_path, "r", encoding='utf-8') as f:
+                self.stylesheet = f.read()
+            # self.setStyleSheet(self.stylesheet)
+        except Exception as e:
+            print(f"Ошибка загрузки стилей: {e}")
+            print(f"Путь к файлу стилей: {style_path}")
+            print(f"Текущая директория: {os.getcwd()}")
+            print(f"MEIPASS: {getattr(sys, '_MEIPASS', 'Не установлен')}")
 
     def setup_ui(self):
         """Настройка интерфейса виджета."""

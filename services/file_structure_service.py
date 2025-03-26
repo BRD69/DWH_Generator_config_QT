@@ -267,3 +267,21 @@ class FileStructureService:
         """
         if file_name:
             self.file_name_config_save = f"{file_name}.json"
+
+    def get_stylesheet_path(self, file_name: str) -> Path:
+        """
+        Возвращает путь для сохранения конфигурации.
+        """
+        import sys
+        import os
+
+        # Определяем базовый путь для ресурсов
+        if getattr(sys, 'frozen', False):
+            # Если приложение собрано с PyInstaller
+            base_path = sys._MEIPASS
+        else:
+            # Если приложение запущено из исходного кода
+            base_path = str(self.working_dir)
+
+        style_path = os.path.join(base_path, "resources", "styles", file_name)
+        return style_path

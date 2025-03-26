@@ -1,3 +1,5 @@
+import os
+import sys
 from pathlib import Path
 from PyQt5 import QtCore, QtGui, QtWidgets
 
@@ -49,11 +51,20 @@ class SelectWidget(QtWidgets.QWidget):
         Стили загружаются из файла SelectWidget.qss в директории resources/styles.
         Применяются к кнопке помощи и выпадающему списку.
         """
-        with open(self.working_dir / "resources" / "styles" / "SelectWidget.qss", "r") as f:
-            self.stylesheet = f.read()
+        style_path = self.app.file_service.get_stylesheet_path("SelectWidget.qss")
 
-        self.btnHelp.setStyleSheet(self.stylesheet)
-        self.comboBox.setStyleSheet(self.stylesheet)
+        try:
+            with open(style_path, "r", encoding='utf-8') as f:
+                self.stylesheet = f.read()
+
+            self.btnHelp.setStyleSheet(self.stylesheet)
+            self.comboBox.setStyleSheet(self.stylesheet)
+        except Exception as e:
+            print(f"Ошибка загрузки стилей: {e}")
+            print(f"Путь к файлу стилей: {style_path}")
+            print(f"Текущая директория: {os.getcwd()}")
+            print(f"MEIPASS: {getattr(sys, '_MEIPASS', 'Не установлен')}")
+
 
     def _setup_ui(self):
         """Создает и настраивает элементы пользовательского интерфейса.

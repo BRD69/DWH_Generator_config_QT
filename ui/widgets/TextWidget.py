@@ -1,3 +1,5 @@
+import os
+import sys
 from pathlib import Path
 from PyQt5 import QtCore, QtGui, QtWidgets
 
@@ -56,11 +58,20 @@ class TextWidget(QtWidgets.QWidget):
         Стили загружаются из файла TextWidget.qss в директории resources/styles.
         Применяются к кнопке помощи и полю ввода.
         """
-        with open(self.working_dir / "resources" / "styles" / "TextWidget.qss", "r") as f:
-            self.stylesheet = f.read()
 
-        self.btnHelp.setStyleSheet(self.stylesheet)
-        self.lineEdit.setStyleSheet(self.stylesheet)
+        style_path = self.app.file_service.get_stylesheet_path("TextWidget.qss")
+
+        try:
+            with open(style_path, "r", encoding='utf-8') as f:
+                self.stylesheet = f.read()
+
+            self.btnHelp.setStyleSheet(self.stylesheet)
+            self.lineEdit.setStyleSheet(self.stylesheet)
+        except Exception as e:
+            print(f"Ошибка загрузки стилей: {e}")
+            print(f"Путь к файлу стилей: {style_path}")
+            print(f"Текущая директория: {os.getcwd()}")
+            print(f"MEIPASS: {getattr(sys, '_MEIPASS', 'Не установлен')}")
 
     def _load_icons(self):
         """Загружает иконки для кнопок приложения.

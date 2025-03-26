@@ -578,9 +578,10 @@ class MainWindow(UiMainWindow):
         test_button = QtWidgets.QPushButton("Тест")
         test_button.clicked.connect(self._event_btn_clicked_test_connect)
 
-        # Создание формы
-        form = ContentForm(
-            title="Настройки подключения к PostgreSQL",
+        try:
+            # Создание формы
+            form = ContentForm(
+                title="Настройки подключения к PostgreSQL",
             content=content_layout,
             ok_callback=lambda: self._callback_btn_ok_save_settings_pg(data=content_layout.get_settings(), form=form),
             stretch_content=True,
@@ -588,8 +589,11 @@ class MainWindow(UiMainWindow):
                 test_button,
             ],
             app=self.app
-        )
-        form.exec_()
+            )
+            form.exec_()
+        except Exception as e:
+            self.logger.error(f"Ошибка при создании формы: {e}")
+            self.notification.show_notification(f"Ошибка при создании формы: {e}", "error", "Ошибка создания формы")
 
     def _event_btn_clicked_test_connect(self):
         """Тест подключения к PostgreSQL."""
@@ -612,14 +616,17 @@ class MainWindow(UiMainWindow):
             )
         content_layout.set_text(text=self.app.sql_scripts[key], key=key, value=value)
 
-
-        form = ContentForm(
-            title="Скрипт SQL",
-            content=content_layout,
-            app=self.app,
-            ok_callback=lambda: self._event_btn_clicked_save_sql_script(key=key, content=content_layout.get_text(), form=form),
-        )
-        form.exec_()
+        try:
+            form = ContentForm(
+                title="Скрипт SQL",
+                content=content_layout,
+                app=self.app,
+                ok_callback=lambda: self._event_btn_clicked_save_sql_script(key=key, content=content_layout.get_text(), form=form),
+            )
+            form.exec_()
+        except Exception as e:
+            self.logger.error(f"Ошибка при создании формы: {e}")
+            self.notification.show_notification(f"Ошибка при создании формы: {e}", "error", "Ошибка создания формы")
 
     def _event_btn_clicked_render_sql_script(self, key: str, value: str, sql_script = None):
         """Обработчик рендеринга скрипта SQL."""

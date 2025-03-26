@@ -39,8 +39,10 @@ from services.file_structure_service import FileStructureService
 
 # Определение пути приложения в исполняемом файле Python, сгенерированном PyInstaller
 if getattr(sys, 'frozen', False):
-    Current_Path =  os.path.dirname(sys.executable)
+    # Если приложение запущено как exe
+    Current_Path = os.path.dirname(sys.executable)
 else:
+    # Если приложение запущено как скрипт Python
     Current_Path = str(os.path.dirname(__file__))
 
 
@@ -73,7 +75,7 @@ class Application(QApplication):
         self.copyright = COPYRIGHT_APP
 
         # Инициализация базовых путей
-        self.working_dir = Path(__file__).parent
+        self.working_dir = Path(Current_Path)
         self.setWindowIcon(QtGui.QIcon("icon512.ico"))
 
         # Инициализация сигналов

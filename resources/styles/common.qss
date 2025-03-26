@@ -1,3 +1,4 @@
+/* Стили для кнопки помощи */
 QPushButton#btnHelp {
     background-color: #808080;
     /* Сероватый фон */

@@ -1,6 +1,8 @@
 from pathlib import Path
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtCore import Qt, QTimer
+import os
+import sys
 
 from ui.widgets.ActionsConnectWidget import ActionsConnectWidget
 from ui.widgets.LoadingWidget import LoadingWidget
@@ -38,33 +40,21 @@ class UiMainWindow(QtWidgets.QMainWindow):
 
     # =============== Настройка стилей ===============
     def _load_stylesheet(self):
-        """Загружает и применяет стили для всех виджетов главного окна.
+        """Загрузка стилей из файла."""
+        try:
+            # Определяем путь к файлу стилей
+            if getattr(sys, 'frozen', False):
+                # Если приложение запущено как exe
+                style_path = os.path.join(sys._MEIPASS, "resources", "styles", "MainForm.qss")
+            else:
+                # Если приложение запущено как скрипт Python
+                style_path = os.path.join(os.path.dirname(__file__), "..", "..", "resources", "styles", "MainForm.qss")
 
-        Загружает стили из файла MainForm.qss и применяет их ко всем основным
-        виджетам окна, включая фреймы, кнопки и таблицу.
-        """
-        with open(self.working_dir / "resources" / "styles" / "MainForm.qss", "r") as f_main_form:
-            self.stylesheet = f_main_form.read()
-
-        with open(self.working_dir / "resources" / "styles" / "ButtonToolBar.qss", "r") as f_button_tool_bar:
-            self.stylesheet_button_tool_bar = f_button_tool_bar.read()
-
-        with open(self.working_dir / "resources" / "styles" / "ButtonToolBarStatus.qss", "r") as f_button_tool_bar_status:
-            self.stylesheet_button_tool_bar_status = f_button_tool_bar_status.read()
-
-        self.setStyleSheet(self.stylesheet)
-        self.centralwidget.setStyleSheet(self.stylesheet)
-        self.frame_content.setStyleSheet(self.stylesheet)
-        self.frame_content_left.setStyleSheet(self.stylesheet)
-        self.toolBox_fields.setStyleSheet(self.stylesheet)
-        self.frame_content_right.setStyleSheet(self.stylesheet)
-        self.frame_control_table.setStyleSheet(self.stylesheet)
-        self.btnAdd.setStyleSheet(self.stylesheet)
-        self.btnClear.setStyleSheet(self.stylesheet)
-        self.table_fields.setStyleSheet(self.stylesheet)
-
-        self.toolBar.setStyleSheet(self.stylesheet_button_tool_bar)
-        self.toolBarStatus.setStyleSheet(self.stylesheet_button_tool_bar_status)
+            # Загружаем стили
+            with open(style_path, "r", encoding="utf-8") as f:
+                self.setStyleSheet(f.read())
+        except Exception as e:
+            print(f"Ошибка загрузки стилей: {e}")
 
     # =============== Настройка иконки ===============
     def _load_icons(self):

@@ -80,6 +80,7 @@ pyinstaller_args = [
     '--name=dwhgenerator',
     f'--icon={icon_path}',
     f'--distpath={build_path}',
+    'datas=[("resources/styles/*.qss", "resources/styles"), ("resources/images/*.png", "resources/images"), ("resources/images/*.ico", "resources/images") ]',
     '--clean',
     '--noconfirm',
     '--add-data=config:config',

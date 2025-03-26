@@ -115,10 +115,10 @@ class TagInputWidget(QtWidgets.QWidget):
             self.btnHelp.setStyleSheet(self.stylesheet)
             self.frame.setStyleSheet(self.stylesheet)
         except Exception as e:
-            print(f"Ошибка загрузки стилей: {e}")
-            print(f"Путь к файлу стилей: {style_path}")
-            print(f"Текущая директория: {os.getcwd()}")
-            print(f"MEIPASS: {getattr(sys, '_MEIPASS', 'Не установлен')}")
+            self.logger.error(f"Ошибка загрузки стилей: {e}")
+            self.logger.error(f"Путь к файлу стилей: {style_path}")
+            self.logger.error(f"Текущая директория: {os.getcwd()}")
+            self.logger.error(f"MEIPASS: {getattr(sys, '_MEIPASS', 'Не установлен')}")
 
 
     def _setup_ui(self):

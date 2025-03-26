@@ -1,3 +1,6 @@
+import sys
+import os
+
 from PyQt5.QtWidgets import (
     QDialog,
     QVBoxLayout,
@@ -29,10 +32,16 @@ class ContentForm(QDialog):
 
     def _load_stylesheet(self):
         """Загрузка стилей."""
-        with open(self.working_dir / "resources" / "styles" / "ContentForm.qss", "r") as f_content_form:
-            self.stylesheet = f_content_form.read()
-
-        self.setStyleSheet(self.stylesheet)
+        style_path = self.app.file_service.get_content_form_stylesheet()
+        try:
+            with open(style_path, "r", encoding='utf-8') as f:
+                self.stylesheet = f.read()
+            self.setStyleSheet(self.stylesheet)
+        except Exception as e:
+            self.logger.error(f"Ошибка загрузки стилей: {e}")
+            self.logger.error(f"Путь к файлу стилей: {style_path}")
+            self.logger.error(f"Текущая директория: {os.getcwd()}")
+            self.logger.error(f"MEIPASS: {getattr(sys, '_MEIPASS', 'Не установлен')}")
 
     def _setup_ui(self):
         """Настройка интерфейса."""

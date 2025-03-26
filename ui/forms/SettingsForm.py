@@ -1,3 +1,6 @@
+import sys
+import os
+
 from PyQt5.QtWidgets import (QDialog, QVBoxLayout, QHBoxLayout,
                              QWidget, QToolBox, QPushButton, QSpacerItem,
                              QSizePolicy)
@@ -87,10 +90,16 @@ class SettingsForm(QDialog):
 
     def _load_styles(self):
         """Загрузка стилей из файла QSS"""
-        with open(self.working_dir / "resources" / "styles" / "SettingsForm.qss", "r") as f_settings_form:
-            self.stylesheet = f_settings_form.read()
-
-        self.setStyleSheet(self.stylesheet)
+        style_path = self.app.file_service.get_settings_form_stylesheet()
+        try:
+            with open(style_path, "r", encoding='utf-8') as f:
+                self.stylesheet = f.read()
+            self.setStyleSheet(self.stylesheet)
+        except Exception as e:
+            self.logger.error(f"Ошибка загрузки стилей: {e}")
+            self.logger.error(f"Путь к файлу стилей: {style_path}")
+            self.logger.error(f"Текущая директория: {os.getcwd()}")
+            self.logger.error(f"MEIPASS: {getattr(sys, '_MEIPASS', 'Не установлен')}")
 
     def exec_(self):
         """Переопределяем метод exec_ для модального окна"""

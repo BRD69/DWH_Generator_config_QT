@@ -597,6 +597,10 @@ class MainWindow(UiMainWindow):
 
     def _event_btn_clicked_open_connection_pg_form(self):
         """Обработчик подключения к PostgreSQL."""
+        if not self.app.config_service:
+            self.notification.show_notification("Не удалось загрузить настройки!", "error", "Ошибка загрузки настроек")
+            return
+
         content_layout = PostgreWidget(
             working_dir=self.app.file_service.get_working_dir(),
             data_connect=self.app.config_service.get_sql_connect()['pg'],
@@ -609,13 +613,15 @@ class MainWindow(UiMainWindow):
             # Создание формы
             form = ContentForm(
                 title="Настройки подключения к PostgreSQL",
-            content=content_layout,
-            ok_callback=lambda: self._callback_btn_ok_save_settings_pg(data=content_layout.get_settings(), form=form),
-            stretch_content=True,
-            custom_buttons=[
-                test_button,
-            ],
-            app=self.app
+                content=content_layout,
+                ok_callback=lambda: self._callback_btn_ok_save_settings_pg(data=content_layout.get_settings(), form=form),
+                stretch_content=True,
+                custom_buttons=[
+                    test_button,
+                ],
+                app=self.app,
+                height=550,
+                width=500
             )
             form.exec_()
         except Exception as e:
@@ -624,14 +630,19 @@ class MainWindow(UiMainWindow):
 
     def _event_btn_clicked_test_connect(self):
         """Тест подключения к PostgreSQL."""
-        self.app.postgres_service.connect()
-        status, message = self.app.postgres_service.status
-        self.app.signals.postgres_connection_changed.emit(status, message)
+        try:
+            self.app.postgres_service.connect()
+            status, message = self.app.postgres_service.status
+            self.app.signals.postgres_connected.emit(status, message)
 
-        if status:
-            self.notification.show_notification("Подключение к PostgreSQL установлено!", "info")
-        else:
-            self.notification.show_notification(f"Не удалось установить подключение к PostgreSQL! {message}", "error", "Ошибка подключения к PostgreSQL")
+            if status:
+                self.notification.show_notification("Подключение к PostgreSQL установлено!", "info")
+            else:
+                self.notification.show_notification(f"Не удалось установить подключение к PostgreSQL! {message}", "error", "Ошибка подключения к PostgreSQL")
+
+        except Exception as e:
+            self.logger.error(f"Ошибка при тестировании подключения к PostgreSQL: {e}")
+            self.notification.show_notification(f"Ошибка при тестировании подключения к PostgreSQL: {e}", "error", "Ошибка тестирования подключения к PostgreSQL")
 
     def _event_btn_clicked_open_sql_script(self, key: str, value: str):
         """Обработчик открытия скрипта SQL."""

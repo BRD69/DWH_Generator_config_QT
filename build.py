@@ -50,11 +50,6 @@ def get_pyinstaller_args(is_mac, is_windows, build_path, icon_path):
     # Определяем разделитель в зависимости от ОС
     separator = ';' if is_windows else ':'
 
-    # Находим путь к PyQt5
-    import PyQt5
-    pyqt_path = os.path.dirname(PyQt5.__file__)
-    qt_path = os.path.join(pyqt_path, 'Qt5')
-
     # Базовые параметры для PyInstaller
     args = [
         'main.py',
@@ -92,34 +87,6 @@ def get_pyinstaller_args(is_mac, is_windows, build_path, icon_path):
         '--hidden-import=PyQt5.QtGui',
         '--hidden-import=PyQt5.QtWidgets',
         '--hidden-import=PyQt5.sip',
-        '--hidden-import=PyQt5.QtPrintSupport',
-        '--hidden-import=PyQt5.QtSvg',
-        '--hidden-import=PyQt5.QtNetwork',
-        '--hidden-import=PyQt5.QtXml',
-        '--hidden-import=PyQt5.QtSql',
-        '--hidden-import=PyQt5.QtBluetooth',
-        '--hidden-import=PyQt5.QtDBus',
-        '--hidden-import=PyQt5.QtDesigner',
-        '--hidden-import=PyQt5.QtHelp',
-        '--hidden-import=PyQt5.QtLocation',
-        '--hidden-import=PyQt5.QtMultimedia',
-        '--hidden-import=PyQt5.QtMultimediaWidgets',
-        '--hidden-import=PyQt5.QtNfc',
-        '--hidden-import=PyQt5.QtOpenGL',
-        '--hidden-import=PyQt5.QtPositioning',
-        '--hidden-import=PyQt5.QtQml',
-        '--hidden-import=PyQt5.QtQuick',
-        '--hidden-import=PyQt5.QtQuickWidgets',
-        '--hidden-import=PyQt5.QtSensors',
-        '--hidden-import=PyQt5.QtSerialPort',
-        '--hidden-import=PyQt5.QtWebChannel',
-        '--hidden-import=PyQt5.QtWebEngine',
-        '--hidden-import=PyQt5.QtWebEngineCore',
-        '--hidden-import=PyQt5.QtWebEngineWidgets',
-        '--hidden-import=PyQt5.QtWebKit',
-        '--hidden-import=PyQt5.QtWebKitWidgets',
-        '--hidden-import=PyQt5.QtWebSockets',
-        '--hidden-import=PyQt5.QtXmlPatterns',
         '--hidden-import=psycopg2',
         '--hidden-import=json',
         '--hidden-import=datetime',
@@ -144,39 +111,8 @@ def get_pyinstaller_args(is_mac, is_windows, build_path, icon_path):
         '--hidden-import=ui.widgets.SQLViewerScript',
         '--hidden-import=ui.widgets.TagInputWidget',
         '--hidden-import=ui.widgets.TextWidget',
-        # Добавляем все необходимые DLL файлы Qt
-        f'--add-binary={os.path.join(qt_path, "bin", "Qt5Core.dll")}{separator}PyQt5/Qt5/bin',
-        f'--add-binary={os.path.join(qt_path, "bin", "Qt5Gui.dll")}{separator}PyQt5/Qt5/bin',
-        f'--add-binary={os.path.join(qt_path, "bin", "Qt5Widgets.dll")}{separator}PyQt5/Qt5/bin',
-        f'--add-binary={os.path.join(qt_path, "bin", "Qt5PrintSupport.dll")}{separator}PyQt5/Qt5/bin',
-        f'--add-binary={os.path.join(qt_path, "bin", "Qt5Svg.dll")}{separator}PyQt5/Qt5/bin',
-        f'--add-binary={os.path.join(qt_path, "bin", "Qt5Network.dll")}{separator}PyQt5/Qt5/bin',
-        f'--add-binary={os.path.join(qt_path, "bin", "Qt5Xml.dll")}{separator}PyQt5/Qt5/bin',
-        f'--add-binary={os.path.join(qt_path, "bin", "Qt5Sql.dll")}{separator}PyQt5/Qt5/bin',
-        f'--add-binary={os.path.join(qt_path, "bin", "Qt5Bluetooth.dll")}{separator}PyQt5/Qt5/bin',
-        f'--add-binary={os.path.join(qt_path, "bin", "Qt5DBus.dll")}{separator}PyQt5/Qt5/bin',
-        f'--add-binary={os.path.join(qt_path, "bin", "Qt5Designer.dll")}{separator}PyQt5/Qt5/bin',
-        f'--add-binary={os.path.join(qt_path, "bin", "Qt5Help.dll")}{separator}PyQt5/Qt5/bin',
-        f'--add-binary={os.path.join(qt_path, "bin", "Qt5Location.dll")}{separator}PyQt5/Qt5/bin',
-        f'--add-binary={os.path.join(qt_path, "bin", "Qt5Multimedia.dll")}{separator}PyQt5/Qt5/bin',
-        f'--add-binary={os.path.join(qt_path, "bin", "Qt5MultimediaWidgets.dll")}{separator}PyQt5/Qt5/bin',
-        f'--add-binary={os.path.join(qt_path, "bin", "Qt5Nfc.dll")}{separator}PyQt5/Qt5/bin',
-        f'--add-binary={os.path.join(qt_path, "bin", "Qt5OpenGL.dll")}{separator}PyQt5/Qt5/bin',
-        f'--add-binary={os.path.join(qt_path, "bin", "Qt5Positioning.dll")}{separator}PyQt5/Qt5/bin',
-        f'--add-binary={os.path.join(qt_path, "bin", "Qt5Qml.dll")}{separator}PyQt5/Qt5/bin',
-        f'--add-binary={os.path.join(qt_path, "bin", "Qt5Quick.dll")}{separator}PyQt5/Qt5/bin',
-        f'--add-binary={os.path.join(qt_path, "bin", "Qt5QuickWidgets.dll")}{separator}PyQt5/Qt5/bin',
-        f'--add-binary={os.path.join(qt_path, "bin", "Qt5Sensors.dll")}{separator}PyQt5/Qt5/bin',
-        f'--add-binary={os.path.join(qt_path, "bin", "Qt5SerialPort.dll")}{separator}PyQt5/Qt5/bin',
-        f'--add-binary={os.path.join(qt_path, "bin", "Qt5WebChannel.dll")}{separator}PyQt5/Qt5/bin',
-        f'--add-binary={os.path.join(qt_path, "bin", "Qt5WebEngineCore.dll")}{separator}PyQt5/Qt5/bin',
-        f'--add-binary={os.path.join(qt_path, "bin", "Qt5WebEngineWidgets.dll")}{separator}PyQt5/Qt5/bin',
-        f'--add-binary={os.path.join(qt_path, "bin", "Qt5WebKit.dll")}{separator}PyQt5/Qt5/bin',
-        f'--add-binary={os.path.join(qt_path, "bin", "Qt5WebKitWidgets.dll")}{separator}PyQt5/Qt5/bin',
-        f'--add-binary={os.path.join(qt_path, "bin", "Qt5WebSockets.dll")}{separator}PyQt5/Qt5/bin',
-        f'--add-binary={os.path.join(qt_path, "bin", "Qt5XmlPatterns.dll")}{separator}PyQt5/Qt5/bin',
-        # Добавляем плагины Qt
-        f'--add-data={os.path.join(qt_path, "plugins")}{separator}PyQt5/Qt5/plugins',
+        # Собираем все файлы PyQt5
+        '--collect-all=PyQt5',
         # Исключаем файлы и модули
         '--exclude-module=_tmp',
         '--exclude-module=.qt_ui',

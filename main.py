@@ -11,6 +11,27 @@ from services.config_service import ConfigService
 from services.crypto_text_service import CryptoTextService
 from settings import NAME_APP, AUTHOR_APP, DESCRIPTION_APP, LICENSE_APP, COPYRIGHT_APP, get_version_info
 
+def _append_run_path():
+    """Добавляет пути для поиска DLL файлов Qt в собранном приложении."""
+    if getattr(sys, 'frozen', False):
+        pathlist = []
+
+        # Если приложение запущено как bundle, PyInstaller добавляет флаг frozen=True
+        # и устанавливает путь к приложению в переменную _MEIPASS
+        pathlist.append(sys._MEIPASS)
+
+        # Путь к исполняемому файлу приложения
+        _main_app_path = os.path.dirname(sys.executable)
+        pathlist.append(_main_app_path)
+
+        # Добавляем пути в переменную окружения PATH
+        os.environ["PATH"] += os.pathsep + os.pathsep.join(pathlist)
+
+        logging.info("Текущий PATH: %s", os.environ['PATH'])
+
+# Добавляем пути для Qt перед импортом PyQt5
+_append_run_path()
+
 from PyQt5 import QtGui, QtWidgets
 from PyQt5.QtCore import pyqtSignal, QObject, QThread
 from PyQt5.QtWidgets import QApplication, QFileDialog, QMessageBox
@@ -349,7 +370,7 @@ class MainWindow(UiMainWindow):
                     page_layout.addWidget(line)
             page_layout.addItem(QtWidgets.QSpacerItem(20, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding))
 
-    def load_columns(self, columns):    
+    def load_columns(self, columns):
         """Загружает колонки в таблицу."""
         if not columns:
             self.logger.error("Не удалось загрузить колонки!")

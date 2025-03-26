@@ -82,6 +82,23 @@ class SplashScreen(QtWidgets.QWidget):
         self.loading_label.setAlignment(Qt.AlignCenter)
         self.layout.addWidget(self.loading_label)
 
+        # Создаем контейнер для списка проверок
+        self.checks_container = QtWidgets.QWidget()
+        self.checks_layout = QtWidgets.QVBoxLayout(self.checks_container)
+        self.checks_layout.setSpacing(10)
+        self.checks_layout.setContentsMargins(0, 0, 0, 0)
+
+        # Создаем иконки для статусов
+        self.check_icon = QtGui.QIcon(":/icon_button/resources/icons/check.png")
+        self.cross_icon = QtGui.QIcon(":/icon_button/resources/icons/cross.png")
+
+        # Добавляем проверки
+        self.structure_check = self._create_check_item("Структура приложения")
+        self.sql_check = self._create_check_item("Подключение к SQL")
+        self.config_check = self._create_check_item("Поля для config")
+
+        self.layout.addWidget(self.checks_container)
+
         # Добавляем растягивающийся элемент
         self.layout.addStretch()
 
@@ -104,3 +121,62 @@ class SplashScreen(QtWidgets.QWidget):
                 border-radius: 10px;
             }
         """)
+
+    def _create_check_item(self, text):
+        """Создает элемент проверки с иконкой и текстом."""
+        container = QtWidgets.QWidget()
+        layout = QtWidgets.QHBoxLayout(container)
+        layout.setContentsMargins(0, 0, 0, 0)
+        layout.setSpacing(10)
+
+        # Создаем иконку статуса
+        status_icon = QtWidgets.QLabel()
+        status_icon.setFixedSize(20, 20)
+        status_icon.setPixmap(self.cross_icon.pixmap(20, 20))
+        layout.addWidget(status_icon)
+
+        # Создаем текст
+        label = QtWidgets.QLabel(text)
+        label.setStyleSheet("""
+            QLabel {
+                font-size: 14px;
+                color: #666666;
+            }
+        """)
+        layout.addWidget(label)
+
+        # Добавляем растягивающийся элемент
+        layout.addStretch()
+
+        # Добавляем в контейнер проверок
+        self.checks_layout.addWidget(container)
+
+        return {
+            'container': container,
+            'status_icon': status_icon,
+            'label': label
+        }
+
+    def update_check_status(self, check_name, status):
+        """Обновляет статус проверки.
+
+        Args:
+            check_name (str): Имя проверки ('structure', 'sql', 'config')
+            status (bool): True для успеха, False для ошибки
+        """
+        check_map = {
+            'structure': self.structure_check,
+            'sql': self.sql_check,
+            'config': self.config_check
+        }
+
+        if check_name in check_map:
+            check = check_map[check_name]
+            icon = self.check_icon if status else self.cross_icon
+            check['status_icon'].setPixmap(icon.pixmap(20, 20))
+            check['label'].setStyleSheet(f"""
+                QLabel {{
+                    font-size: 14px;
+                    color: {'#4CAF50' if status else '#666666'};
+                }}
+            """)

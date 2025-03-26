@@ -849,6 +849,10 @@ def main():
         splash = SplashScreen(user_name)
         splash.show()
 
+        splash.update_check_status('structure', bool(app.file_service))
+        splash.update_check_status('sql', bool(app.postgres_service and app.postgres_service.is_connected))
+        splash.update_check_status('config', bool(app.config_fields and app.config_pages and app.config_output))
+
         # Центрируем splash screen
         screen = QApplication.primaryScreen().geometry()
         x = (screen.width() - splash.width()) // 2
@@ -865,7 +869,7 @@ def main():
         # Создаем таймер для минимального времени показа splash screen
         min_display_timer = QTimer()
         min_display_timer.setSingleShot(True)
-        min_display_timer.start(2000)  # Минимум 2 секунды
+        min_display_timer.start(3000)  # Минимум 3 секунды
 
         # Создаем таймер для проверки готовности приложения
         check_ready_timer = QTimer()
@@ -884,11 +888,26 @@ def _check_app_ready(splash, main_window, min_display_timer, check_ready_timer, 
     """Проверяет готовность приложения к показу."""
     # Проверяем, прошло ли минимальное время показа
     if not min_display_timer.isActive():
-        # Проверяем, загружены ли все необходимые данные
-        if (app.config_fields and
-            app.config_pages and
-            app.config_output):
+        # Проверяем структуру приложения
+        structure_ready = bool(app.file_service)
+        splash.update_check_status('structure', structure_ready)
 
+        # Проверяем подключение к SQL
+        sql_ready = bool(app.postgres_service and app.postgres_service.is_connected)
+        splash.update_check_status('sql', sql_ready)
+
+        # Проверяем поля конфигурации
+        config_ready = bool(app.config_fields and app.config_pages and app.config_output)
+        splash.update_check_status('config', config_ready)
+
+        # Проверяем, прошло ли 5 секунд с момента запуска
+        if not hasattr(app, '_start_time'):
+            app._start_time = datetime.now()
+
+        time_elapsed = (datetime.now() - app._start_time).total_seconds()
+
+        # Если прошло 5 секунд или все проверки пройдены, закрываем splash screen
+        if time_elapsed >= 5 or (structure_ready and sql_ready and config_ready):
             # Останавливаем таймер проверки
             check_ready_timer.stop()
 

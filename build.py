@@ -63,7 +63,7 @@ def get_pyinstaller_args(is_mac, is_windows, build_path, icon_path):
         f'--add-data=resources/styles/ButtonToolBarStatus.qss{separator}resources/styles',
         f'--add-data=resources/styles/CheckBoxWidget.qss{separator}resources/styles',
         f'--add-data=resources/styles/common.qss{separator}resources/styles',
-        f'--add-data=resources/styles/ContentForm.qss{separator}resources/styles'
+        f'--add-data=resources/styles/ContentForm.qss{separator}resources/styles',
         f'--add-data=resources/styles/MainForm.qss{separator}resources/styles',
         f'--add-data=resources/styles/NumberWidget.qss{separator}resources/styles',
         f'--add-data=resources/styles/SelectWidget.qss{separator}resources/styles',

@@ -14,6 +14,7 @@ from PyQt5.QtWidgets import (
     QSpacerItem,
 )
 from PyQt5.QtCore import Qt
+from PyQt5.QtGui import QIcon
 
 
 class ContentForm(QDialog):
@@ -30,6 +31,7 @@ class ContentForm(QDialog):
         self.width = width
 
         self._setup_ui()
+        self._load_icons()
         self._load_stylesheet()
 
     def _load_stylesheet(self):
@@ -44,6 +46,16 @@ class ContentForm(QDialog):
             self.logger.error(f"Путь к файлу стилей: {style_path}")
             self.logger.error(f"Текущая директория: {os.getcwd()}")
             self.logger.error(f"MEIPASS: {getattr(sys, '_MEIPASS', 'Не установлен')}")
+
+    def _load_icons(self):
+        """Загрузка иконок."""
+        # Устанавливаем иконку окна
+        if getattr(sys, 'frozen', False):
+            window_icon_path = os.path.join(sys._MEIPASS, "resources", "images", "icon512.png")
+        else:
+            window_icon_path = os.path.join(os.path.dirname(__file__), "..", "..", "resources", "images", "icon512.png")
+
+        self.setWindowIcon(QIcon(window_icon_path))
 
     def _setup_ui(self):
         """Настройка интерфейса."""

@@ -50,6 +50,11 @@ def get_pyinstaller_args(is_mac, is_windows, build_path, icon_path):
     # Определяем разделитель в зависимости от ОС
     separator = ';' if is_windows else ':'
 
+    # Находим путь к PyQt5
+    import PyQt5
+    pyqt_path = os.path.dirname(PyQt5.__file__)
+    qt_path = os.path.join(pyqt_path, 'Qt5')
+
     # Базовые параметры для PyInstaller
     args = [
         'main.py',
@@ -110,10 +115,10 @@ def get_pyinstaller_args(is_mac, is_windows, build_path, icon_path):
         '--hidden-import=ui.widgets.TagInputWidget',
         '--hidden-import=ui.widgets.TextWidget',
         # Добавляем зависимости Qt
-        f'--add-data=PyQt5{separator}PyQt5',
-        f'--add-data=PyQt5/Qt5{separator}PyQt5/Qt5',
-        f'--add-data=PyQt5/Qt5/bin{separator}PyQt5/Qt5/bin',
-        f'--add-data=PyQt5/Qt5/plugins{separator}PyQt5/Qt5/plugins',
+        f'--add-data={pyqt_path}{separator}PyQt5',
+        f'--add-data={qt_path}{separator}PyQt5/Qt5',
+        f'--add-data={os.path.join(qt_path, "bin")}{separator}PyQt5/Qt5/bin',
+        f'--add-data={os.path.join(qt_path, "plugins")}{separator}PyQt5/Qt5/plugins',
         # Исключаем файлы и модули
         '--exclude-module=_tmp',
         '--exclude-module=.qt_ui',

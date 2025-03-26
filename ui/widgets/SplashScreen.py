@@ -36,7 +36,7 @@ class SplashScreen(QtWidgets.QWidget):
         # Создаем верхнюю часть с заголовком
         self.header_layout = QtWidgets.QHBoxLayout()
 
-        # Добавляем иконку
+        # Добавляем иконку слева
         self.icon_label = QtWidgets.QLabel()
         if getattr(sys, 'frozen', False):
             icon_path = os.path.join(sys._MEIPASS, "resources", "images", "icon512.png")
@@ -47,7 +47,7 @@ class SplashScreen(QtWidgets.QWidget):
         self.icon_label.setPixmap(icon.scaled(100, 100, Qt.KeepAspectRatio, Qt.SmoothTransformation))
         self.header_layout.addWidget(self.icon_label)
 
-        # Добавляем заголовок
+        # Добавляем заголовок в центр
         self.title_label = QtWidgets.QLabel("DWH Generator config")
         self.title_label.setStyleSheet("""
             QLabel {
@@ -57,6 +57,17 @@ class SplashScreen(QtWidgets.QWidget):
             }
         """)
         self.header_layout.addWidget(self.title_label)
+
+        # Добавляем логотип справа
+        self.logo_label = QtWidgets.QLabel()
+        if getattr(sys, 'frozen', False):
+            logo_path = os.path.join(sys._MEIPASS, "resources", "images", "logo_upd.png")
+        else:
+            logo_path = os.path.join(os.path.dirname(__file__), "..", "..", "resources", "images", "logo_upd.png")
+
+        logo = QtGui.QPixmap(logo_path)
+        self.logo_label.setPixmap(logo.scaled(100, 100, Qt.KeepAspectRatio, Qt.SmoothTransformation))
+        self.header_layout.addWidget(self.logo_label)
 
         self.layout.addLayout(self.header_layout)
 
@@ -180,3 +191,9 @@ class SplashScreen(QtWidgets.QWidget):
                     color: {'#4CAF50' if status else '#666666'};
                 }}
             """)
+
+if __name__ == "__main__":
+    app = QtWidgets.QApplication(sys.argv)
+    splash = SplashScreen("John Doe")
+    splash.show()
+    sys.exit(app.exec_())

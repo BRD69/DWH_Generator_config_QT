@@ -113,6 +113,7 @@ class UiMainWindow(QtWidgets.QMainWindow):
         """
         self.setObjectName("MainWindow")
         self.resize(1200, 850)
+        self.setWindowIcon(QtGui.QIcon("icon512.ico"))
 
         self.centralwidget = QtWidgets.QWidget(parent=self)
         self.centralwidget.setObjectName("centralwidget")

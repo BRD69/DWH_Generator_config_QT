@@ -94,9 +94,9 @@ class UiMainWindow(QtWidgets.QMainWindow):
 
             # Устанавливаем иконку окна
             if getattr(sys, 'frozen', False):
-                window_icon_path = os.path.join(sys._MEIPASS, "resources", "images", "icon512.ico")
+                window_icon_path = os.path.join(sys._MEIPASS, "resources", "images", "icon512.png")
             else:
-                window_icon_path = os.path.join(os.path.dirname(__file__), "..", "..", "resources", "images", "icon512.ico")
+                window_icon_path = os.path.join(os.path.dirname(__file__), "..", "..", "resources", "images", "icon512.png")
 
             self.setWindowIcon(QtGui.QIcon(window_icon_path))
 
@@ -118,7 +118,6 @@ class UiMainWindow(QtWidgets.QMainWindow):
         """
         self.setObjectName("MainWindow")
         self.resize(1200, 850)
-        self.setWindowIcon(QtGui.QIcon("icon512.ico"))
 
         self.centralwidget = QtWidgets.QWidget(parent=self)
         self.centralwidget.setObjectName("centralwidget")
@@ -411,7 +410,7 @@ class UiMainWindow(QtWidgets.QMainWindow):
         # self.progress_timer.timeout.connect(self._update_progress)
         # self.progress_timer.start()
         from ui.widgets.SplashScreen import SplashScreen
-        
+
         splash = SplashScreen(os.getlogin())
         splash.show()
 

@@ -898,6 +898,9 @@ def _check_app_ready(splash, main_window, min_display_timer, check_ready_timer, 
             # Показываем главное окно
             main_window.show()
 
+        # TODO: Сделать форму для проверки JSON
+        # TODO: Сделать форму для проверки SQL скриптов
+
 
 import resource # type: ignore
 

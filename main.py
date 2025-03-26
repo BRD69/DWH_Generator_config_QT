@@ -536,6 +536,10 @@ class MainWindow(UiMainWindow):
 
     def _event_btn_clicked_view_fields_table(self):
         """Обработчик просмотра полей."""
+        if not self.app.config_output:
+            self.notification.show_notification("Не удалось загрузить поля!", "error", "Ошибка загрузки полей")
+            return
+
         content_layout = ViewJSONWidget(text=json.dumps(self.app.config_output, indent=4, ensure_ascii=False), working_dir=self.working_dir)
 
         # Создаем кнопку для копирования в буфер обмена

@@ -16,7 +16,7 @@ from PyQt5.QtCore import pyqtSignal, QObject, QThread
 from PyQt5.QtWidgets import QApplication, QFileDialog, QMessageBox
 
 from ui.forms.ContentForm import ContentForm
-from ui.forms.GitForm import GitForm
+# from ui.forms.GitForm import GitForm
 from ui.forms.MainForm import UiMainWindow
 from ui.forms.SettingsForm import SettingsForm
 from ui.widgets.CheckBoxWidget import CheckBoxWidget
@@ -498,8 +498,9 @@ class MainWindow(UiMainWindow):
 
     def _event_btn_clicked_open_git_form(self):
         """Обработчик git операций."""
-        git_form = GitForm(parent=self)
-        git_form.show()
+        pass
+        # git_form = GitForm(parent=self)
+        # git_form.show()
 
     def _event_btn_clicked_settings_fields(self):
         """Обработчик настроек."""

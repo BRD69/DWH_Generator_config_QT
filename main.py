@@ -499,21 +499,26 @@ class MainWindow(UiMainWindow):
 
     def _event_btn_clicked_clear_fields_table(self):
         """Очистить таблицу"""
+        widget_question = QtWidgets.QLabel("Очистить таблицу?")
+        widget_question.setObjectName("question_label")
         # Создаем диалоговое окно подтверждения
-        reply = QMessageBox.question(
-            self,
-            "Подтверждение",
-            "Очистить таблицу?",
-            QMessageBox.Yes | QMessageBox.No,
-            QMessageBox.No
+        content_form = ContentForm(
+            title="Подтверждение",
+            content=widget_question,
+            ok_callback=lambda: self._event_btn_clicked_clear_fields_table_confirm(form=content_form),
+            app=self.app,
+            height=150,
+            width=300
         )
+        content_form.exec_()
 
-        # Если пользователь нажал "Да"
-        if reply == QMessageBox.Yes:
-            # Очищаем таблицу
-            self.table_fields.setRowCount(0)
-            self.values_fields = []
-            self.app.config_service.set_config_output(key='fields', value=self.values_fields)
+
+    def _event_btn_clicked_clear_fields_table_confirm(self, form: ContentForm):
+        self.table_fields.setRowCount(0)
+        self.values_fields = []
+        self.app.config_service.set_config_output(key='fields', value=self.values_fields)
+        form.close()
+        self.notification.show_notification("Таблица очищена!", "info", "Очистка таблицы")
 
     def _event_btn_clicked_delete_row(self, row):
         """Обработчик удаления строки."""

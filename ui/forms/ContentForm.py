@@ -17,7 +17,7 @@ from PyQt5.QtCore import Qt
 
 
 class ContentForm(QDialog):
-    def __init__(self, title: str, content, ok_callback=None, custom_buttons=None, parent=None, stretch_content=False, app=None):
+    def __init__(self, title: str, content, ok_callback=None, custom_buttons=None, parent=None, stretch_content=False, app=None, height=550, width=500):
         super().__init__(parent)
         self.title = title
         self.content = content
@@ -26,6 +26,8 @@ class ContentForm(QDialog):
         self.stretch_content = stretch_content
         self.app = app
         self.working_dir = app.working_dir
+        self.height = height
+        self.width = width
 
         self._setup_ui()
         self._load_stylesheet()
@@ -51,7 +53,7 @@ class ContentForm(QDialog):
         self.setWindowFlags(Qt.Window | Qt.WindowCloseButtonHint | Qt.WindowTitleHint)
         self.setModal(True)
         self.setObjectName("content_form")
-        self.setBaseSize(500, 550)
+        self.setBaseSize(self.width, self.height)
 
         # Основной layout
         main_layout = QVBoxLayout()

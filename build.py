@@ -113,6 +113,8 @@ def get_pyinstaller_args(is_mac, is_windows, build_path, icon_path):
         '--hidden-import=ui.widgets.TextWidget',
         # Собираем все файлы PyQt5
         '--collect-all=PyQt5',
+        # Добавляем отладочную информацию
+        '--debug=all',
         # Исключаем файлы и модули
         '--exclude-module=_tmp',
         '--exclude-module=.qt_ui',
@@ -130,7 +132,6 @@ def get_pyinstaller_args(is_mac, is_windows, build_path, icon_path):
             f'--target-architecture={target_arch}',
             '--osx-bundle-identifier=com.brdpro.dwhgenerator',
             '--codesign-identity=-',  # Отключаем подпись для разработки
-            '--debug=all',  # Включаем отладочную информацию
             '--osx-entitlements-file=entitlements.plist',  # Добавляем файл с правами доступа
         ])
 

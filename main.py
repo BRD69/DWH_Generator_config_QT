@@ -16,18 +16,40 @@ def _append_run_path():
     if getattr(sys, 'frozen', False):
         pathlist = []
 
-        # Если приложение запущено как bundle, PyInstaller добавляет флаг frozen=True
-        # и устанавливает путь к приложению в переменную _MEIPASS
-        pathlist.append(sys._MEIPASS)
+        # Путь к временной директории PyInstaller
+        meipass = getattr(sys, '_MEIPASS', None)
+        if meipass:
+            pathlist.append(meipass)
+            logging.info("Добавлен путь MEIPASS: %s", meipass)
 
-        # Путь к исполняемому файлу приложения
-        _main_app_path = os.path.dirname(sys.executable)
-        pathlist.append(_main_app_path)
+            # Добавляем путь к bin директории Qt
+            qt_bin = os.path.join(meipass, 'PyQt5', 'Qt5', 'bin')
+            if os.path.exists(qt_bin):
+                pathlist.append(qt_bin)
+                logging.info("Добавлен путь Qt bin: %s", qt_bin)
 
-        # Добавляем пути в переменную окружения PATH
-        os.environ["PATH"] += os.pathsep + os.pathsep.join(pathlist)
+            # Добавляем путь к plugins директории Qt
+            qt_plugins = os.path.join(meipass, 'PyQt5', 'Qt5', 'plugins')
+            if os.path.exists(qt_plugins):
+                pathlist.append(qt_plugins)
+                logging.info("Добавлен путь Qt plugins: %s", qt_plugins)
 
-        logging.info("Текущий PATH: %s", os.environ['PATH'])
+        # Путь к директории с исполняемым файлом
+        exe_path = os.path.dirname(sys.executable)
+        pathlist.append(exe_path)
+        logging.info("Добавлен путь к exe: %s", exe_path)
+
+        # Добавляем пути в начало PATH
+        os.environ["PATH"] = os.pathsep.join(pathlist) + os.pathsep + os.environ["PATH"]
+        logging.info("Обновленный PATH: %s", os.environ["PATH"])
+
+        # Проверяем наличие Qt DLL
+        qt_core = os.path.join(meipass, 'PyQt5', 'Qt5', 'bin', 'Qt5Core.dll')
+        if os.path.exists(qt_core):
+            logging.info("Qt5Core.dll найден: %s", qt_core)
+        else:
+            logging.error("Qt5Core.dll не найден!")
+            logging.error("Содержимое директории bin: %s", os.listdir(os.path.join(meipass, 'PyQt5', 'Qt5', 'bin')))
 
 # Добавляем пути для Qt перед импортом PyQt5
 _append_run_path()

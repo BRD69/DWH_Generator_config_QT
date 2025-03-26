@@ -12,7 +12,7 @@ from services.crypto_text_service import CryptoTextService
 from settings import NAME_APP, AUTHOR_APP, DESCRIPTION_APP, LICENSE_APP, COPYRIGHT_APP, get_version_info
 
 from PyQt5 import QtGui, QtWidgets
-from PyQt5.QtCore import pyqtSignal, QObject
+from PyQt5.QtCore import pyqtSignal, QObject, QThread
 from PyQt5.QtWidgets import QApplication, QFileDialog
 
 from ui.forms.ContentForm import ContentForm
@@ -21,6 +21,7 @@ from ui.forms.MainForm import UiMainWindow
 from ui.forms.SettingsForm import SettingsForm
 from ui.widgets.CheckBoxWidget import CheckBoxWidget
 from ui.widgets.ItemTableWidgets import ActionItemTableWidget, BooleanItemTableWidget, HeaderItem, NumberItemTableWidget, SelectItemTableWidget, TextItemTableWidget
+from ui.widgets.LoadingWidget import LoadingWidget
 from ui.widgets.NumberWidget import NumberWidget
 from ui.widgets.SQLClickHouseWidget import ClickHouseWidget
 from ui.widgets.SQLPostgreWidget import PostgreWidget
@@ -164,6 +165,34 @@ class Application(QApplication):
         if self.postgres_service:
             self.postgres_service.close()
             self.logger_service.info("Приложение завершило работу")
+
+
+class SQLWorker(QThread):
+    """Рабочий поток для выполнения SQL-запроса"""
+    finished = pyqtSignal(list)  # Сигнал с результатами
+    error = pyqtSignal(str)      # Сигнал с ошибкой
+    progress = pyqtSignal(int)   # Сигнал с прогрессом
+
+    def __init__(self, app, script):
+        super().__init__()
+        self.app = app
+        self.script = script
+        self.sql_service = app.postgres_service
+
+    def run(self):
+        try:
+            # Выполняем SQL-запрос
+            status, results, error_message = self.sql_service.execute_script(script=self.script)
+            if status:
+                self.finished.emit(results)
+            else:
+                self.error.emit(error_message)
+        except Exception as e:
+            self.error.emit(str(e))
+
+    def _update_progress(self, value):
+        """Обновление прогресса"""
+        self.progress.emit(value)
 
 
 class MainWindow(UiMainWindow):
@@ -543,7 +572,14 @@ class MainWindow(UiMainWindow):
             self.notification.show_notification("Не удалось установить подключение к PostgreSQL!", "error", "Ошибка подключения к PostgreSQL")
             return
 
+        # Создаем и показываем виджет загрузки
+        self.loading_widget = LoadingWidget(self)
+        self.loading_widget.show_loading("Выполнение SQL скрипта...")
+        # Подключаем сигнал отмены
+        self.loading_widget.cancelled.connect(self._cancel_sql_execution)
+
         try:
+            # Получаем SQL-скрипт
             if sql_script is None:
                 script = self.app.sql_scripts.get(key, "")
                 if not script:
@@ -551,39 +587,74 @@ class MainWindow(UiMainWindow):
             else:
                 script = sql_script
 
-            self.loading.show_loading("Выполнение SQL скрипта...")
-            success, result, error = self.app.postgres_service.execute_script(
-                script=script,
-                params={"value": value}
-            )
-
-            if success:
-                if result:
-                    self.logger.info("SQL скрипт выполнен успешно")
-                    self.loading.update_status("Обработка результатов...")
-                    total_rows = len(result)
-
-                    for i, values in enumerate(result):
-                        progress = int((i + 1) / total_rows * 100)
-                        keys = self.app.config_service.get_config_tables_keys()
-                        fields = dict(zip(keys, values))
-                        self._event_btn_clicked_add_field_table(data_value=fields)
-                        self.loading.update_status(f"Обработка результатов... {progress}%", progress)
-                    self.loading.hide_loading()
-                    self.notification.show_notification(f"Загрузка данных завершена! Данных в таблице: {total_rows} строк", "info")
-                    self.app.processEvents()
-                else:
-                    self.logger.warning("SQL скрипт выполнен, но не вернул результатов")
-                    self.notification.show_notification("Скрипт SQL выполнен, но не вернул результатов", "warning")
-            else:
-                self.logger.error(f"Ошибка выполнения SQL скрипта: {error}")
-                self.notification.show_notification(f"Ошибка выполнения SQL скрипта: {error}", "error")
+            # Создаем и настраиваем рабочий поток
+            self.sql_worker = SQLWorker(app=self.app, script=script)
+            self.sql_worker.finished.connect(self._on_sql_finished)
+            self.sql_worker.error.connect(self._on_sql_error)
+            self.sql_worker.progress.connect(self._on_sql_progress)
+            self.sql_worker.start()
 
         except Exception as e:
             error_msg = f"Ошибка при выполнении SQL скрипта: {e}"
             self.logger.error(error_msg)
             self.notification.show_notification(error_msg, "error")
+            self.loading_widget.hide_loading()
 
+    def _on_sql_finished(self, results):
+        """Обработка успешного завершения выполнения SQL-запроса"""
+        try:
+            self.logger.info("SQL скрипт выполнен успешно")
+            self.loading_widget.update_status("Обработка результатов...")
+            total_rows = len(results)
+
+            # Очищаем таблицу перед загрузкой новых данных
+            self.table_fields.setRowCount(0)
+            self.values_fields = []
+
+            # Загружаем данные с отображением прогресса
+            for i, values in enumerate(results):
+                progress = int((i + 1) / total_rows * 100)
+                keys = self.app.config_service.get_config_tables_keys()
+                fields = dict(zip(keys, values))
+                self._event_btn_clicked_add_field_table(data_value=fields)
+                self.loading_widget.update_status(f"Обработка результатов... {progress}%", progress)
+
+            # Завершаем загрузку
+            self.loading_widget.hide_loading()
+            self.notification.show_notification(
+                f"Загрузка данных завершена! Данных в таблице: {total_rows} строк",
+                "info"
+            )
+
+        except Exception as e:
+            error_msg = f"Ошибка при обработке результатов: {e}"
+            self.logger.error(error_msg)
+            self.notification.show_notification(error_msg, "error")
+            self.loading_widget.hide_loading()
+
+    def _on_sql_error(self, error_message):
+        """Обработка ошибки выполнения SQL-запроса"""
+        self.logger.error(f"Ошибка выполнения SQL скрипта: {error_message}")
+        self.notification.show_notification(
+            f"Ошибка выполнения SQL скрипта: {error_message}",
+            "error"
+        )
+        self.loading_widget.hide_loading()
+
+    def _on_sql_progress(self, value):
+        """Обработка обновления прогресса"""
+        self.loading_widget.update_status(f"Выполнение SQL скрипта... {value}%", value)
+
+    def _cancel_sql_execution(self):
+        """Обработка отмены выполнения SQL-запроса"""
+        if hasattr(self, 'sql_worker') and self.sql_worker.isRunning():
+            self.sql_worker.terminate()  # Останавливаем поток
+            self.sql_worker.wait()      # Ждем завершения потока
+        self.loading_widget.hide_loading()
+        self.notification.show_notification(
+            "Выполнение SQL скрипта отменено пользователем",
+            "warning"
+        )
 
     # =============== Обработчик сигналов ===============
     def _on_signal_status_connect_sql(self, status: bool, message: str):

@@ -243,7 +243,7 @@ class UiMainWindow(QtWidgets.QMainWindow):
         self.menubar.addAction(self.menuParametrs.menuAction())
 
         self.notification = NotificationWidget(self)
-        self.loading = LoadingWidget(self)
+        self.loading_widget = LoadingWidget(self)
 
         self._retranslateUi()
         self.toolBox_fields.setCurrentIndex(0)
@@ -396,7 +396,6 @@ class UiMainWindow(QtWidgets.QMainWindow):
     def _event_btn_clicked_test_notification(self):
         """Тестирование уведомлений"""
         # Создаем виджет загрузки
-        self.loading_widget = LoadingWidget(self)
         self.loading_widget.show_loading("Загрузка тестовых данных...")
 
         # Подключаем сигнал отмены
@@ -409,7 +408,7 @@ class UiMainWindow(QtWidgets.QMainWindow):
         self.progress_timer.timeout.connect(self._update_progress)
         self.progress_timer.start()
 
-    
+
 
 
     def load_field_data(self):
